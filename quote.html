@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Get a Gearbox Quote | Gearbox Giants UK</title>
+  <meta name="description" content="Get an instant quote for gearbox repair, replacement or reconditioning with free UK recovery. Up to 60% cheaper than main dealer.">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2.2'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>">
+
+  <link rel="stylesheet" href="css/style.css?v=35.0">
+  <link rel="stylesheet" href="css/components.css?v=35.0">
+  <link rel="stylesheet" href="css/animations.css?v=3.8">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Gearbox Giants Homepage">
+        <svg class="brand-gear-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="brand-title">Gearbox <span>GIANTS</span></span>
+      </a>
+
+      <div class="nav-right-group">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="fault-finding.html" class="nav-link">Fault Finding</a></li>
+            <li class="nav-item"><a href="locations.html" class="nav-link">Locations</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="tel:02080589668" class="phone-link-clean" aria-label="Call Gearbox Giants">0208 058 9668</a>
+          <button class="nav-quote-link" onclick="window.openQuoteModal()">Quote Me <span>→</span></button>
+          <button id="mobile-menu-toggle" class="btn-mobile-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <svg class="brand-gear-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="brand-title" style="font-size:1.1rem;">Gearbox <span>GIANTS</span></span>
+        </div>
+        <button id="mobile-drawer-close" class="mobile-drawer-close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home <span>→</span></a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services <span>→</span></a></li>
+        <li><a href="fault-finding.html" class="mobile-nav-link">Fault Finding <span>→</span></a></li>
+        <li><a href="locations.html" class="mobile-nav-link">Locations <span>→</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="tel:02080589668" class="btn btn-secondary btn-full" style="margin-bottom:0.75rem;">0208 058 9668</a>
+      <button class="btn btn-primary btn-full btn-lg" onclick="window.openQuoteModal()">Quote Me Now</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         CINEMATIC HERO SECTION: WORKSHOP FACILITY
+         ========================================================================== -->
+    <section class="cinematic-hero-section">
+      <!-- Scroll Zoom Image Layer (Workshop Facility) -->
+      <div class="hero-parallax-layer hero-img-quote"></div>
+      <div class="hero-parallax-overlay"></div>
+
+      <div class="container" style="position:relative; z-index:10;">
+        <div class="cinematic-hero-content fade-in-up">
+          <div class="hero-tag-simple desktop-only">SPECIALIST TRANSMISSION WORKSHOP</div>
+
+          <h1 class="hero-title-cinematic">
+            <span class="title-line-nowrap">GET A FREE</span><br>
+            <span class="highlight-amber">GEARBOX QUOTE.</span>
+          </h1>
+
+          <p class="hero-desc-cinematic">
+            We beat your main dealership with a smile. We recover your vehicle, repair it, and drop it back off fixed with a fresh clean.
+          </p>
+
+          <!-- Clean Actions: All on One Single Line -->
+          <div class="hero-action-row">
+            <form class="hero-reg-form" onsubmit="event.preventDefault(); const reg = this.querySelector('.uk-reg-input').value; if(reg){ const pageInput = document.getElementById('quote-reg-input-page'); if(pageInput){ pageInput.value = reg.toUpperCase(); if(window.executeRegLookup) { window.executeRegLookup(reg, 'page'); } else if(window.handleRegLookup) { window.handleRegLookup(reg, 'page'); } } } document.getElementById('quote-form-section')?.scrollIntoView({behavior:'smooth'});">
+              <div class="uk-reg-box">
+                <div class="uk-reg-flag">
+                  <svg viewBox="0 0 60 30" width="16" height="10"><path d="M0 0h60v30H0z" fill="#012169"/><path d="m0 0 60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
+                  <span>UK</span>
+                </div>
+                <input type="text" class="uk-reg-input" placeholder="ENTER REG" maxlength="8">
+              </div>
+
+              <button type="submit" class="btn-hero-quote">
+                QUOTE ME <span>→</span>
+              </button>
+
+              <a href="#quote-form-section" class="btn-hero-secondary desktop-only">
+                COMPLETE FULL FORM
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         YELLOW MARQUEE TICKER BANNER (INSPIRATION MATCH)
+         ========================================================================== -->
+    <div class="marquee-ticker-bar">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>UP TO 60% CHEAPER THAN MAIN DEALER</span>
+          <span class="ticker-dot">✦</span>
+          <span>FREE RECOVERY & DELIVERY</span>
+          <span class="ticker-dot">✦</span>
+          <span>WARRANTY INCLUDED</span>
+          <span class="ticker-dot">✦</span>
+          <span>ALL MAKES & MODELS</span>
+          <span class="ticker-dot">✦</span>
+          <span>0% FINANCE AVAILABLE</span>
+          <span class="ticker-dot">✦</span>
+          <span>COMPLIMENTARY CARWASH</span>
+          <span class="ticker-dot">✦</span>
+          <span>UP TO 60% CHEAPER THAN MAIN DEALER</span>
+          <span class="ticker-dot">✦</span>
+          <span>FREE RECOVERY & DELIVERY</span>
+          <span class="ticker-dot">✦</span>
+          <span>WARRANTY INCLUDED</span>
+          <span class="ticker-dot">✦</span>
+          <span>ALL MAKES & MODELS</span>
+          <span class="ticker-dot">✦</span>
+          <span>0% FINANCE AVAILABLE</span>
+          <span class="ticker-dot">✦</span>
+          <span>COMPLIMENTARY CARWASH</span>
+          <span class="ticker-dot">✦</span>
+        </div>
+        <!-- Duplicated Track for Continuous Loop -->
+        <div class="marquee-content" aria-hidden="true">
+          <span>UP TO 60% CHEAPER THAN MAIN DEALER</span>
+          <span class="ticker-dot">✦</span>
+          <span>FREE RECOVERY & DELIVERY</span>
+          <span class="ticker-dot">✦</span>
+          <span>WARRANTY INCLUDED</span>
+          <span class="ticker-dot">✦</span>
+          <span>ALL MAKES & MODELS</span>
+          <span class="ticker-dot">✦</span>
+          <span>0% FINANCE AVAILABLE</span>
+          <span class="ticker-dot">✦</span>
+          <span>COMPLIMENTARY CARWASH</span>
+          <span class="ticker-dot">✦</span>
+          <span>UP TO 60% CHEAPER THAN MAIN DEALER</span>
+          <span class="ticker-dot">✦</span>
+          <span>FREE RECOVERY & DELIVERY</span>
+          <span class="ticker-dot">✦</span>
+          <span>WARRANTY INCLUDED</span>
+          <span class="ticker-dot">✦</span>
+          <span>ALL MAKES & MODELS</span>
+          <span class="ticker-dot">✦</span>
+          <span>0% FINANCE AVAILABLE</span>
+          <span class="ticker-dot">✦</span>
+          <span>COMPLIMENTARY CARWASH</span>
+          <span class="ticker-dot">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         FULL QUOTE FORM & BOOKING
+         ========================================================================== -->
+    <section class="section" id="quote-form-section" style="padding-top: 4rem; padding-bottom: 5rem;">
+      <div class="container">
+        <div class="section-header fade-in-up" style="max-width: 860px;">
+          <div class="section-tag">ONLINE ESTIMATOR & BOOKING</div>
+          <h2>GET A FREE <span class="highlight-amber">GEARBOX QUOTE</span></h2>
+          <p>
+            Up to 60% cheaper than main dealership. Complete the form below with your vehicle registration for an immediate quote and free recovery booking.
+          </p>
+        </div>
+
+        <div class="grid-2" style="align-items: start; gap: 3rem;">
+          <!-- Left Info & Trust Media Card -->
+          <div class="fade-in-up">
+            <div class="step-card" style="margin-bottom: 2rem;">
+              <div class="step-card-media" style="height: 240px;">
+                <img src="assets/workshop_facility.jpg" alt="Gearbox Giants Engineering Workshop" loading="lazy">
+              </div>
+              <div class="step-card-body" style="padding: 2.25rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">EVERY QUOTE INCLUDES</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                  Transparent quote pricing with no surprise dealership add-ons or diagnostic penalty fees.
+                </p>
+
+                <ul class="info-feature-list" style="margin: 0;">
+                  <li class="info-feature-item">
+                    <span class="info-feature-icon">🚚</span>
+                    <div class="info-feature-text"><strong>Free Nationwide Collection:</strong> We collect from home, work, or garage.</div>
+                  </li>
+                  <li class="info-feature-item">
+                    <span class="info-feature-icon"></span>
+                    <div class="info-feature-text"><strong>12-Month / 12,000-Mile Warranty:</strong> Full coverage on all parts & labor.</div>
+                  </li>
+                  <li class="info-feature-item">
+                    <span class="info-feature-icon">✨</span>
+                    <div class="info-feature-text"><strong>Complimentary Valet:</strong> Cleaned and returned feeling fresh.</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="background: #141519; border: 1px solid var(--border-amber); border-radius: var(--border-radius-lg); padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+              <div>
+                <div style="font-size: 0.85rem; color: var(--amber-400); font-weight: 800; text-transform: uppercase;">Prefer to speak with an engineer?</div>
+                <div style="font-size: 1.35rem; font-weight: 900; color: #fff; font-family: var(--font-heading);">0208 058 9668</div>
+              </div>
+              <a href="tel:02080589668" class="btn btn-secondary">Call Hub </a>
+            </div>
+          </div>
+
+          <!-- Right Form Container -->
+          <div class="fade-in-up delay-1" style="background:#111216; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:2.25rem 2.25rem; box-shadow:0 25px 50px rgba(0,0,0,0.6);">
+            <form onsubmit="window.handleQuoteFormSubmit(event)">
+              
+              <!-- Section 1: Unified Vehicle Details -->
+              <div id="vehicle-ident-block-page" style="margin-bottom:1.5rem; padding-bottom:1.25rem; border-bottom:1px solid rgba(255,255,255,0.07);">
+                <label style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.6rem;">
+                  <span>1. Vehicle Registration</span>
+                </label>
+                <div style="display:flex; gap:0.65rem; align-items:center;">
+                  <div class="uk-reg-box" style="height:46px; flex:1; max-width:220px;">
+                    <div class="uk-reg-flag" style="font-size:7px; padding:0 0.4rem;">
+                      <svg viewBox="0 0 60 30" width="14" height="8"><path d="M0 0h60v30H0z" fill="#012169"/><path d="m0 0 60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
+                      <span>UK</span>
+                    </div>
+                    <input type="text" id="quote-reg-input-page" class="uk-reg-input" placeholder="AB12 CDE" maxlength="8" oninput="window.handleRegLookup(this.value, 'page')" onkeydown="if(event.key==='Enter'){event.preventDefault();window.triggerRegLookup('page');}" style="font-size:1.2rem; width:100%;">
+                  </div>
+                  <button type="button" class="btn btn-secondary" onclick="window.triggerRegLookup('page')" style="height:46px; padding:0 1.25rem; font-size:0.85rem; font-weight:700;">
+                    Find Vehicle
+                  </button>
+                </div>
+                
+                <!-- Live Verification Result Badge -->
+                <div id="reg-lookup-result"></div>
+
+                <!-- Manual Vehicle Specification Dropdowns -->
+                <div id="vehicle-spec-section-page" style="margin-top:1rem; padding-top:0.85rem; border-top:1px dashed rgba(255,255,255,0.08); transition:all 0.3s ease;">
+                  <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.6rem;">
+                    Or Select Vehicle Manually:
+                  </div>
+
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+                    <div class="form-group" style="margin-bottom:0;">
+                      <label class="form-label" style="font-size:0.78rem;" for="quote-make-select-page">Make</label>
+                      <select id="quote-make-select-page" class="form-select" onchange="window.handleMakeSelectChange(this.value, 'page', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                        <option value="">-- Select Make --</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                      <label class="form-label" style="font-size:0.78rem;" for="quote-model-select-page">Model</label>
+                      <select id="quote-model-select-page" class="form-select" onchange="window.handleModelSelectChange(this.value, 'page', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                        <option value="">-- Select Model --</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display:grid; grid-template-columns:1.3fr 0.7fr; gap:0.75rem;">
+                    <div class="form-group" style="margin-bottom:0;">
+                      <label class="form-label" style="font-size:0.78rem;" for="quote-transmission-select-page">Transmission</label>
+                      <select id="quote-transmission-select-page" class="form-select" onchange="window.handleTransSelectChange(this.value, 'page', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                        <option value="Automatic (ZF / Torque Converter / Steptronic)">Automatic (ZF / Steptronic)</option>
+                        <option value="Dual-Clutch (DSG / S-Tronic / DCT / Powershift / PDK)">Dual-Clutch (DSG / S-Tronic)</option>
+                        <option value="Manual (5-Speed / 6-Speed Transmission)">Manual Gearbox</option>
+                        <option value="CVT / e-CVT Continuously Variable">CVT / Hybrid</option>
+                        <option value="Semi-Automatic / Mechatronics Service">Semi-Auto / Mechatronics</option>
+                        <option value="Electric Drive Unit">Electric Drive Unit</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                      <label class="form-label" style="font-size:0.78rem;" for="quote-year-input-page">Year</label>
+                      <input type="text" id="quote-year-input-page" class="form-input" placeholder="2018" oninput="window.handleYearInputChange(this.value, 'page', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                    </div>
+                  </div>
+
+                  <input type="hidden" id="quote-make-page">
+                  <input type="hidden" id="quote-model-page">
+                </div>
+              </div>
+
+              <!-- Section 2: Customer Details -->
+              <div style="margin-bottom:1.35rem;">
+                <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
+                  2. Your Details
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-name">Full Name *</label>
+                    <input type="text" id="quote-name" class="form-input" placeholder="John Smith" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-phone">Phone Number *</label>
+                    <input type="tel" id="quote-phone" class="form-input" placeholder="07123 456789" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-email">Email Address *</label>
+                    <input type="email" id="quote-email" class="form-input" placeholder="john@example.co.uk" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-postcode">Postcode / City *</label>
+                    <input type="text" id="quote-postcode" class="form-input" placeholder="e.g. RG1 1AA" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Service & Fault Description -->
+              <div style="margin-bottom:1.25rem;">
+                <div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-service-type">Required Service</label>
+                    <select id="quote-service-type" class="form-select" style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                      <option value="Gearbox Repair / Diagnostic">Gearbox Repair / Diagnostic Booking</option>
+                      <option value="Gearbox Reconditioning">Gearbox Reconditioning (OEM Standard)</option>
+                      <option value="Gearbox Replacement">Gearbox Replacement</option>
+                      <option value="Clutch & Dual-Mass Flywheel">Clutch & Dual-Mass Flywheel</option>
+                      <option value="Automatic / DSG Mechatronics">Automatic / DSG Mechatronics</option>
+                      <option value="Emergency Recovery & Diagnostics">Emergency Free Recovery</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-desc">Fault Symptoms <span style="font-weight:400; text-transform:none; color:var(--text-muted);">(Optional)</span></label>
+                    <textarea id="quote-desc" class="form-textarea" rows="2" placeholder="e.g. grinding noise, slipping in 2nd/3rd gear, warning light on..." style="padding:0.65rem 0.85rem; font-size:0.88rem; min-height:55px;"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.35rem; font-size:1.05rem; padding:0.85rem 1.5rem; border-radius:8px; font-weight:800; letter-spacing:0.02em;">
+                Submit Quote Request →
+              </button>
+
+              <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1rem; font-size:0.76rem; color:var(--text-muted); flex-wrap:wrap;">
+                <span>🔒 100% Confidential</span>
+                <span>12-Month Warranty</span>
+                <span>🚚 Free Collection</span>
+                <span>💳 0% Finance</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>© 2024–2026 Gearbox Giants UK. Phone: 0208 058 9668 • Email: Contact@gearboxgiants.co.uk</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/parallax-hero.js?v=35.0"></script>
+  <script src="js/quote.js?v=35.0"></script>
+  <script src="js/app.js?v=3.8"></script>
+</body>
+</html>

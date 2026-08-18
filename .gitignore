@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Local environments & credentials
+.env
+.DS_Store
+config.json
+
+# Temporary archives
+*.zip
