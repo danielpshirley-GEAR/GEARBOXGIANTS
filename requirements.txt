@@ -1,0 +1,2 @@
+# Gearbox Giants uses Python 3 standard libraries (http.server, urllib, ssl, json, socketserver)
+# No external pip dependencies required.

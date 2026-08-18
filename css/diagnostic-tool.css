@@ -1,0 +1,1243 @@
+/**
+ * GEARBOX GIANTS - INTELLIGENT DIAGNOSTIC & MOT DOSSIER STYLESHEET
+ * Precision match for the sleek 4-step diagnostic card with live DVSA auto-matching,
+ * transmission platform selection tiles, model-specific triage, and 5-tab telemetry dossier.
+ */
+
+/* ==========================================================================
+   1. MASTER CONTAINER & STEP TRACKER
+   ========================================================================== */
+.diag-master-card {
+  background: #0d121d;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  padding: 3rem 2.75rem;
+  max-width: 980px;
+  margin: 0 auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Horizontal 4-Step Tracker matching screenshot */
+.step-tracker-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.75rem;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #4b5563;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.step-num-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #192231;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
+.step-item.active {
+  color: #ffcc00;
+}
+
+.step-item.active .step-num-circle {
+  background: #ffcc00;
+  color: #0d121d;
+  box-shadow: 0 0 14px rgba(255, 204, 0, 0.45);
+}
+
+.step-item.completed {
+  color: #22c55e;
+}
+
+.step-item.completed .step-num-circle {
+  background: rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.step-connector-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.09);
+  margin: 0 1.25rem;
+}
+
+/* Step Header & Subtitle */
+.step-main-header {
+  margin-bottom: 2rem;
+}
+
+.step-title-headline {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.3;
+}
+
+.step-subtitle-text {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. STEP 1: REGISTRATION AUTO-MATCH & TRANSMISSION TILES
+   ========================================================================== */
+.reg-match-row {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.25rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.reg-match-label {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.reg-match-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+/* Glowing UK Number Plate Pill in screenshot */
+.uk-plate-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffcc00;
+  color: #111111;
+  border: 2px solid #000000;
+  border-radius: 9999px;
+  overflow: hidden;
+  height: 46px;
+  box-shadow: 0 0 16px rgba(255, 204, 0, 0.3);
+}
+
+.uk-pill-flag {
+  background: #003399;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 100%;
+  font-size: 0.72rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  gap: 4px;
+}
+
+.uk-pill-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Charles Wright', 'Impact', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0 16px;
+  width: 140px;
+  text-align: center;
+}
+
+.uk-pill-input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 800;
+}
+
+/* Glowing Verify Button matching screenshot */
+.btn-verify-reg {
+  background: #ffb703;
+  color: #0d121d;
+  border: none;
+  border-radius: 9999px;
+  padding: 0 1.5rem;
+  height: 46px;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 183, 3, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-verify-reg:hover {
+  background: #ffa200;
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(255, 183, 3, 0.6);
+}
+
+.btn-verify-reg:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Verified Vehicle Banner (Appears when plate matched) */
+.verified-vehicle-toast {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Responsive Vehicle Spec Display */
+@media (min-width: 769px) {
+  .veh-card-mobile { display: none !important; }
+  .veh-card-desktop { display: block !important; }
+}
+@media (max-width: 768px) {
+  .veh-card-desktop { display: none !important; }
+  .veh-card-mobile { display: block !important; }
+}
+
+.veh-mob-container {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.veh-mob-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0.5rem 0 0.15rem 0;
+  line-height: 1.25;
+}
+
+.veh-mob-sub {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin: 0 0 0.85rem 0;
+}
+
+.veh-mob-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.85rem;
+}
+
+.veh-mob-cell {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+  padding-bottom: 0.55rem;
+}
+
+.veh-mob-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.veh-mob-val {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.veh-mob-val.amber {
+  color: var(--amber-400);
+}
+
+.toast-car-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 0.2rem 0;
+}
+
+.toast-car-specs {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.toast-badge-green {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+/* 3-Option Transmission Grid (Manual, Automatic, Semi-Automatic) */
+.trans-types-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
+}
+
+@media (max-width: 768px) {
+  .trans-types-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* 2x2 Transmission Grid matching screenshot */
+.trans-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+@media (max-width: 768px) {
+  .trans-types-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trans-type-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.trans-type-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 183, 3, 0.35);
+  transform: translateY(-2px);
+}
+
+.trans-type-card.selected {
+  background: rgba(255, 183, 3, 0.05);
+  border: 1.5px solid #ffb703;
+  box-shadow: 0 0 20px rgba(255, 183, 3, 0.15), inset 0 0 12px rgba(255, 183, 3, 0.05);
+}
+
+.trans-card-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.trans-card-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Bottom Action Row matching screenshot */
+.diag-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.btn-step-next {
+  background: #a16207;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-step-next:hover {
+  background: #ca8a04;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(202, 138, 4, 0.35);
+}
+
+.btn-step-next.ready {
+  background: #d97706;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+}
+
+.btn-step-next.ready:hover {
+  background: #f59e0b;
+}
+
+.btn-step-prev {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.95rem 1.6rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-step-prev:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================================================================
+   3. STEPS 2 & 3: SCENARIO & SYMPTOM TILES
+   ========================================================================== */
+.option-tiles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2.25rem;
+}
+
+.option-tile-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  transition: all 0.2s ease;
+}
+
+.option-tile-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 183, 3, 0.35);
+  transform: translateY(-1px);
+}
+
+.option-tile-card.selected {
+  background: rgba(255, 183, 3, 0.06);
+  border: 1.5px solid #ffb703;
+  box-shadow: 0 0 16px rgba(255, 183, 3, 0.12);
+}
+
+.opt-radio-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.option-tile-card.selected .opt-radio-circle {
+  background: #ffb703;
+  border-color: #ffb703;
+  color: #0d121d;
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.opt-main-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.opt-body-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.opt-target-tag {
+  font-size: 0.78rem;
+  color: #ffb703;
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. STEP 4: CUSTOMER CAPTURE & COMPREHENSIVE REPORT
+   ========================================================================== */
+.customer-capture-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.capture-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 183, 3, 0.1);
+  color: #ffb703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+/* Report Styles */
+.report-wrapper {
+  animation: fadeIn 0.4s ease;
+}
+
+.report-delivery-banner {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  border-radius: 12px;
+  padding: 1.2rem 1.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.delivery-text {
+  text-align: left;
+}
+
+.delivery-actions {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .report-delivery-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.15rem;
+  }
+  .delivery-actions {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .delivery-actions .btn {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.vehicle-report-header-card {
+  background: #111726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.reg-plate-display-sm {
+  background: #ffcc00;
+  color: #111111;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-family: 'Charles Wright', 'Impact', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reg-gb {
+  background: #003399;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.reg-text {
+  padding: 0 12px;
+}
+
+.vehicle-main-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+}
+
+.vehicle-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.vtag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.health-gauge-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1rem 1.35rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gauge-circle-wrap {
+  width: 72px;
+  height: 72px;
+  position: relative;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 3.8;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.8s ease;
+}
+
+.gauge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 900;
+}
+
+.gauge-score {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.gauge-max {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.gauge-title {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: block;
+}
+
+.gauge-urgency {
+  font-size: 0.92rem;
+  font-weight: 900;
+  font-family: var(--font-heading, sans-serif);
+}
+
+/* Telemetry Grid */
+.telemetry-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.telemetry-stat-card {
+  background: #111726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Component Wear Bars */
+.component-wear-container {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.component-wear-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.component-wear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.diag-component-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.diag-component-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.diag-component-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.diag-component-fill.high { background: #ef4444; }
+.diag-component-fill.med { background: #f59e0b; }
+.diag-component-fill.low { background: #22c55e; }
+
+/* Report Tabs */
+.report-tabs-wrapper {
+  background: #111726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.report-tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-nav-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tab-nav-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tab-nav-btn.active {
+  background: #ffcc00;
+  color: #0d121d;
+}
+
+.report-tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.report-tab-content.active {
+  display: block;
+}
+
+/* Findings Cards */
+.finding-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.finding-card.severity-high, .finding-card.severity-critical { border-left: 4px solid #ef4444; }
+.finding-card.severity-medium { border-left: 4px solid #ffcc00; }
+
+.finding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.finding-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.badge-high, .badge-critical { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.badge-medium { background: rgba(255, 204, 0, 0.2); color: #ffcc00; }
+
+.finding-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0.3rem 0 0 0;
+}
+
+.finding-probability {
+  text-align: right;
+}
+
+.prob-num {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffcc00;
+  display: block;
+}
+
+.prob-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.finding-explanation {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.finding-components {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+
+.comp-label { color: #64748b; font-weight: 700; }
+.comp-tag {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  color: #e2e8f0;
+}
+
+.finding-source-tag {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* MOT Table */
+.mot-history-table-wrapper { overflow-x: auto; }
+.mot-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+.mot-history-table th {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #64748b;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+.mot-history-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.mot-result-badge.pass { color: #22c55e; font-weight: 800; }
+.mot-result-badge.fail { color: #ef4444; font-weight: 800; }
+.mot-defect-item {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  background: rgba(255, 204, 0, 0.06);
+  border-left: 2px solid #ffcc00;
+}
+
+/* TSB List */
+.tsb-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.tsb-risk-badge { font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; }
+.tsb-title { font-family: var(--font-heading, sans-serif); font-size: 1.1rem; font-weight: 800; color: #ffffff; margin: 0.35rem 0 0.5rem 0; }
+.tsb-desc { font-size: 0.88rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.75rem; }
+.tsb-action-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  border-left: 3px solid #ffcc00;
+}
+
+/* Workshop Checklist */
+.workshop-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; padding: 0; }
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+.check-box { width: 18px; height: 18px; border: 1.5px solid #ffcc00; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+.check-text { font-size: 0.9rem; color: #e2e8f0; line-height: 1.45; }
+
+/* Cost Breakdown */
+.cost-figures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.cost-fig-box { background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.06); padding: 1.25rem; border-radius: 10px; text-align: center; }
+.cost-fig-box.highlight { background: rgba(255, 204, 0, 0.08); border: 1.5px solid #ffcc00; }
+.cost-fig-label { font-size: 0.78rem; color: #64748b; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.4rem; }
+.cost-fig-val { font-size: 1.35rem; font-weight: 900; color: #ffffff; font-family: var(--font-heading, sans-serif); }
+.cost-fig-box.highlight .cost-fig-val { color: #ffcc00; }
+
+.cost-savings-banner {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+.savings-tag { background: #22c55e; color: #000000; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 900; font-size: 0.78rem; }
+
+/* Direct Action CTA Card */
+.report-cta-card {
+  background: rgba(255, 204, 0, 0.06);
+  border: 1.5px solid rgba(255, 204, 0, 0.35);
+  border-radius: 16px;
+  padding: 2.25rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.report-cta-card h3 { font-family: var(--font-heading, sans-serif); font-size: 1.5rem; font-weight: 900; color: #ffffff; margin: 0 0 0.5rem 0; }
+.report-cta-card p { color: #94a3b8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.95rem; line-height: 1.55; }
+.cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.cta-guarantees { display: flex; justify-content: center; gap: 1.5rem; font-size: 0.82rem; color: #64748b; flex-wrap: wrap; }
+
+/* ==========================================================================
+   4. MOBILE & TABLET RESPONSIVE STYLES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .trans-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .diag-master-card {
+    padding: 1.5rem 1.15rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .step-tracker-bar {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    gap: 0.15rem;
+    justify-content: space-between;
+  }
+
+  .step-item {
+    font-size: 0.65rem;
+    letter-spacing: 0.01em;
+    gap: 0.25rem;
+  }
+
+  .step-num-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+
+  .step-connector-line {
+    margin: 0 0.2rem;
+    min-width: 8px;
+  }
+
+  .step-title-headline {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .step-subtitle-text {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Auto Match Registration Controls */
+  .reg-match-row {
+    padding: 1.15rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reg-match-label {
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  .reg-match-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+    align-items: stretch;
+  }
+
+  .uk-plate-pill {
+    width: 100%;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .uk-pill-input {
+    width: 140px;
+    font-size: 1.2rem;
+  }
+
+  .btn-verify-reg {
+    width: 100%;
+    height: 46px;
+    font-size: 0.92rem;
+    border-radius: 8px;
+  }
+
+  /* Transmission Types Grid */
+  .trans-types-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .trans-type-card {
+    padding: 1.15rem 1.2rem;
+    border-radius: 12px;
+  }
+
+  .trans-card-title {
+    font-size: 1.05rem;
+  }
+
+  .trans-card-desc {
+    font-size: 0.82rem;
+  }
+
+  /* Navigation Action Buttons */
+  .diag-actions-row {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .btn-step-next,
+  .btn-step-prev {
+    width: 100%;
+    justify-content: center;
+    height: 48px;
+    font-size: 0.95rem;
+  }
+
+  /* Report Dashboard Mobile Adjustments */
+  .vehicle-report-header-card {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .health-gauge-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .report-tab-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .tab-nav-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .report-header-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .report-header-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .customer-capture-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   5. PRINT STYLESHEET
+   ========================================================================== */
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; }
+  .site-header, .site-footer, .floating-mobile-bar, .marquee-ticker-bar, .delivery-actions, .cta-buttons, .tab-nav-btn { display: none !important; }
+  .report-tab-content { display: block !important; margin-bottom: 2rem; }
+  .report-wrapper, .vehicle-report-header-card, .telemetry-stat-card, .finding-card {
+    background: #ffffff !important; color: #000000 !important; border: 1px solid #cccccc !important; box-shadow: none !important;
+  }
+}
