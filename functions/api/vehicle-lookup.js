@@ -72,7 +72,7 @@ export async function onRequest(context) {
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-API-Key',
     'Content-Type': 'application/json; charset=utf-8',
-    'Cache-Control': 'public, max-age=3600'
+    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0', 'Pragma': 'no-cache'
   };
 
   if (request.method === 'OPTIONS') {
