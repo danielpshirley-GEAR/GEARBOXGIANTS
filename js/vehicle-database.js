@@ -126,6 +126,51 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "EJ63UNL": {
+    registration: "EJ63 UNL",
+    make: "BMW",
+    model: "1 Series",
+    derivative: "114i Sport (1.6L TwinPower Petrol)",
+    year: 2014,
+    firstRegistered: "January 2014",
+    fuelType: "Petrol",
+    transmission: "6-Speed Manual / 8-Speed Steptronic Automatic",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "BMW 6-Speed Manual / ZF 8HP",
+    gearboxCode: "GS6-17BG",
+    engineCapacity: 1598,
+    powerBhp: 102,
+    colour: "White",
+    bodyType: "5 Door Hatchback",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WBA1R12050E**9124",
+    currentMileage: 74200,
+    motExpiryDate: "2026-04-06",
+    motStatus: "VALID",
+    motDaysRemaining: 217,
+    knownIssues: [
+      {
+        title: "Manual Gearbox Input Shaft Bearing & Clutch Release Noise",
+        risk: "MEDIUM",
+        description: "Clutch release bearing whine or 1st/2nd synchromesh wear during cold shifts.",
+        affectedComponents: ["Input Shaft Bearing", "Clutch Release Bearing", "MTF-LT-3 Fluid"],
+        recommendedAction: "Inspect clutch release fork and replace transmission fluid with genuine OEM spec."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "06 April 2026",
+        testNumber: "847291038291",
+        result: "PASSED",
+        odometer: "74,200 miles",
+        odometerRaw: 74200,
+        expiryDate: "06 April 2027",
+        rfrAndComments: []
+      }
+    ]
+  },
+
   "GV61FJD": {
     registration: "GV61 FJD",
     make: "BMW",

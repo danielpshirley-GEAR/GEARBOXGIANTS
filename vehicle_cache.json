@@ -373,5 +373,24 @@
     "region": "Garden of England (Maidstone, Brighton) (GV)",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "EJ63UNL": {
+    "found": true,
+    "registration": "EJ63 UNL",
+    "make": "BMW",
+    "model": "1 Series (114i Sport)",
+    "spec": "114i Sport",
+    "derivative": "114i Sport (1.6L Petrol)",
+    "year": 2014,
+    "fuelType": "Petrol",
+    "colour": "White",
+    "engine": "1.6L Petrol (1598cc, 102 bhp)",
+    "transmission": "6-Speed Manual / 8-Speed Steptronic Automatic",
+    "gearboxCategory": "MANUAL",
+    "currentMileage": 74200,
+    "motExpiryDate": "2026-04-06",
+    "motStatus": "VALID",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }

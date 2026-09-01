@@ -246,6 +246,7 @@
     'FH67TXF': { make: 'Mercedes-Benz', model: 'A-Class (A180d AMG Line / Sport)', year: '2017', engine: '1.5L Diesel (1461cc, 109 bhp)', colour: 'Grey', transmission: '7G-DCT 7-Speed Dual-Clutch Automatic', region: 'Nottingham (FH)' },
     'NG61EYW': { make: 'Audi', model: 'A1 (1.6 TDI Sport)', year: '2011', engine: '1.6L Diesel (1598cc, 105 bhp)', colour: 'Black', transmission: '5-Speed Manual Transmission', region: 'Nottingham / East Midlands (NG)' },
     'GV61FJD': { make: 'BMW', model: '3 Series (320d M Sport)', year: '2011', engine: '2.0L TwinPower Diesel (184 bhp)', colour: 'Black', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', region: 'Garden of England (Maidstone, Brighton) (GV)', isVerified: true },
+    'EJ63UNL': { make: 'BMW', model: '1 Series (114i Sport)', spec: '114i Sport', year: '2014', engine: '1.6L Petrol (1598cc, 102 bhp)', colour: 'White', transmission: '6-Speed Manual / 8-Speed Steptronic Automatic', gearboxCategory: 'MANUAL', region: 'Essex / Chelmsford (EJ)', isVerified: true },
     'AB12CDE': { make: 'BMW', model: '3 Series (320d EfficientDynamics)', year: '2012', engine: '2.0L Diesel (163 bhp)', transmission: '8-Speed Steptronic Automatic', region: 'Peterborough (AB)' }
   };
 
@@ -294,21 +295,6 @@
   // ==========================================================================
   // 3. DETERMINISTIC VEHICLE RESOLVER
   // ==========================================================================
-  const UK_SAMPLE_SPECS = [
-    { make: 'BMW', model: '3 Series (320d M Sport)', spec: '320d M Sport', engine: '2.0L TwinPower Diesel (184 bhp)', fuel: 'Diesel', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', gearboxCategory: 'AUTO' },
-    { make: 'Volkswagen', model: 'Golf (2.0 TDI GTD)', spec: '2.0 TDI GTD DSG', engine: '2.0L Diesel (184 bhp)', fuel: 'Diesel', transmission: '7-Speed DSG Dual-Clutch (DQ381)', gearboxCategory: 'DSG' },
-    { make: 'Audi', model: 'A4 (2.0 TDI S Line)', spec: '2.0 TDI S Line S-Tronic', engine: '2.0L Diesel (190 bhp)', fuel: 'Diesel', transmission: '7-Speed S-Tronic Dual-Clutch (DL382)', gearboxCategory: 'DSG' },
-    { make: 'Mercedes-Benz', model: 'C-Class (C220d AMG Line)', spec: 'C220d AMG Line', engine: '2.1L Diesel (170 bhp)', fuel: 'Diesel', transmission: '9G-Tronic 9-Speed Automatic', gearboxCategory: 'AUTO' },
-    { make: 'Ford', model: 'Focus (1.0 EcoBoost Titanium)', spec: '1.0 EcoBoost Titanium', engine: '1.0L EcoBoost Petrol (125 bhp)', fuel: 'Petrol', transmission: '6-Speed Manual Transmission', gearboxCategory: 'MANUAL' },
-    { make: 'BMW', model: '1 Series (118i M Sport)', spec: '118i M Sport', engine: '1.5L Turbo Petrol (136 bhp)', fuel: 'Petrol', transmission: '8-Speed Steptronic Automatic', gearboxCategory: 'AUTO' },
-    { make: 'Audi', model: 'A3 Sportback (35 TFSI S Line)', spec: '35 TFSI S Line S-Tronic', engine: '1.5L TSI Petrol (150 bhp)', fuel: 'Petrol', transmission: '7-Speed S-Tronic Dual-Clutch', gearboxCategory: 'DSG' },
-    { make: 'Nissan', model: 'Qashqai (1.3 DIG-T N-Connecta)', spec: '1.3 DIG-T N-Connecta', engine: '1.3L Turbo Petrol (140 bhp)', fuel: 'Petrol', transmission: 'Xtronic CVT Automatic', gearboxCategory: 'AUTO' },
-    { make: 'Vauxhall', model: 'Corsa (1.2 Turbo SRi)', spec: '1.2 Turbo SRi', engine: '1.2L Turbo Petrol (100 bhp)', fuel: 'Petrol', transmission: '6-Speed Manual Transmission', gearboxCategory: 'MANUAL' },
-    { make: 'Land Rover', model: 'Range Rover Evoque (2.0 D180 R-Dynamic)', spec: '2.0 D180 R-Dynamic', engine: '2.0L Diesel (180 bhp)', fuel: 'Diesel', transmission: 'ZF 9-Speed Automatic (9HP48)', gearboxCategory: 'AUTO' },
-    { make: 'Toyota', model: 'C-HR (1.8 Hybrid Design)', spec: '1.8 Hybrid Design', engine: '1.8L Hybrid Petrol (122 bhp)', fuel: 'Hybrid', transmission: 'e-CVT Electronic Transmission', gearboxCategory: 'AUTO' },
-    { make: 'Mercedes-Benz', model: 'A-Class (A200 AMG Line)', spec: 'A200 AMG Line', engine: '1.3L Turbo Petrol (163 bhp)', fuel: 'Petrol', transmission: '7G-DCT Dual-Clutch Automatic', gearboxCategory: 'DSG' }
-  ];
-
   function parseUkRegistration(rawPlate) {
     if (!rawPlate) return null;
     const clean = rawPlate.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -377,25 +363,21 @@
       resolvedYear = String(2008 + yearOffset);
     }
 
-    const hash = getDeterministicHash(clean);
-    const chosen = UK_SAMPLE_SPECS[hash % UK_SAMPLE_SPECS.length];
-
     return {
       formatted: formatUkPlate(clean),
       raw: clean,
-      make: chosen.make,
-      model: chosen.model,
-      spec: chosen.spec,
-      variant: chosen.spec,
-      derivative: `${chosen.model} - ${chosen.engine}`,
+      make: '',
+      model: '',
+      spec: '',
+      variant: '',
+      derivative: '',
       year: resolvedYear,
-      engine: chosen.engine,
-      fuelType: chosen.fuel,
-      transmission: chosen.transmission,
-      gearboxCategory: chosen.gearboxCategory,
+      engine: '',
+      fuelType: '',
+      transmission: 'Automatic / Dual-Clutch / Manual',
       region: regionText,
-      isVerified: true,
-      found: true
+      isVerified: false,
+      found: false
     };
   }
 
