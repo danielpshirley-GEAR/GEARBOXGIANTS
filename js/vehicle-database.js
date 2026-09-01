@@ -126,6 +126,51 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "HG13FNC": {
+    registration: "HG13 FNC",
+    make: "TOYOTA",
+    model: "Aygo",
+    derivative: "1.0 VVT-i (1.0L Petrol)",
+    year: 2013,
+    firstRegistered: "July 2013",
+    fuelType: "Petrol",
+    transmission: "5-Speed Manual / MultiMode Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "Toyota C551 5-Speed Manual / MMT",
+    gearboxCode: "C551-5MT",
+    engineCapacity: 998,
+    powerBhp: 68,
+    colour: "Orange",
+    bodyType: "3 Door Hatchback",
+    euroStatus: "Euro 5",
+    ulezCompliant: true,
+    vinMasked: "VNKKG08B00A**4819",
+    currentMileage: 61200,
+    motExpiryDate: "2026-06-11",
+    motStatus: "VALID",
+    motDaysRemaining: 283,
+    knownIssues: [
+      {
+        title: "Clutch Friction Plate & Release Bearing Wear",
+        risk: "MEDIUM",
+        description: "Clutch pedal biting point becomes high or develops judder on 1st gear take-off.",
+        affectedComponents: ["Clutch Friction Plate", "Pressure Plate", "Release Bearing"],
+        recommendedAction: "Renew 190mm clutch kit assembly and adjust clutch cable tension."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "11 June 2026",
+        testNumber: "847291038102",
+        result: "PASSED",
+        odometer: "61,200 miles",
+        odometerRaw: 61200,
+        expiryDate: "11 June 2027",
+        rfrAndComments: []
+      }
+    ]
+  },
+
   "EJ63UNL": {
     registration: "EJ63 UNL",
     make: "BMW",
