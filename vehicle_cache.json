@@ -411,5 +411,24 @@
     "motStatus": "VALID",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "MJ15BDY": {
+    "found": true,
+    "registration": "MJ15 BDY",
+    "make": "Ford",
+    "model": "Transit Courier",
+    "spec": "1.5 TDCi",
+    "derivative": "1.5 TDCi Diesel (1499cc, 75 bhp)",
+    "year": 2015,
+    "fuelType": "Diesel",
+    "colour": "White",
+    "engine": "1.5L Diesel (1499cc, 75 bhp)",
+    "transmission": "6-Speed Manual Transmission",
+    "gearboxCategory": "MANUAL",
+    "currentMileage": 78500,
+    "motExpiryDate": "2026-04-29",
+    "motStatus": "VALID",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }

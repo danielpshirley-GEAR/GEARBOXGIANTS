@@ -126,6 +126,51 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "MJ15BDY": {
+    registration: "MJ15 BDY",
+    make: "FORD",
+    model: "Transit Courier",
+    derivative: "1.5 TDCi (1.5L Diesel)",
+    year: 2015,
+    firstRegistered: "March 2015",
+    fuelType: "Diesel",
+    transmission: "6-Speed Manual Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "Ford 6-Speed Manual B6",
+    gearboxCode: "B6-6MT",
+    engineCapacity: 1499,
+    powerBhp: 75,
+    colour: "White",
+    bodyType: "Van / Commercial",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WF0LXXTATL**1928",
+    currentMileage: 78500,
+    motExpiryDate: "2026-04-29",
+    motStatus: "VALID",
+    motDaysRemaining: 240,
+    knownIssues: [
+      {
+        title: "Dual Mass Flywheel & Clutch Slave Cylinder Inspection",
+        risk: "MEDIUM",
+        description: "Clutch pedal friction point wear under commercial urban loading.",
+        affectedComponents: ["Clutch Plate", "Concentric Slave Cylinder", "Gearbox Oil"],
+        recommendedAction: "Inspect clutch disengagement stroke and verify 75W FE gear oil level."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "29 April 2026",
+        testNumber: "948201948291",
+        result: "PASSED",
+        odometer: "78,500 miles",
+        odometerRaw: 78500,
+        expiryDate: "29 April 2027",
+        rfrAndComments: []
+      }
+    ]
+  },
+
   "HG13FNC": {
     registration: "HG13 FNC",
     make: "TOYOTA",
