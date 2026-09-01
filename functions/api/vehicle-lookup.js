@@ -268,3 +268,12 @@ function formatPlate(reg) {
   if (reg.length === 6) return `${reg.slice(0, 3)} ${reg.slice(3)}`;
   return reg;
 }
+
+export async function onRequestGet(context) {
+  return onRequest(context);
+}
+
+export async function onRequestPost(context) {
+  return onRequest(context);
+}
+
