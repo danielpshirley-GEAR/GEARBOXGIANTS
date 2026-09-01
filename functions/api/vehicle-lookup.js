@@ -1,34 +1,17 @@
-/**
- * Cloudflare Pages Serverless Function: /api/vehicle-lookup
- * Live UK Vehicle & MOT Lookup Engine
- * Dual-Channel: Official DVSA MOT API + Live Government MOT Service Parser
- */
-
-function _d(b) {
-  try { return atob(b); } catch (e) { return b; }
-}
-
-const DEFAULT_DVSA = {
-  client_id: _d("MjJhN2MwM2UtN2Q3MS00ODVmLWJmMTktYjhjNTk4NGU2NGY2"),
-  client_secret: _d("OG15OFF+cVVaeEZxYW1lTThFOVhUWlFsOVl6YUxQZXpPZ2N3NGNtcA=="),
-  api_key: _d("VHV6M29RRzJwRjMxUnVodlJHOXl1MUtqVkdOdUtrUTM1SlpGZXF6aA=="),
-  token_url: "https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token",
-  scope: "https://tapi.dvsa.gov.uk/.default"
-};
-
-let cachedToken = null;
-let tokenExpiresAt = 0;
-
 async function getDvsaToken(env) {
   const now = Math.floor(Date.now() / 1000);
   if (cachedToken && tokenExpiresAt > (now + 60)) {
     return cachedToken;
   }
 
-  const clientId = (env && env.DVSA_CLIENT_ID) || DEFAULT_DVSA.client_id;
-  const clientSecret = (env && env.DVSA_CLIENT_SECRET) || DEFAULT_DVSA.client_secret;
-  const tokenUrl = (env && env.DVSA_TOKEN_URL) || DEFAULT_DVSA.token_url;
-  const scope = (env && env.DVSA_SCOPE) || DEFAULT_DVSA.scope;
+  const clientId = env && env.DVSA_CLIENT_ID;
+  const clientSecret = env && env.DVSA_CLIENT_SECRET;
+  const tokenUrl = (env && env.DVSA_TOKEN_URL) || "https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token";
+  const scope = (env && env.DVSA_SCOPE) || "https://tapi.dvsa.gov.uk/.default";
+
+  if (!clientId || !clientSecret) {
+    return null;
+  }
 
   const params = new URLSearchParams({
     grant_type: 'client_credentials',
@@ -84,7 +67,7 @@ export async function onRequest(context) {
   // 1. CHANNEL 1: Official DVSA MOT History API
   try {
     const token = await getDvsaToken(env);
-    const apiKey = (env && env.DVSA_API_KEY) || DEFAULT_DVSA.api_key;
+    const apiKey = env && env.DVSA_API_KEY;
 
     if (token && apiKey) {
       const dvsaUrl = `https://history.mot.api.gov.uk/v1/trade/vehicles/registration/${cleanReg}`;

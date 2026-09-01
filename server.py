@@ -21,18 +21,18 @@ def _d(s):
         return s
 
 DEFAULT_DVSA_CREDS = {
-    "client_id": os.environ.get('DVSA_CLIENT_ID') or _d('MjJhN2MwM2UtN2Q3MS00ODVmLWJmMTktYjhjNTk4NGU2NGY2'),
-    "client_secret": os.environ.get('DVSA_CLIENT_SECRET') or _d('OG15OFF+cVVaeEZxYW1lTThFOVhUWlFsOVl6YUxQZXpPZ2N3NGNtcA=='),
-    "api_key": os.environ.get('DVSA_API_KEY') or _d('VHV6M29RRzJwRjMxUnVodlJHOXl1MUtqVkdOdUtrUTM1SlpGZXF6aA=='),
-    "token_url": os.environ.get('DVSA_TOKEN_URL') or "https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token",
-    "scope": os.environ.get('DVSA_SCOPE') or "https://tapi.dvsa.gov.uk/.default",
+    "client_id": os.environ.get('DVSA_CLIENT_ID', ''),
+    "client_secret": os.environ.get('DVSA_CLIENT_SECRET', ''),
+    "api_key": os.environ.get('DVSA_API_KEY', ''),
+    "token_url": os.environ.get('DVSA_TOKEN_URL', 'https://login.microsoftonline.com/a455b827-244f-4c97-b5b4-ce5d13b4d00c/oauth2/v2.0/token'),
+    "scope": os.environ.get('DVSA_SCOPE', 'https://tapi.dvsa.gov.uk/.default'),
     "api_base": "https://history.mot.api.gov.uk/v1/trade/vehicles/registration"
 }
 
 def load_config():
     cfg = {
         'dvsa_mot_credentials': DEFAULT_DVSA_CREDS,
-        'dvla_api_key': os.environ.get('DVLA_API_KEY') or _d('ZWFfbGl2ZV92Yld3RVpvM21zNDY1enBjY0FPay1KdmpiSkhWdUtXNGhYemJSUy00UTF3')
+        'dvla_api_key': os.environ.get('DVLA_API_KEY', '')
     }
     if os.path.exists(CONFIG_FILE):
         try:
