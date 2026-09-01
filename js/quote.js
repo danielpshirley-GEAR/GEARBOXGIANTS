@@ -249,6 +249,7 @@
     'EJ63UNL': { make: 'BMW', model: '1 Series (114i Sport)', spec: '114i Sport', year: '2014', engine: '1.6L Petrol (1598cc, 102 bhp)', colour: 'White', transmission: '6-Speed Manual / 8-Speed Steptronic Automatic', gearboxCategory: 'MANUAL', region: 'Essex / Chelmsford (EJ)', isVerified: true },
     'HG13FNC': { make: 'Toyota', model: 'Aygo (1.0 VVT-i)', spec: '1.0 VVT-i', year: '2013', engine: '1.0L Petrol (998cc, 68 bhp)', colour: 'Orange', transmission: '5-Speed Manual / MultiMode Transmission', gearboxCategory: 'MANUAL', region: 'Hampshire & Dorset (HG)', isVerified: true },
     'MJ15BDY': { make: 'Ford', model: 'Transit Courier', spec: '1.5 TDCi Base / Trend', year: '2015', engine: '1.5L TDCi Diesel (1499cc, 75 bhp)', colour: 'White', transmission: '6-Speed Manual Transmission', gearboxCategory: 'MANUAL', region: 'Manchester (MJ)', isVerified: true },
+    'NU09BSV': { make: 'BMW', model: '3 Series', spec: '320i SE / M Sport', year: '2009', engine: '2.0L Petrol (1995cc, 170 bhp)', colour: 'Grey', transmission: '6-Speed Steptronic Automatic (ZF 6HP) / 6-Speed Manual', gearboxCategory: 'AUTO', region: 'Newcastle (NU)', isVerified: true },
     'AB12CDE': { make: 'BMW', model: '3 Series (320d EfficientDynamics)', year: '2012', engine: '2.0L Diesel (163 bhp)', transmission: '8-Speed Steptronic Automatic', region: 'Peterborough (AB)' }
   };
 

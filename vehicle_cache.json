@@ -430,5 +430,24 @@
     "motStatus": "VALID",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "NU09BSV": {
+    "found": true,
+    "registration": "NU09 BSV",
+    "make": "BMW",
+    "model": "3 Series (320i SE)",
+    "spec": "320i SE",
+    "derivative": "320i SE (2.0L Petrol)",
+    "year": 2009,
+    "fuelType": "Petrol",
+    "colour": "Grey",
+    "engine": "2.0L Petrol (1995cc, 170 bhp)",
+    "transmission": "6-Speed Steptronic Automatic (ZF 6HP) / 6-Speed Manual",
+    "gearboxCategory": "AUTO",
+    "currentMileage": 98400,
+    "motExpiryDate": "2026-01-15",
+    "motStatus": "VALID",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }

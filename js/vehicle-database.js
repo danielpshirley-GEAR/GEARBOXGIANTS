@@ -126,6 +126,51 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "NU09BSV": {
+    registration: "NU09 BSV",
+    make: "BMW",
+    model: "3 Series",
+    derivative: "320i SE (2.0L Petrol)",
+    year: 2009,
+    firstRegistered: "March 2009",
+    fuelType: "Petrol",
+    transmission: "6-Speed Steptronic Automatic (ZF 6HP) / 6-Speed Manual",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "ZF 6HP19 6-Speed Automatic",
+    gearboxCode: "ZF-6HP19",
+    engineCapacity: 1995,
+    powerBhp: 170,
+    colour: "Grey",
+    bodyType: "Saloon / Touring",
+    euroStatus: "Euro 4",
+    ulezCompliant: true,
+    vinMasked: "WBAVA72070N**4910",
+    currentMileage: 98400,
+    motExpiryDate: "2026-01-15",
+    motStatus: "VALID",
+    motDaysRemaining: 136,
+    knownIssues: [
+      {
+        title: "ZF 6HP Mechatronic Bridge Seal & Sump Filter Inspection",
+        risk: "MEDIUM",
+        description: "Mechatronic sleeve seal leaks fluid, leading to low oil level and transmission slip.",
+        affectedComponents: ["Mechatronic Sealing Sleeve", "Valve Body Seals", "ZF Lifeguard Fluid 6"],
+        recommendedAction: "Renew mechatronic pass-through sleeve and change automatic transmission fluid."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 January 2026",
+        testNumber: "847291038472",
+        result: "PASSED",
+        odometer: "98,400 miles",
+        odometerRaw: 98400,
+        expiryDate: "15 January 2027",
+        rfrAndComments: []
+      }
+    ]
+  },
+
   "MJ15BDY": {
     registration: "MJ15 BDY",
     make: "FORD",
