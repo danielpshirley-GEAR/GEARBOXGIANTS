@@ -358,5 +358,20 @@
     "region": "Peterborough (AB)",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "GV61FJD": {
+    "found": true,
+    "registration": "GV61 FJD",
+    "make": "BMW",
+    "model": "3 Series (320d M Sport)",
+    "trim": "M Sport",
+    "year": 2011,
+    "engine": "2.0L Diesel (184 bhp)",
+    "fuelType": "Diesel",
+    "transmission": "8-Speed Steptronic Automatic (ZF 8HP)",
+    "gearboxCategory": "AUTO",
+    "region": "Garden of England (Maidstone, Brighton) (GV)",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }

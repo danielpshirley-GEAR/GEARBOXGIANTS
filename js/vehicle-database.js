@@ -126,6 +126,51 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "GV61FJD": {
+    registration: "GV61 FJD",
+    make: "BMW",
+    model: "3 Series",
+    derivative: "320d M Sport (2.0L TwinPower Diesel)",
+    year: 2011,
+    firstRegistered: "November 2011",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "ZF 8HP45 8-Speed Automatic",
+    gearboxCode: "ZF-8HP45",
+    engineCapacity: 1995,
+    powerBhp: 184,
+    colour: "Black",
+    bodyType: "Saloon / Coupe",
+    euroStatus: "Euro 5",
+    ulezCompliant: true,
+    vinMasked: "WBA3D32090F**9812",
+    currentMileage: 94200,
+    motExpiryDate: "2026-11-12",
+    motStatus: "VALID",
+    motDaysRemaining: 72,
+    knownIssues: [
+      {
+        title: "ZF 8HP Mechatronic Bridge Seal & Adapter Sleeve Wear",
+        risk: "MEDIUM",
+        description: "Rubber sealing adapter sleeve hardens with age, causing slow gear engagement or 2-3 shift flare.",
+        affectedComponents: ["Mechatronic Bridge Seal", "Valve Body Sealing Sleeves", "ZF Lifeguard Fluid 8"],
+        recommendedAction: "Renew Mechatronic bridge adapter seal and perform transmission adaptation reset."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "13 November 2025",
+        testNumber: "958201948271",
+        result: "PASSED",
+        odometer: "94,200 miles",
+        odometerRaw: 94200,
+        expiryDate: "12 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+
   "NG61EYW": {
     registration: "NG61 EYW",
     make: "AUDI",
