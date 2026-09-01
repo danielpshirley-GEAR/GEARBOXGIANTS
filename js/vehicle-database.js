@@ -126,6 +126,1283 @@ export const VEHICLE_DATABASE = {
     ]
   },
 
+  "NG61EYW": {
+    registration: "NG61 EYW",
+    make: "AUDI",
+    model: "A1",
+    derivative: "1.6 TDI Sport (105PS Diesel)",
+    year: 2011,
+    firstRegistered: "September 2011",
+    fuelType: "Diesel",
+    transmission: "Manual 5-Speed Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "VAG 02T / 0A4 5-Speed Manual",
+    gearboxCode: "02T-MANUAL",
+    engineCapacity: 1598,
+    powerBhp: 105,
+    colour: "Black",
+    bodyType: "3 Door Hatchback",
+    euroStatus: "Euro 5",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZ8X6CB**3891",
+    currentMileage: 89400,
+    motExpiryDate: "2026-10-18",
+    motStatus: "VALID",
+    motDaysRemaining: 47,
+    knownIssues: [
+      {
+        title: "Dual Mass Flywheel & Clutch Release Bearing Wear",
+        risk: "MEDIUM",
+        description: "Clutch release bearing rattle or slight pedal vibration on engagement.",
+        affectedComponents: ["Dual Mass Flywheel", "Clutch Plate", "Concentric Slave Cylinder"],
+        recommendedAction: "Inspect clutch engagement biting point and renew release bearing if noisy."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "19 October 2025",
+        testNumber: "784910283910",
+        result: "PASSED",
+        odometer: "89,400 miles",
+        odometerRaw: 89400,
+        expiryDate: "18 October 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+
+  "WF68KLU": {
+    registration: "WF68 KLU",
+    make: "BMW",
+    model: "3 Series (320d M Sport)",
+    derivative: "3 Series (320d M Sport) (2.0L Diesel (190 bhp))",
+    year: 2019,
+    firstRegistered: "March 2019",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZWF68KLU**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "EA19XPR": {
+    registration: "EA19 XPR",
+    make: "VOLKSWAGEN",
+    model: "Golf (1.5 TSI EVO Match)",
+    derivative: "Golf (1.5 TSI EVO Match) (1.5L Petrol (150 bhp))",
+    year: 2019,
+    firstRegistered: "March 2019",
+    fuelType: "Petrol",
+    transmission: "7-Speed DSG Dual-Clutch (DQ381)",
+    gearboxCategory: "DSG",
+    gearboxFamily: "7-Speed DSG Dual-Clutch (DQ381)",
+    gearboxCode: "DSG-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZEA19XPR**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "LK67YHB": {
+    registration: "LK67 YHB",
+    make: "FORD",
+    model: "Focus (1.0 EcoBoost Titanium)",
+    derivative: "Focus (1.0 EcoBoost Titanium) (1.0L Petrol (125 bhp))",
+    year: 2018,
+    firstRegistered: "March 2018",
+    fuelType: "Petrol",
+    transmission: "6-Speed Manual Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "6-Speed Manual Transmission",
+    gearboxCode: "MANUAL-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZLK67YHB**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "GL70VBC": {
+    registration: "GL70 VBC",
+    make: "AUDI",
+    model: "A4 (35 TDI S Line S-Tronic)",
+    derivative: "A4 (35 TDI S Line S-Tronic) (2.0L Diesel (163 bhp))",
+    year: 2020,
+    firstRegistered: "March 2020",
+    fuelType: "Diesel",
+    transmission: "7-Speed S-Tronic Dual-Clutch (DL382)",
+    gearboxCategory: "DSG",
+    gearboxFamily: "7-Speed S-Tronic Dual-Clutch (DL382)",
+    gearboxCode: "DSG-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZGL70VBC**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "RO17LKM": {
+    registration: "RO17 LKM",
+    make: "MERCEDES-BENZ",
+    model: "A-Class (A200 AMG Line)",
+    derivative: "A-Class (A200 AMG Line) (1.6L Petrol (156 bhp))",
+    year: 2017,
+    firstRegistered: "March 2017",
+    fuelType: "Petrol",
+    transmission: "7G-DCT Dual-Clutch Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7G-DCT Dual-Clutch Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZRO17LKM**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "BD21FGT": {
+    registration: "BD21 FGT",
+    make: "VAUXHALL",
+    model: "Corsa (1.2 Turbo SRi Premium)",
+    derivative: "Corsa (1.2 Turbo SRi Premium) (1.2L Petrol (100 bhp))",
+    year: 2021,
+    firstRegistered: "March 2021",
+    fuelType: "Petrol",
+    transmission: "6-Speed Manual Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "6-Speed Manual Transmission",
+    gearboxCode: "MANUAL-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZBD21FGT**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "GU69NTR": {
+    registration: "GU69 NTR",
+    make: "NISSAN",
+    model: "Qashqai (1.3 DIG-T N-Connecta)",
+    derivative: "Qashqai (1.3 DIG-T N-Connecta) (1.3L Petrol (140 bhp))",
+    year: 2019,
+    firstRegistered: "March 2019",
+    fuelType: "Petrol",
+    transmission: "Xtronic Continuously Variable (CVT)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "Xtronic Continuously Variable (CVT)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZGU69NTR**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "LO21VBN": {
+    registration: "LO21 VBN",
+    make: "AUDI",
+    model: "A3 Sportback (35 TFSI S Line)",
+    derivative: "A3 Sportback (35 TFSI S Line) (1.5L MHEV Petrol (150 bhp))",
+    year: 2021,
+    firstRegistered: "March 2021",
+    fuelType: "Petrol",
+    transmission: "7-Speed S-Tronic Dual-Clutch (DQ381)",
+    gearboxCategory: "DSG",
+    gearboxFamily: "7-Speed S-Tronic Dual-Clutch (DQ381)",
+    gearboxCode: "DSG-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZLO21VBN**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "OY68FGT": {
+    registration: "OY68 FGT",
+    make: "BMW",
+    model: "5 Series (520d M Sport Touring)",
+    derivative: "5 Series (520d M Sport Touring) (2.0L Diesel (190 bhp))",
+    year: 2018,
+    firstRegistered: "March 2018",
+    fuelType: "Diesel",
+    transmission: "8-Speed ZF Automatic w/ Paddles",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed ZF Automatic w/ Paddles",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZOY68FGT**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "HV22ABC": {
+    registration: "HV22 ABC",
+    make: "MERCEDES-BENZ",
+    model: "CLA Coupe (CLA220d AMG Line)",
+    derivative: "CLA Coupe (CLA220d AMG Line) (2.0L Diesel (190 bhp))",
+    year: 2022,
+    firstRegistered: "March 2022",
+    fuelType: "Diesel",
+    transmission: "8G-DCT Dual-Clutch Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8G-DCT Dual-Clutch Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZHV22ABC**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "SF20KLM": {
+    registration: "SF20 KLM",
+    make: "LAND ROVER",
+    model: "Range Rover Evoque (2.0 D180 R-Dynamic S)",
+    derivative: "Range Rover Evoque (2.0 D180 R-Dynamic S) (2.0L Diesel (180 bhp))",
+    year: 2020,
+    firstRegistered: "March 2020",
+    fuelType: "Diesel",
+    transmission: "ZF 9-Speed Automatic (9HP48)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "ZF 9-Speed Automatic (9HP48)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZSF20KLM**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "YE19BCD": {
+    registration: "YE19 BCD",
+    make: "FORD",
+    model: "Fiesta (1.0 EcoBoost ST-Line)",
+    derivative: "Fiesta (1.0 EcoBoost ST-Line) (1.0L Petrol (125 bhp))",
+    year: 2019,
+    firstRegistered: "March 2019",
+    fuelType: "Petrol",
+    transmission: "6-Speed Manual Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "6-Speed Manual Transmission",
+    gearboxCode: "MANUAL-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZYE19BCD**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "MA71XRT": {
+    registration: "MA71 XRT",
+    make: "HYUNDAI",
+    model: "Tucson (1.6 T-GDi N Line 48V)",
+    derivative: "Tucson (1.6 T-GDi N Line 48V) (1.6L Petrol MHEV (150 bhp))",
+    year: 2021,
+    firstRegistered: "March 2021",
+    fuelType: "Petrol",
+    transmission: "7-Speed Dual-Clutch (7-DCT)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7-Speed Dual-Clutch (7-DCT)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZMA71XRT**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "LN18PQR": {
+    registration: "LN18 PQR",
+    make: "MINI",
+    model: "Hatch (Cooper S 2.0 Sport)",
+    derivative: "Hatch (Cooper S 2.0 Sport) (2.0L Turbo Petrol (192 bhp))",
+    year: 2018,
+    firstRegistered: "March 2018",
+    fuelType: "Petrol",
+    transmission: "7-Speed Steptronic Dual-Clutch",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7-Speed Steptronic Dual-Clutch",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZLN18PQR**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "AK69WXY": {
+    registration: "AK69 WXY",
+    make: "VOLVO",
+    model: "XC60 (2.0 D4 AWD Momentum)",
+    derivative: "XC60 (2.0 D4 AWD Momentum) (2.0L Diesel (190 bhp))",
+    year: 2019,
+    firstRegistered: "March 2019",
+    fuelType: "Diesel",
+    transmission: "8-Speed Geartronic Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Geartronic Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZAK69WXY**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "KX20TUV": {
+    registration: "KX20 TUV",
+    make: "KIA",
+    model: "Sportage (1.6 CRDi GT-Line S AWD)",
+    derivative: "Sportage (1.6 CRDi GT-Line S AWD) (1.6L Diesel (134 bhp))",
+    year: 2020,
+    firstRegistered: "March 2020",
+    fuelType: "Diesel",
+    transmission: "7-Speed Dual-Clutch (7-DCT)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7-Speed Dual-Clutch (7-DCT)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZKX20TUV**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "BP68HJK": {
+    registration: "BP68 HJK",
+    make: "PEUGEOT",
+    model: "3008 (1.5 BlueHDi Allure Premium)",
+    derivative: "3008 (1.5 BlueHDi Allure Premium) (1.5L Diesel (130 bhp))",
+    year: 2018,
+    firstRegistered: "March 2018",
+    fuelType: "Diesel",
+    transmission: "8-Speed EAT8 Automatic (Aisin)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed EAT8 Automatic (Aisin)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZBP68HJK**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "HN21MNO": {
+    registration: "HN21 MNO",
+    make: "TOYOTA",
+    model: "C-HR (1.8 Hybrid Design)",
+    derivative: "C-HR (1.8 Hybrid Design) (1.8L Petrol Hybrid (122 bhp))",
+    year: 2021,
+    firstRegistered: "March 2021",
+    fuelType: "Petrol",
+    transmission: "e-CVT Hybrid Electronic Transmission",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "e-CVT Hybrid Electronic Transmission",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZHN21MNO**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "WN17QRS": {
+    registration: "WN17 QRS",
+    make: "SEAT",
+    model: "Leon (2.0 TDI FR Technology)",
+    derivative: "Leon (2.0 TDI FR Technology) (2.0L Diesel (150 bhp))",
+    year: 2017,
+    firstRegistered: "March 2017",
+    fuelType: "Diesel",
+    transmission: "6-Speed DSG Dual-Clutch (DQ250)",
+    gearboxCategory: "DSG",
+    gearboxFamily: "6-Speed DSG Dual-Clutch (DQ250)",
+    gearboxCode: "DSG-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZWN17QRS**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "YF70TUV": {
+    registration: "YF70 TUV",
+    make: "SKODA",
+    model: "Octavia (2.0 TDI SE L DSG)",
+    derivative: "Octavia (2.0 TDI SE L DSG) (2.0L Diesel (150 bhp))",
+    year: 2020,
+    firstRegistered: "March 2020",
+    fuelType: "Diesel",
+    transmission: "7-Speed DSG Dual-Clutch (DQ381)",
+    gearboxCategory: "DSG",
+    gearboxFamily: "7-Speed DSG Dual-Clutch (DQ381)",
+    gearboxCode: "DSG-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZYF70TUV**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "BJ15JJV": {
+    registration: "BJ15 JJV",
+    make: "BMW",
+    model: "3 Series (320d M Sport / SE)",
+    derivative: "3 Series (320d M Sport / SE) (2.0L Diesel (1995cc))",
+    year: 2015,
+    firstRegistered: "March 2015",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZBJ15JJV**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "PJ65SYE": {
+    registration: "PJ65 SYE",
+    make: "BMW",
+    model: "X6 (xDrive30d / xDrive40d M Sport)",
+    derivative: "X6 (xDrive30d / xDrive40d M Sport) (3.0L TwinPower Diesel (2993cc, 258 bhp))",
+    year: 2015,
+    firstRegistered: "March 2015",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZPJ65SYE**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "CK64WWG": {
+    registration: "CK64 WWG",
+    make: "BMW",
+    model: "X6 (xDrive30d / xDrive40d M Sport)",
+    derivative: "X6 (xDrive30d / xDrive40d M Sport) (3.0L Twin-Turbo Diesel (2993cc, 313 bhp))",
+    year: 2014,
+    firstRegistered: "March 2014",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZCK64WWG**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "BL22XMW": {
+    registration: "BL22 XMW",
+    make: "CUPRA",
+    model: "Born (V2 58kWh EV)",
+    derivative: "Born (V2 58kWh EV) (Electric 58kWh (204 bhp))",
+    year: 2022,
+    firstRegistered: "March 2022",
+    fuelType: "Petrol",
+    transmission: "Electric Drive Unit (Single-Speed)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "Electric Drive Unit (Single-Speed)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZBL22XMW**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "MM17ETZ": {
+    registration: "MM17 ETZ",
+    make: "BMW",
+    model: "X6 (xDrive30d / xDrive40d M Sport)",
+    derivative: "X6 (xDrive30d / xDrive40d M Sport) (3.0L TwinPower Diesel (2993cc, 258 bhp))",
+    year: 2017,
+    firstRegistered: "March 2017",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic (ZF 8HP)",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZMM17ETZ**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "FH17TXF": {
+    registration: "FH17 TXF",
+    make: "MERCEDES-BENZ",
+    model: "A-Class (A180d AMG Line / Sport)",
+    derivative: "A-Class (A180d AMG Line / Sport) (1.5L Diesel (1461cc, 109 bhp))",
+    year: 2017,
+    firstRegistered: "March 2017",
+    fuelType: "Diesel",
+    transmission: "7G-DCT 7-Speed Dual-Clutch Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7G-DCT 7-Speed Dual-Clutch Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZFH17TXF**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "FH67TXF": {
+    registration: "FH67 TXF",
+    make: "MERCEDES-BENZ",
+    model: "A-Class (A180d AMG Line / Sport)",
+    derivative: "A-Class (A180d AMG Line / Sport) (1.5L Diesel (1461cc, 109 bhp))",
+    year: 2017,
+    firstRegistered: "March 2017",
+    fuelType: "Diesel",
+    transmission: "7G-DCT 7-Speed Dual-Clutch Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "7G-DCT 7-Speed Dual-Clutch Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZFH67TXF**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
+  "AB12CDE": {
+    registration: "AB12 CDE",
+    make: "BMW",
+    model: "3 Series (320d EfficientDynamics)",
+    derivative: "3 Series (320d EfficientDynamics) (2.0L Diesel (163 bhp))",
+    year: 2012,
+    firstRegistered: "March 2012",
+    fuelType: "Diesel",
+    transmission: "8-Speed Steptronic Automatic",
+    gearboxCategory: "AUTO",
+    gearboxFamily: "8-Speed Steptronic Automatic",
+    gearboxCode: "AUTO-SPEC",
+    engineCapacity: 1998,
+    powerBhp: 150,
+    colour: "Black",
+    bodyType: "Hatchback / Saloon / SUV",
+    euroStatus: "Euro 6",
+    ulezCompliant: true,
+    vinMasked: "WAUZZZAB12CDE**9182",
+    currentMileage: 58900,
+    motExpiryDate: "2026-11-20",
+    motStatus: "VALID",
+    motDaysRemaining: 80,
+    knownIssues: [
+      {
+        title: "Transmission Inspection & Fluid Quality",
+        risk: "LOW",
+        description: "Regular scheduled inspection recommended for optimum hydraulic line pressure.",
+        affectedComponents: ["Hydraulic Fluid", "Filter"],
+        recommendedAction: "Inspect fluid levels and clutch adaptations."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "15 November 2025",
+        testNumber: "847291039482",
+        result: "PASSED",
+        odometer: "58,900 miles",
+        odometerRaw: 58900,
+        expiryDate: "20 November 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
   "EA18XRO": {
     registration: "EA18 XRO",
     make: "FORD",

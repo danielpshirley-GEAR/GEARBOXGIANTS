@@ -244,6 +244,7 @@
     'MM17ETZ': { make: 'BMW', model: 'X6 (xDrive30d / xDrive40d M Sport)', year: '2017', engine: '3.0L TwinPower Diesel (2993cc, 258 bhp)', colour: 'Black', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', region: 'Manchester (MM)' },
     'FH17TXF': { make: 'Mercedes-Benz', model: 'A-Class (A180d AMG Line / Sport)', year: '2017', engine: '1.5L Diesel (1461cc, 109 bhp)', colour: 'Grey', transmission: '7G-DCT 7-Speed Dual-Clutch Automatic', region: 'Nottingham (FH)' },
     'FH67TXF': { make: 'Mercedes-Benz', model: 'A-Class (A180d AMG Line / Sport)', year: '2017', engine: '1.5L Diesel (1461cc, 109 bhp)', colour: 'Grey', transmission: '7G-DCT 7-Speed Dual-Clutch Automatic', region: 'Nottingham (FH)' },
+    'NG61EYW': { make: 'Audi', model: 'A1 (1.6 TDI Sport)', year: '2011', engine: '1.6L Diesel (1598cc, 105 bhp)', colour: 'Black', transmission: '5-Speed Manual Transmission', region: 'Nottingham / East Midlands (NG)' },
     'AB12CDE': { make: 'BMW', model: '3 Series (320d EfficientDynamics)', year: '2012', engine: '2.0L Diesel (163 bhp)', transmission: '8-Speed Steptronic Automatic', region: 'Peterborough (AB)' }
   };
 
@@ -833,15 +834,23 @@
     const resultElem = document.getElementById(resultElemId);
     if (!resultElem) return;
 
+    const parsed = parseUkRegistration(cleanPlate);
+    const yearText = parsed && parsed.year ? parsed.year : '2011';
+    const regionText = parsed && parsed.region ? parsed.region : 'UK Registered';
+
+    if (parsed && parsed.year) {
+      syncVehicleToForm({ year: parsed.year, transmission: 'Automatic' }, scope);
+    }
+
     resultElem.innerHTML = `
-      <div class="diag-fade-in" style="background:rgba(239, 68, 68, 0.08); border:1px solid rgba(239, 68, 68, 0.35); border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem; text-align:left;">
+      <div class="diag-fade-in" style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem; text-align:left;">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; flex-wrap:wrap;">
           <div style="display:flex; align-items:center; gap:0.45rem;">
-            <span style="background:#ef4444; color:#fff; font-size:0.68rem; font-weight:800; padding:2px 6px; border-radius:4px; text-transform:uppercase;">NOT FOUND</span>
-            <span style="font-size:0.88rem; font-weight:700; color:#f87171;">Vehicle (${formatUkPlate(cleanPlate)}) not found on DVSA database</span>
+            <span style="background:var(--amber-400); color:#000; font-size:0.68rem; font-weight:800; padding:2px 6px; border-radius:4px; text-transform:uppercase;">UK REGISTERED</span>
+            <span style="font-size:0.88rem; font-weight:700; color:#ffffff;">Plate: <strong>${formatUkPlate(cleanPlate)}</strong> • Year: <strong>${yearText}</strong> (${regionText})</span>
           </div>
-          <button type="button" onclick="window.focusVehicleSelect('${scope}')" style="background:none; border:none; color:var(--amber-400); font-weight:700; cursor:pointer; text-decoration:underline; font-size:0.75rem; padding:0;">
-            Select Vehicle Below ↓
+          <button type="button" onclick="window.focusVehicleSelect('${scope}')" style="background:none; border:none; color:var(--amber-400); font-weight:700; cursor:pointer; text-decoration:underline; font-size:0.78rem; padding:0;">
+            Confirm Make & Model Below ↓
           </button>
         </div>
       </div>
