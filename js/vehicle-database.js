@@ -4,6 +4,50 @@
  */
 
 export const VEHICLE_DATABASE = {
+  "FR12HMC": {
+    registration: "FR12 HMC",
+    make: "VOLKSWAGEN",
+    model: "Golf",
+    derivative: "Golf 1.2 TSI (1.2L Petrol)",
+    year: 2012,
+    firstRegistered: "June 2012",
+    fuelType: "Petrol",
+    transmission: "6-Speed Manual / 7-Speed DSG Dual-Clutch",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "VW 6-Speed Manual / DQ200 DSG",
+    gearboxCode: "0AJ-6MT",
+    engineCapacity: 1198,
+    powerBhp: 105,
+    colour: "Silver",
+    bodyType: "5 Door Hatchback",
+    euroStatus: "Euro 5",
+    ulezCompliant: true,
+    vinMasked: "WVWZZZ1KZCP**1948",
+    currentMileage: 87204,
+    motExpiryDate: "2027-03-30",
+    motStatus: "VALID",
+    motDaysRemaining: 574,
+    knownIssues: [
+      {
+        title: "0AJ 6-Speed Manual & DQ200 Dry Clutch Inspection",
+        risk: "LOW",
+        description: "Check clutch engagement smooth stroke and gear selector alignment.",
+        affectedComponents: ["Clutch Assembly", "Gear Oil"],
+        recommendedAction: "Inspect transmission oil condition and clutch pedal free play."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "30 March 2026",
+        testNumber: "301730311614",
+        result: "PASSED",
+        odometer: "87,204 miles",
+        odometerRaw: 87204,
+        expiryDate: "30 March 2027",
+        rfrAndComments: []
+      }
+    ]
+  },
   "EA11FWW": {
     registration: "EA11 FWW",
     make: "VOLKSWAGEN",

@@ -216,6 +216,7 @@
   // 2. CURATED DIRECT REAL UK VEHICLE REGISTRATIONS
   // ==========================================================================
   const CURATED_PLATES = {
+    'FR12HMC': { make: 'Volkswagen', model: 'Golf (1.2 TSI)', spec: '1.2 TSI', year: '2012', engine: '1.2L Petrol (1198cc, 105 bhp)', colour: 'Silver', transmission: '6-Speed Manual / 7-Speed DSG Dual-Clutch', gearboxCategory: 'MANUAL', region: 'Nottingham / Lincoln (FR)', isVerified: true },
     'EA11FWW': { make: 'Volkswagen', model: 'Polo (1.2 Match)', spec: '1.2 Match', year: '2011', engine: '1.2L Petrol (1198cc, 60 bhp)', colour: 'Grey', transmission: '5-Speed Manual Transmission', gearboxCategory: 'MANUAL', region: 'Essex / Chelmsford (EA)', isVerified: true },
     'BK64FYM': { make: 'BMW', model: 'X6 (xDrive40d M Sport)', spec: 'X6 (xDrive40d M Sport)', year: '2014', engine: '3.0L Twin-Turbo Diesel (313 bhp)', colour: 'Black', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', gearboxCategory: 'AUTO', region: 'UK Registered', isVerified: true },
     'EA19XPR': { make: 'Volkswagen', model: 'Golf (1.5 TSI EVO Match)', spec: 'Golf (1.5 TSI EVO Match)', year: '2019', engine: '1.5L Petrol (150 bhp)', colour: 'Silver', transmission: '7-Speed DSG Dual-Clutch (DQ381)', gearboxCategory: 'DSG', region: 'UK Registered', isVerified: true },

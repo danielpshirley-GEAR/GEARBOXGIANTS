@@ -2119,5 +2119,26 @@
     "motStatus": "VALID",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "FR12HMC": {
+    "found": true,
+    "registration": "FR12 HMC",
+    "make": "Volkswagen",
+    "model": "Golf (1.2 TSI)",
+    "spec": "1.2 TSI",
+    "derivative": "Golf 1.2 TSI (1198cc Petrol, 105 bhp)",
+    "year": 2012,
+    "fuelType": "Petrol",
+    "colour": "Silver",
+    "engine": "1.2L Petrol (1198cc, 105 bhp)",
+    "transmission": "6-Speed Manual / 7-Speed DSG Dual-Clutch",
+    "gearboxCategory": "MANUAL",
+    "gearboxFamily": "VW 6-Speed Manual / DQ200 DSG",
+    "gearboxCode": "0AJ-6MT",
+    "currentMileage": 87204,
+    "motExpiryDate": "2027-03-30",
+    "motStatus": "VALID",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }
