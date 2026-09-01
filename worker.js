@@ -1,13 +1,12 @@
 /**
- * Cloudflare Pages Serverless Function: /api/vehicle-lookup
- * Real-time Official UK Government DVSA MOT History Trade API Gateway
+ * Cloudflare Worker: worker.js
+ * Real-time Official UK Government DVSA MOT History Trade API Gateway & Static Asset Router
  */
 
 function _b(str) {
   try { return atob(str); } catch (e) { return str; }
 }
 
-// Official DVSA MOT History Trade Credentials
 const DVSA_CONFIG = {
   client_id: _b("MjJhN2MwM2UtN2Q3MS00ODVmLWJmMTktYjhjNTk4NGU2NGY2"),
   client_secret: _b("OG15OFF+cVVaeEZxYW1lTThFOVhUWlFsOVl6YUxQZXpPZ2N3NGNtcA=="),
@@ -61,8 +60,7 @@ async function getDvsaToken(env) {
   return null;
 }
 
-export async function onRequest(context) {
-  const { request, env } = context;
+async function handleVehicleLookup(request, env) {
   const url = new URL(request.url);
   const regParam = url.searchParams.get('reg') || '';
   const cleanReg = regParam.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
@@ -72,7 +70,7 @@ export async function onRequest(context) {
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-API-Key',
     'Content-Type': 'application/json; charset=utf-8',
-    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0', 'Pragma': 'no-cache'
+    'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0'
   };
 
   if (request.method === 'OPTIONS') {
@@ -86,7 +84,6 @@ export async function onRequest(context) {
     });
   }
 
-  // 1. PRIMARY: Query Live Official DVSA MOT History Trade API
   try {
     const token = await getDvsaToken(env);
     const apiKey = (env && env.DVSA_API_KEY) || DVSA_CONFIG.api_key;
@@ -98,7 +95,7 @@ export async function onRequest(context) {
           'Authorization': `Bearer ${token}`,
           'X-API-Key': apiKey,
           'Accept': 'application/json+v6',
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
       });
 
@@ -157,7 +154,6 @@ export async function onRequest(context) {
     console.warn("DVSA API execution note:", err);
   }
 
-  // 2. Not Found in Official DVSA Database
   return new Response(JSON.stringify({
     found: false,
     registration: formatPlate(cleanReg),
@@ -269,11 +265,19 @@ function formatPlate(reg) {
   return reg;
 }
 
-export async function onRequestGet(context) {
-  return onRequest(context);
-}
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
-export async function onRequestPost(context) {
-  return onRequest(context);
-}
+    // Handle /api/vehicle-lookup
+    if (url.pathname === '/api/vehicle-lookup') {
+      return handleVehicleLookup(request, env);
+    }
 
+    // Serve static assets
+    if (env && env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    }
+    return fetch(request);
+  }
+};
