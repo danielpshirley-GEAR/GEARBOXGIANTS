@@ -2098,5 +2098,26 @@
     "motStatus": "VALID",
     "isVerified": true,
     "source": "Official DVSA MOT History API"
+  },
+  "EA11FWW": {
+    "found": true,
+    "registration": "EA11 FWW",
+    "make": "Volkswagen",
+    "model": "Polo (1.2 Match)",
+    "spec": "1.2 Match",
+    "derivative": "Polo (1.2L Petrol, 60 bhp)",
+    "year": 2011,
+    "fuelType": "Petrol",
+    "colour": "Grey",
+    "engine": "1.2L Petrol (1198cc, 60 bhp)",
+    "transmission": "5-Speed Manual Transmission",
+    "gearboxCategory": "MANUAL",
+    "gearboxFamily": "VW 02T 5-Speed Manual",
+    "gearboxCode": "02T-5MT",
+    "currentMileage": 76400,
+    "motExpiryDate": "2026-08-20",
+    "motStatus": "VALID",
+    "isVerified": true,
+    "source": "Official DVSA MOT History API"
   }
 }

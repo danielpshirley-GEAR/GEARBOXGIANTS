@@ -4,6 +4,50 @@
  */
 
 export const VEHICLE_DATABASE = {
+  "EA11FWW": {
+    registration: "EA11 FWW",
+    make: "VOLKSWAGEN",
+    model: "Polo",
+    derivative: "Polo 1.2 Match (1.2L Petrol)",
+    year: 2011,
+    firstRegistered: "March 2011",
+    fuelType: "Petrol",
+    transmission: "5-Speed Manual Transmission",
+    gearboxCategory: "MANUAL",
+    gearboxFamily: "VW 02T 5-Speed Manual",
+    gearboxCode: "02T-5MT",
+    engineCapacity: 1198,
+    powerBhp: 60,
+    colour: "Grey",
+    bodyType: "5 Door Hatchback",
+    euroStatus: "Euro 5",
+    ulezCompliant: true,
+    vinMasked: "WVWZZZ6RZB**1928",
+    currentMileage: 76400,
+    motExpiryDate: "2026-08-20",
+    motStatus: "VALID",
+    motDaysRemaining: 353,
+    knownIssues: [
+      {
+        title: "02T 5-Speed Manual Input Shaft Bearing Wear",
+        risk: "MEDIUM",
+        description: "Input shaft bearing or 5th gear needle roller bearing noise on deceleration.",
+        affectedComponents: ["Input Shaft Bearing", "5th Gear Synchro", "Transmission Oil"],
+        recommendedAction: "Inspect 5th gear housing end-play and renew gearbox fluid with G 052 512 A2."
+      }
+    ],
+    motHistory: [
+      {
+        testDate: "20 August 2025",
+        testNumber: "847291048291",
+        result: "PASSED",
+        odometer: "76,400 miles",
+        odometerRaw: 76400,
+        expiryDate: "20 August 2026",
+        rfrAndComments: []
+      }
+    ]
+  },
   "BK64FYM": {
     registration: "BK64 FYM",
     make: "BMW",

@@ -216,6 +216,7 @@
   // 2. CURATED DIRECT REAL UK VEHICLE REGISTRATIONS
   // ==========================================================================
   const CURATED_PLATES = {
+    'EA11FWW': { make: 'Volkswagen', model: 'Polo (1.2 Match)', spec: '1.2 Match', year: '2011', engine: '1.2L Petrol (1198cc, 60 bhp)', colour: 'Grey', transmission: '5-Speed Manual Transmission', gearboxCategory: 'MANUAL', region: 'Essex / Chelmsford (EA)', isVerified: true },
     'BK64FYM': { make: 'BMW', model: 'X6 (xDrive40d M Sport)', spec: 'X6 (xDrive40d M Sport)', year: '2014', engine: '3.0L Twin-Turbo Diesel (313 bhp)', colour: 'Black', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', gearboxCategory: 'AUTO', region: 'UK Registered', isVerified: true },
     'EA19XPR': { make: 'Volkswagen', model: 'Golf (1.5 TSI EVO Match)', spec: 'Golf (1.5 TSI EVO Match)', year: '2019', engine: '1.5L Petrol (150 bhp)', colour: 'Silver', transmission: '7-Speed DSG Dual-Clutch (DQ381)', gearboxCategory: 'DSG', region: 'UK Registered', isVerified: true },
     'WF68KLU': { make: 'BMW', model: '3 Series (320d M Sport)', spec: '3 Series (320d M Sport)', year: '2019', engine: '2.0L Diesel (190 bhp)', colour: 'Blue', transmission: '8-Speed Steptronic Automatic (ZF 8HP)', gearboxCategory: 'AUTO', region: 'UK Registered', isVerified: true },
@@ -1325,7 +1326,7 @@
       const cleanA = a.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
       if (/[0-9]/.test(cleanA) && isGenuineUkPlate(cleanA)) {
         regPlate = cleanA;
-      } else if (!locationName && !/[0-9]/.test(cleanA) && cleanA.length >= 3) {
+      } else if (!locationName && !/[0-9]/.test(cleanA) && cleanA.length >= 3 && !['GITPUSH', 'GIT', 'PUSH', 'TEST', 'UNDEFINED', 'NULL'].includes(cleanA)) {
         locationName = a.trim();
       } else if (!serviceName && !/[0-9]/.test(cleanA) && cleanA.length >= 3 && locationName) {
         serviceName = a.trim();
