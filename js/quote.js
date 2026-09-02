@@ -971,9 +971,16 @@
     const currentCat = (vehicle.gearboxCategory || (vehicle.transmission && vehicle.transmission.toLowerCase().includes('manual') ? 'MANUAL' : (vehicle.transmission && (vehicle.transmission.toLowerCase().includes('semi') || vehicle.transmission.toLowerCase().includes('dsg') || vehicle.transmission.toLowerCase().includes('dct')) ? 'SEMI_AUTO' : 'AUTO'))).toUpperCase();
     const currentGearbox = currentCat === 'MANUAL' ? 'Manual' : (currentCat === 'DSG' || currentCat === 'SEMI_AUTO' ? 'Semi-Automatic' : 'Automatic');
     const displayModel = (vehicle.baseModel || vehicle.model || '-').split('(')[0].trim();
-    const displayEngine = vehicle.engineCapacity ? `${(vehicle.engineCapacity/1000).toFixed(1)}L (${vehicle.engineCapacity}cc)` : (vehicle.engine || '');
+    
+    let cleanEngine = '';
+    if (vehicle.engineCapacity) {
+      cleanEngine = `${(vehicle.engineCapacity / 1000).toFixed(1)}L`;
+    } else if (vehicle.engine) {
+      cleanEngine = vehicle.engine.replace(/\(.*?\)/g, '').replace(/cc/gi, '').trim();
+    }
+    
     const rawFuel = vehicle.fuelType || vehicle.fuel || 'Petrol';
-    const cleanFuel = (rawFuel || 'Petrol').replace(/\b([A-Za-z]+)\s+\1\b/gi, '$1').trim();
+    const fuelText = (rawFuel || 'Petrol').trim().charAt(0).toUpperCase() + (rawFuel || 'Petrol').trim().slice(1).toLowerCase();
     const colourText = vehicle.colour ? (vehicle.colour.charAt(0).toUpperCase() + vehicle.colour.slice(1).toLowerCase()) : 'Confirmed';
 
     // Store in active session
@@ -999,10 +1006,11 @@
           </div>
         </div>
 
-        <!-- Row 2: Clean Verified Specification (No Duplicates) -->
+        <!-- Row 2: Clean Verified Specification (Engine • Fuel • Colour) -->
         <div style="font-size:0.82rem; color:#cbd5e1; display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.65rem; margin-bottom:0.7rem;">
-          ${displayEngine ? `<span><strong style="color:#94a3b8;">Engine:</strong> ${displayEngine} ${cleanFuel ? '(' + cleanFuel + ')' : ''}</span>` : ''}
-          ${displayEngine && colourText ? `<span style="color:rgba(255,255,255,0.2);">&bull;</span>` : ''}
+          ${cleanEngine ? `<span><strong style="color:#94a3b8;">Engine:</strong> ${cleanEngine}</span><span style="color:rgba(255,255,255,0.2);">&bull;</span>` : ''}
+          <span><strong style="color:#94a3b8;">Fuel:</strong> ${fuelText}</span>
+          <span style="color:rgba(255,255,255,0.2);">&bull;</span>
           <span><strong style="color:#94a3b8;">Colour:</strong> ${colourText}</span>
         </div>
 
