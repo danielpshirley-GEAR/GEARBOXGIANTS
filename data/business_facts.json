@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "version": "1.0.0",
+    "updated_at": "2026-09-02T23:38:00Z",
+    "description": "Gearbox Giants Central Single Source of Truth for Business Facts, Warranties, Pricing, Turnaround, and Locations"
+  },
+  "business": {
+    "official_name": "Gearbox Giants UK",
+    "trading_name": "Gearbox Giants",
+    "phone": "0208 058 9668",
+    "phone_clean": "02080589668",
+    "email": "Contact@gearboxgiants.co.uk",
+    "website_url": "https://gearboxgiants.co.uk",
+    "operating_hours": "Mon–Sun: 09:00 – 18:00",
+    "operating_model": {
+      "facility_type": "Central Specialist Transmission Engineering Centre",
+      "logistics_model": "Complimentary nationwide flatbed vehicle collection, recovery & doorstep return delivery",
+      "service_coverage_count": 45,
+      "service_coverage_label": "45+ Dedicated Regional Collection & Recovery Hubs across Greater London, Home Counties, South Coast, East of England & Midlands",
+      "strict_terminology_rule": "Use 'Gearbox collection and repair service covering [Area]' for collection hubs. Never claim physical workshop branches in areas where only vehicle collection/recovery operates."
+    }
+  },
+  "warranty": {
+    "standard_duration": "12 Months",
+    "mileage_limit": "Unlimited Mileage",
+    "coverage_type": "Comprehensive Parts & Labour",
+    "eligible_services": [
+      "Gearbox Reconditioning",
+      "Full Gearbox Replacement",
+      "Major Automatic & DSG Rebuilds",
+      "Manual Commercial Gearbox Overhauls"
+    ],
+    "terms_summary": "12-month unlimited mileage warranty covering replacement bearings, synchromesh rings, seals, gaskets, torque converters, mechatronic units, and precision assembly labour.",
+    "claim_procedure": "Immediate diagnostic review and priority recovery to our engineering facility."
+  },
+  "turnaround": {
+    "diagnostic_inspection": "Same day to 24 hours from arrival",
+    "typical_rebuild_turnaround": "48 to 72 hours",
+    "complex_or_rare_import_turnaround": "3 to 5 working days (dependent on bespoke parts supply)",
+    "factors_affecting_time": [
+      "Transmission complexity (e.g. multi-clutch hybrid vs 5-speed manual)",
+      "Special-order OEM components or rare mechatronic circuit board supply",
+      "Dynamometer bench testing and electronic adaptation requirements",
+      "Customer approval of diagnostic teardown findings"
+    ]
+  },
+  "pricing": {
+    "currency": "GBP (£)",
+    "starting_price_reconditioning": "From £895",
+    "starting_price_manual": "From £795",
+    "starting_price_dsg": "From £895",
+    "starting_price_automatic": "From £1,150",
+    "starting_price_zf8hp": "From £1,195",
+    "inclusions": [
+      "Complete transmission teardown and ultrasonic component cleaning",
+      "Replacement of all high-wear bearings, synchros, and seals with OEM-spec components",
+      "Precision re-assembly to original manufacturer tolerances",
+      "Dynamometer testing and shift simulation",
+      "12-Month unlimited mileage warranty"
+    ]
+  },
+  "dealer_comparison": {
+    "claim_statement": "Up to 60% cheaper than franchised main dealer complete crate replacements",
+    "dealer_replacement_benchmarks": {
+      "dsg_vag": {
+        "dealer_range": "£4,800 – £7,200",
+        "gg_rebuild": "From £895",
+        "typical_savings": "Save £3,900+"
+      },
+      "zf8hp_bmw_jlr": {
+        "dealer_range": "£6,500 – £9,500",
+        "gg_rebuild": "From £1,195",
+        "typical_savings": "Save £5,300+"
+      },
+      "mercedes_7g_9g": {
+        "dealer_range": "£5,800 – £8,900",
+        "gg_rebuild": "From £1,150",
+        "typical_savings": "Save £4,650+"
+      },
+      "ford_powershift": {
+        "dealer_range": "£4,600 – £6,200",
+        "gg_rebuild": "From £950",
+        "typical_savings": "Save £3,650+"
+      },
+      "commercial_van_manual": {
+        "dealer_range": "£3,800 – £5,400",
+        "gg_rebuild": "From £795",
+        "typical_savings": "Save £3,000+"
+      }
+    },
+    "rationale": "Main dealerships operate on whole-unit replacement policies charging £180–£250/hr labour plus new crate assembly margins. Gearbox Giants repairs and reconditions the specific internal failure components."
+  },
+  "finance": {
+    "available": true,
+    "interest_rate": "0% Finance Available",
+    "terms": "Flexible monthly repayment options subject to status",
+    "regulatory_note": "Finance options provided via approved partner lenders. Terms and eligibility criteria apply."
+  }
+}

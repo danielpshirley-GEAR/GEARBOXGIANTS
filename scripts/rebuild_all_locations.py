@@ -318,7 +318,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "Guildford's premier gearbox repair specialists. Automatic, DSG, CVT and manual gearbox reconditioning across Guildford, Godalming, Cranleigh & Shalford with free vehicle recovery.",
         "transit_logistics": "Direct recovery coverage via the A3 London-Portsmouth trunk road, A31 Hog's Back, and A281 corridor.",
         "vehicle_demographics": "Prestige SUVs, 4x4 transfer cases (Land Rover, BMW xDrive, Audi Quattro), and executive commuter cars driven on hilly Surrey terrain.",
-        "dealer_comparison": "Avoid the high labor rates of Moorfield Road main dealers. We provide component-level remanufacturing, valve body re-machining, and dyno testing backed by a 12-month warranty.",
+        "dealer_comparison": "Avoid the high labour rates of Moorfield Road main dealers. We provide component-level remanufacturing, valve body re-machining, and dyno testing backed by a 12-month warranty.",
         "sub_areas": ["Guildford Town & Burpham", "Onslow Village & Park Barn", "Merrow & Boxgrove", "Godalming & Farncombe", "Cranleigh & Bramley"]
     },
     {
