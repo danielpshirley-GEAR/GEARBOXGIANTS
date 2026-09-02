@@ -971,120 +971,55 @@
     const currentCat = (vehicle.gearboxCategory || (vehicle.transmission && vehicle.transmission.toLowerCase().includes('manual') ? 'MANUAL' : (vehicle.transmission && (vehicle.transmission.toLowerCase().includes('semi') || vehicle.transmission.toLowerCase().includes('dsg') || vehicle.transmission.toLowerCase().includes('dct')) ? 'SEMI_AUTO' : 'AUTO'))).toUpperCase();
     const currentGearbox = currentCat === 'MANUAL' ? 'Manual' : (currentCat === 'DSG' || currentCat === 'SEMI_AUTO' ? 'Semi-Automatic' : 'Automatic');
     const displayModel = (vehicle.baseModel || vehicle.model || '-').split('(')[0].trim();
-    let cleanSpec = vehicle.spec || vehicle.variant || vehicle.derivative || (vehicle.model && vehicle.model.includes('(') ? vehicle.model.split('(')[1].replace(')', '').trim() : (vehicle.engine || 'Standard'));
-    cleanSpec = (cleanSpec || 'Standard').replace(/\b([A-Za-z]+)\s+\1\b/gi, '$1').trim();
-    const displayEngine = vehicle.engineCapacity ? `${(vehicle.engineCapacity/1000).toFixed(1)}L (${vehicle.engineCapacity}cc)` : (vehicle.engine || '-');
+    const displayEngine = vehicle.engineCapacity ? `${(vehicle.engineCapacity/1000).toFixed(1)}L (${vehicle.engineCapacity}cc)` : (vehicle.engine || '');
     const rawFuel = vehicle.fuelType || vehicle.fuel || 'Petrol';
     const cleanFuel = (rawFuel || 'Petrol').replace(/\b([A-Za-z]+)\s+\1\b/gi, '$1').trim();
-    const firstUsedVal = vehicle.firstUsedDate || vehicle.firstRegistered || `${vehicle.year || '-'}`;
+    const colourText = vehicle.colour ? (vehicle.colour.charAt(0).toUpperCase() + vehicle.colour.slice(1).toLowerCase()) : 'Confirmed';
+
+    // Store in active session
+    saveActiveVehicle(vehicle);
 
     resultElem.innerHTML = `
-      <!-- Desktop View (2-Line Concise Layout) -->
-      <div class="veh-card-desktop diag-fade-in" style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:0.85rem 1.15rem; margin-top:0.65rem; text-align:left;">
-        <!-- Line 1: Bigger Reg + Title + Gearbox Above + MOT Badge + Change Reg Button -->
+      <div class="diag-fade-in" style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:0.85rem 1.15rem; margin-top:0.65rem; text-align:left;">
+        <!-- Row 1: Registration Badge + Vehicle Name + MOT Badge + Change Reg -->
         <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.45rem;">
-          <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-            <span style="background:#ffb703; color:#0d121d; font-family:var(--font-heading), sans-serif; font-size:0.96rem; font-weight:900; padding:4px 11px; border-radius:5px; letter-spacing:0.06em; box-shadow:0 1px 4px rgba(0,0,0,0.3); display:inline-block;">
-              ${vehicle.registration || vehicle.formatted || 'UK MATCH'}
+          <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+            <span style="background:#ffb703; color:#0d121d; font-family:var(--font-heading), sans-serif; font-size:0.95rem; font-weight:900; padding:4px 11px; border-radius:5px; letter-spacing:0.06em; box-shadow:0 1px 4px rgba(0,0,0,0.3); display:inline-block;">
+              ${vehicle.registration || vehicle.formatted || formatUkPlate(cleanPlate)}
             </span>
-            <span style="font-size:1.15rem; font-weight:900; color:#fff; font-family:var(--font-heading);">
-              ${vehicle.year || ''} ${vehicle.make} ${displayModel}
-            </span>
-            <span style="color:rgba(255,255,255,0.25);">&bull;</span>
-            <span style="font-size:0.92rem; color:var(--amber-400); font-weight:800; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); padding:2px 9px; border-radius:5px;">
-              Gearbox: ${currentGearbox}
+            <span style="font-size:1.12rem; font-weight:900; color:#ffffff; font-family:var(--font-heading);">
+              ${vehicle.year ? vehicle.year + ' ' : ''}${vehicle.make} ${displayModel}
             </span>
           </div>
           <div style="display:flex; align-items:center; gap:0.6rem;">
             ${vehicle.motStatus ? `<span style="background:rgba(34,197,94,0.18); color:#4ade80; border:1px solid rgba(34,197,94,0.35); font-size:0.74rem; font-weight:800; padding:3px 9px; border-radius:9999px;">✓ MOT ${vehicle.motStatus}</span>` : ''}
             <button type="button" onclick="window.clearActiveVehicle('${scope}')" style="background:none; border:none; color:var(--amber-400); font-weight:700; cursor:pointer; text-decoration:underline; font-size:0.75rem; padding:0;">
-              Change Reg 
+              Change Reg
             </button>
           </div>
         </div>
 
-        <!-- Line 2: All Specific Details with Spec + Quick Selector (No redundant make/model) -->
-        <div style="font-size:0.78rem; color:#cbd5e1; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.4rem 0.6rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.35rem; margin-top:0.25rem;">
-          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.35rem 0.55rem;">
-            <span><strong style="color:#94a3b8;">Spec:</strong> ${cleanSpec}</span>
-            <span style="color:rgba(255,255,255,0.2);">&bull;</span>
-            <span><strong style="color:#94a3b8;">Year:</strong> ${vehicle.year || '-'}</span>
-            <span style="color:rgba(255,255,255,0.2);">&bull;</span>
-            <span><strong style="color:#94a3b8;">Engine:</strong> ${displayEngine}</span>
-            <span style="color:rgba(255,255,255,0.2);">&bull;</span>
-            <span><strong style="color:#94a3b8;">Fuel:</strong> ${cleanFuel}</span>
-            <span style="color:rgba(255,255,255,0.2);">&bull;</span>
-            <span><strong style="color:#94a3b8;">Colour:</strong> ${vehicle.colour || 'Confirmed'}</span>
-          </div>
-          <div style="display:inline-flex; gap:5px; flex-wrap:wrap;">
-            <button type="button" onclick="window.selectVehicleGearboxSpec('MANUAL', '${scope}')" style="cursor:pointer; background:${currentCat === 'MANUAL' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'MANUAL' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.72rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Manual
-            </button>
-            <button type="button" onclick="window.selectVehicleGearboxSpec('AUTO', '${scope}')" style="cursor:pointer; background:${currentCat === 'AUTO' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'AUTO' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.72rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Automatic
-            </button>
-            <button type="button" onclick="window.selectVehicleGearboxSpec('SEMI_AUTO', '${scope}')" style="cursor:pointer; background:${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.72rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Semi-Auto
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile & Tablet View (Matching Screenshot) -->
-      <div class="veh-card-mobile veh-mob-container diag-fade-in">
-        <!-- Top Row: Reg Plate + MOT Badge + Change Reg -->
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.4rem;">
-          <span style="background:#ffb703; color:#0d121d; font-family:var(--font-heading), sans-serif; font-size:0.95rem; font-weight:900; padding:4px 11px; border-radius:5px; letter-spacing:0.06em; box-shadow:0 1px 4px rgba(0,0,0,0.3); display:inline-block;">
-            ${vehicle.registration || vehicle.formatted || 'UK MATCH'}
-          </span>
-          <div style="display:flex; align-items:center; gap:0.5rem;">
-            ${vehicle.motStatus ? `<span style="background:rgba(34,197,94,0.18); color:#4ade80; border:1px solid rgba(34,197,94,0.35); font-size:0.75rem; font-weight:800; padding:3px 10px; border-radius:9999px;">✓ MOT ${vehicle.motStatus}</span>` : ''}
-            <button type="button" onclick="window.clearActiveVehicle('${scope}')" style="background:none; border:none; color:var(--amber-400); font-weight:700; cursor:pointer; text-decoration:underline; font-size:0.75rem; padding:0;">
-              Change Reg 
-            </button>
-          </div>
+        <!-- Row 2: Clean Verified Specification (No Duplicates) -->
+        <div style="font-size:0.82rem; color:#cbd5e1; display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.65rem; margin-bottom:0.7rem;">
+          ${displayEngine ? `<span><strong style="color:#94a3b8;">Engine:</strong> ${displayEngine} ${cleanFuel ? '(' + cleanFuel + ')' : ''}</span>` : ''}
+          ${displayEngine && colourText ? `<span style="color:rgba(255,255,255,0.2);">&bull;</span>` : ''}
+          <span><strong style="color:#94a3b8;">Colour:</strong> ${colourText}</span>
         </div>
 
-        <!-- Big Title & Subtitle -->
-        <div class="veh-mob-header">
-          <div class="veh-mob-title">${vehicle.make} ${displayModel}</div>
-          <div class="veh-mob-sub">${cleanFuel} &bull; ${displayEngine} &bull; ${vehicle.year || '-'}</div>
-        </div>
-
-        <!-- 2-Column Specification Grid with Dashed Lines -->
-        <div class="veh-mob-grid">
-          <div class="veh-mob-cell">
-            <div class="veh-mob-label">COLOUR</div>
-            <div class="veh-mob-val">${vehicle.colour || 'Confirmed'}</div>
-          </div>
-          <div class="veh-mob-cell">
-            <div class="veh-mob-label">FIRST USED</div>
-            <div class="veh-mob-val">${firstUsedVal}</div>
-          </div>
-          <div class="veh-mob-cell">
-            <div class="veh-mob-label" style="color:var(--amber-400);">GEARBOX</div>
-            <div class="veh-mob-val amber">${currentGearbox}</div>
-          </div>
-          <div class="veh-mob-cell">
-            <div class="veh-mob-label">SPEC</div>
-            <div class="veh-mob-val">${cleanSpec}</div>
-          </div>
-        </div>
-
-        <!-- Mobile Quick Transmission Toggle Row -->
-        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:0.75rem; margin-top:0.75rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
-          <div style="font-size:0.72rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em;">
-            Select Gearbox:
+        <!-- Row 3: Select Transmission Section -->
+        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.6rem;">
+          <div style="font-size:0.78rem; font-weight:800; color:var(--amber-400); text-transform:uppercase; letter-spacing:0.04em; display:flex; align-items:center; gap:4px;">
+            <span>Select Transmission:</span>
           </div>
           <div style="display:inline-flex; gap:6px; flex-wrap:wrap;">
-            <button type="button" onclick="window.selectVehicleGearboxSpec('MANUAL', '${scope}')" style="cursor:pointer; background:${currentCat === 'MANUAL' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'MANUAL' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 10px; border-radius:6px; font-size:0.75rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Manual
+            <button type="button" onclick="window.selectVehicleGearboxSpec('MANUAL', '${scope}')" style="cursor:pointer; background:${currentCat === 'MANUAL' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'MANUAL' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 12px; border-radius:6px; font-size:0.76rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
+              ${currentCat === 'MANUAL' ? '✓ ' : ''}Manual
             </button>
-            <button type="button" onclick="window.selectVehicleGearboxSpec('AUTO', '${scope}')" style="cursor:pointer; background:${currentCat === 'AUTO' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'AUTO' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 10px; border-radius:6px; font-size:0.75rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Automatic
+            <button type="button" onclick="window.selectVehicleGearboxSpec('AUTO', '${scope}')" style="cursor:pointer; background:${currentCat === 'AUTO' ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${currentCat === 'AUTO' ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 12px; border-radius:6px; font-size:0.76rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
+              ${currentCat === 'AUTO' ? '✓ ' : ''}Automatic
             </button>
-            <button type="button" onclick="window.selectVehicleGearboxSpec('SEMI_AUTO', '${scope}')" style="cursor:pointer; background:${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 10px; border-radius:6px; font-size:0.75rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
-               Semi-Auto
+            <button type="button" onclick="window.selectVehicleGearboxSpec('SEMI_AUTO', '${scope}')" style="cursor:pointer; background:${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.05)'}; border:1px solid ${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? 'var(--amber-400)' : 'rgba(255,255,255,0.15)'}; color:#fff; padding:4px 12px; border-radius:6px; font-size:0.76rem; font-weight:800; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;">
+              ${(currentCat === 'SEMI_AUTO' || currentCat === 'DSG') ? '✓ ' : ''}Semi-Auto
             </button>
           </div>
         </div>
@@ -1112,7 +1047,7 @@
       v.gearboxCode = 'AUTOMATIC';
     }
     saveActiveVehicle(v);
-    renderVehicleResult(v, v.reg || '', scope, true);
+    renderVehicleResult(v, v.reg || v.raw || '', scope, true);
     syncVehicleToForm(v, scope);
   };
 
