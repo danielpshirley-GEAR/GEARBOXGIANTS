@@ -58,9 +58,9 @@
       "category": "Logistics",
       "pages_used": ["index.html", "services.html", "locations.html", "location-*.html"],
       "source": "Operational offer",
-      "evidence_available": "Collection fleet coverage across defined regional network",
-      "verification_status": "VERIFIED_SERVICE_OFFER",
-      "required_action": "Maintain clear geographical service boundary definitions."
+      "evidence_available": "Collection fleet coverage across defined regional network (terms, conditionality, and radius require owner confirmation)",
+      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
+      "required_action": "Do not mark verified until exact terms, vehicle limitations, return delivery policy, and conditionality are confirmed by business owner."
     },
     {
       "claim_id": "CLM-007",

@@ -22,7 +22,7 @@
       "recovery_depots": 0,
       "recovery_depots_status": "UNVERIFIED",
       "service_areas_covered": 45,
-      "service_areas_status": "VERIFIED_COLLECTION_COVERAGE",
+      "service_areas_status": "HUMAN_CONFIRMATION_REQUIRED",
       "strict_rule": "Location pages represent collection and recovery service areas, NOT independent physical workshop branches."
     }
   },
