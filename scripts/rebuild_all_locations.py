@@ -1109,15 +1109,15 @@ def render_html_page(loc):
         </nav>
 
         <div class="cinematic-hero-content fade-in-up">
-          <div class="hero-tag-simple desktop-only">SPECIALIST TRANSMISSION WORKSHOP &bull; {loc['region_label'].upper()}</div>
+          <div class="hero-tag-simple desktop-only">GEARBOX COLLECTION & REPAIR SERVICE &bull; {loc['region_label'].upper()}</div>
 
           <h1 class="hero-title-cinematic">
             <span class="title-line-nowrap">{loc['hero_headline']}</span><br>
-            <span class="highlight-amber">UP TO 60% CHEAPER THAN MAIN DEALER.</span>
+            <span class="highlight-amber">PRECISION RECONDITIONING & FREE RECOVERY</span>
           </h1>
 
           <p class="hero-desc-cinematic">
-            {loc['hero_sub']} Free vehicle recovery, 12-month unlimited mileage warranty, and rapid 48-hour rebuild turnaround.
+            Dedicated vehicle collection covering {loc['name']}. Precision reconditioning, mechatronic repairs, and dyno testing at our central transmission engineering facility with 12-month unlimited mileage warranty.
           </p>
 
           <!-- Clean Registration Form -->
@@ -1144,17 +1144,15 @@ def render_html_page(loc):
     <div class="trust-ticker-container">
       <div class="marquee-track">
         <div class="marquee-content">
-          <span>UP TO 60% CHEAPER THAN MAIN DEALER</span>
-          <span class="ticker-dot">✦</span>
-          <span>FREE RECOVERY ACROSS {loc['name'].upper()}</span>
+          <span>FREE FLATBED RECOVERY ACROSS {loc['name'].upper()}</span>
           <span class="ticker-dot">✦</span>
           <span>12-MONTH UNLIMITED MILEAGE WARRANTY</span>
           <span class="ticker-dot">✦</span>
           <span>ALL MAKES & MODELS &bull; DSG &bull; AUTO &bull; MANUAL</span>
           <span class="ticker-dot">✦</span>
-          <span>0% FINANCE AVAILABLE</span>
+          <span>0% FINANCE OPTIONS AVAILABLE</span>
           <span class="ticker-dot">✦</span>
-          <span>COMPLIMENTARY RETURN CARWASH</span>
+          <span>COMPONENT-LEVEL RECONDITIONING</span>
           <span class="ticker-dot">✦</span>
         </div>
       </div>
@@ -1167,35 +1165,35 @@ def render_html_page(loc):
       <div class="container">
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center;">
           <div>
-            <div class="section-tag-gold">{loc['name'].upper()} GEARBOX ENGINEERING</div>
+            <div class="section-tag-gold">{loc['name'].upper()} SERVICE AREA</div>
             <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.6rem); color:#ffffff; font-family:var(--font-heading); margin-bottom:1.25rem;">
-              Specialist Transmission Repairs For <span class="highlight-amber">{loc['name']}</span> Motorists.
+              Specialist Transmission Repairs Covering <span class="highlight-amber">{loc['name']}</span>.
             </h2>
             <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.7; margin-bottom:1.25rem;">
-              When your vehicle suffers from transmission shudder, loss of drive, gear crunching, or flashing mechatronic warnings in {loc['name']}, you need an established engineering specialist rather than a general local garage.
+              When your vehicle experiences transmission slipping, loss of gears, harsh engagement, or mechatronic warning lights in {loc['name']}, our dedicated collection service arranges rapid transport directly to our central specialist transmission facility.
             </p>
             <p style="color:#94a3b8; font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem;">
-              <strong>Local Logistics & Transit:</strong> {loc['transit_logistics']}
+              <strong>Transport & Recovery Routes:</strong> {loc['transit_logistics']}
             </p>
             <div style="display:flex; gap:1rem; flex-wrap:wrap;">
               <button class="btn btn-primary" onclick="window.openQuoteModal('{loc['name']}')">Get Your Free {loc['name']} Quote →</button>
-              <a href="tel:02080589668" class="btn btn-secondary">Speak to a Master Technician</a>
+              <a href="tel:02080589668" class="btn btn-secondary">Speak to a Specialist Technician</a>
             </div>
           </div>
 
           <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:2rem;">
             <h3 style="color:#ffffff; font-size:1.25rem; font-weight:800; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
-              <span style="color:var(--amber-400);">⚙️</span> Local Vehicle Profile & Demographics
+              <span style="color:var(--amber-400);">📍</span> Doorstep Collection & Recovery
             </h3>
             <p style="color:#94a3b8; font-size:0.92rem; line-height:1.6; margin-bottom:1.25rem;">
-              {loc['vehicle_demographics']}
+              We operate insured flatbed vehicle recovery covering postcodes {loc['postcodes']}. Your vehicle is collected, fully diagnosed and reconditioned at our specialist facility, and returned to your doorstep.
             </p>
             <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:1rem;">
               <div style="font-size:0.8rem; font-weight:800; color:var(--amber-400); text-transform:uppercase; margin-bottom:0.4rem;">
-                Dealer Cost Comparison
+                Indicative Dealer Comparison
               </div>
               <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.5; margin:0;">
-                {loc['dealer_comparison']}
+                Main dealerships typically quote for complete crate unit replacements. Reconditioning the specific failure components at our specialist facility provides an OEM-grade repair at significant savings.
               </p>
             </div>
           </div>
@@ -1209,12 +1207,12 @@ def render_html_page(loc):
     <section class="section" style="background:#0c0e14; padding-top:4rem; padding-bottom:4rem; border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
       <div class="container">
         <div style="text-align:center; max-width:760px; margin:0 auto 3rem auto;">
-          <div class="section-tag-gold">DEALERSHIP-GRADE CAPABILITIES</div>
+          <div class="section-tag-gold">CENTRAL ENGINEERING FACILITY</div>
           <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.6rem); color:#ffffff; font-family:var(--font-heading);">
             Complete Gearbox Engineering For All Vehicle Types
           </h2>
           <p style="color:#94a3b8; font-size:1rem;">
-            We operate precision rebuild benches, electronic diagnostic rigs, and dynamic dyno testing for every transmission architecture in {loc['name']}.
+            Precision rebuild benches, electronic diagnostic rigs, and dynamic dyno testing for vehicles collected across {loc['name']}.
           </p>
         </div>
 
@@ -1280,12 +1278,12 @@ def render_html_page(loc):
     <section class="section" style="padding-top:4rem; padding-bottom:4rem;">
       <div class="container">
         <div style="text-align:center; max-width:760px; margin:0 auto 2.5rem auto;">
-          <div class="section-tag-gold">LOCAL DOORSTEP RECOVERY</div>
+          <div class="section-tag-gold">DOORSTEP VEHICLE RECOVERY</div>
           <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.5rem); color:#ffffff; font-family:var(--font-heading);">
-            Areas We Collect From Across {loc['name']}
+            Collection Coverage Across {loc['name']}
           </h2>
           <p style="color:#94a3b8; font-size:0.95rem;">
-            Covering postcodes <strong>{loc['postcodes']}</strong> with fully insured flatbed recovery directly to our transmission engineering centre.
+            Covering postcodes <strong>{loc['postcodes']}</strong> with fully insured flatbed recovery directly to our central transmission facility.
           </p>
         </div>
 
@@ -1303,10 +1301,10 @@ def render_html_page(loc):
         <div style="text-align:center; margin-bottom:2.5rem;">
           <div class="section-tag-gold">FREQUENTLY ASKED QUESTIONS</div>
           <h2 style="font-size:clamp(1.9rem, 3.5vw, 2.5rem); color:#ffffff; font-family:var(--font-heading);">
-            {loc['name']} Gearbox Repair FAQs
+            {loc['name']} Transmission FAQs
           </h2>
           <p style="color:#94a3b8; font-size:0.95rem;">
-            Common questions regarding our doorstep vehicle recovery, turnaround times, and pricing in {loc['name']}.
+            Frequently asked questions regarding our vehicle collection process, turnaround times, and warranty coverage for {loc['name']} motorists.
           </p>
         </div>
 
@@ -1335,7 +1333,7 @@ def render_html_page(loc):
             <span class="brand-title">Gearbox <span>GIANTS</span></span>
           </a>
           <p style="font-size:0.92rem; line-height:1.5; margin-bottom:1rem; color:#94a3b8;">
-            Specialist gearbox rebuild engineering centre with complimentary recovery, precision dyno testing, and doorstep delivery across {loc['name']} and the UK.
+            Specialist transmission reconditioning with complimentary recovery across {loc['name']} and the UK. All engineering performed at our central specialist facility.
           </p>
           <a href="tel:02080589668" style="color:#ffffff; font-weight:800; text-decoration:none; font-size:1.05rem;">
              0208 058 9668
@@ -1350,6 +1348,17 @@ def render_html_page(loc):
             <li><a href="locations.html" class="footer-link">Locations Directory</a></li>
           </ul>
         </div>
+        <div class="footer-nav-col">
+          <h3 class="footer-col-title">Legal & Terms</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="warranty.html" class="footer-link">Warranty Terms</a></li>
+            <li><a href="finance.html" class="footer-link">Finance Info</a></li>
+            <li><a href="cookies.html" class="footer-link">Cookie Policy</a></li>
+            <li><a href="complaints.html" class="footer-link">Complaints</a></li>
+          </ul>
+        </div>
         <div class="footer-hours-col">
           <h3 class="footer-col-title">Hours</h3>
           <ul class="opening-hours-list">
@@ -1361,7 +1370,7 @@ def render_html_page(loc):
         </div>
       </div>
       <div class="footer-bottom">
-        <div>© 2024–2026 Gearbox Giants UK. All Rights Reserved. &bull; {loc['name']} Transmission Specialists</div>
+        <div>© 2024–2026 Gearbox Giants UK. All Rights Reserved. &bull; {loc['name']} Service Area</div>
       </div>
     </div>
   </footer>

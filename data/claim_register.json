@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "generated_at": "2026-09-02T23:50:00Z",
+  "claims": [
+    {
+      "claim_id": "CLM-001",
+      "claim_text": "Up to 60% cheaper than main dealer / Save up to 60%",
+      "category": "Pricing & Comparison",
+      "pages_used": ["index.html", "services.html", "location-*.html"],
+      "source": "Marketing copy comparison",
+      "evidence_available": "None formalised (anecdotal comparison with dealer whole-crate replacement policies)",
+      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
+      "required_action": "Soften claim in copy; require empirical sample of like-for-like dealer quotes before publishing as fact."
+    },
+    {
+      "claim_id": "CLM-002",
+      "claim_text": "£4,000–£8,000+ main dealer gearbox replacement costs",
+      "category": "Pricing & Comparison",
+      "pages_used": ["services.html", "location-*.html"],
+      "source": "Industry parts catalogue crate pricing",
+      "evidence_available": "OEM list prices for complete new assemblies",
+      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
+      "required_action": "Frame as typical industry crate replacement range, not universal guarantee."
+    },
+    {
+      "claim_id": "CLM-003",
+      "claim_text": "Gearbox reconditioning starting from £895 / Manual from £795 / Automatic from £1,150",
+      "category": "Pricing",
+      "pages_used": ["index.html", "services.html", "location-*.html"],
+      "source": "Internal service price guide",
+      "evidence_available": "Baseline labour + standard bearing kit cost",
+      "verification_status": "UNVERIFIED",
+      "required_action": "Clearly state prices are indicative starting estimates subject to teardown inspection."
+    },
+    {
+      "claim_id": "CLM-004",
+      "claim_text": "12-Month Unlimited Mileage Warranty",
+      "category": "Warranty",
+      "pages_used": ["index.html", "services.html", "fault-finding.html", "locations.html", "location-*.html"],
+      "source": "Internal business policy",
+      "evidence_available": "Terms document draft",
+      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
+      "required_action": "Standardized across all pages; requires formal sign-off by business owner."
+    },
+    {
+      "claim_id": "CLM-005",
+      "claim_text": "Typical 48–72 Hour Rebuild Turnaround",
+      "category": "Operations",
+      "pages_used": ["index.html", "services.html", "location-*.html"],
+      "source": "Operational target",
+      "evidence_available": "Average workshop completion timeframe",
+      "verification_status": "UNVERIFIED",
+      "required_action": "Avoid universal guarantee wording; explain factors affecting turnaround (parts supply, dyno schedule)."
+    },
+    {
+      "claim_id": "CLM-006",
+      "claim_text": "Free nationwide vehicle recovery & collection",
+      "category": "Logistics",
+      "pages_used": ["index.html", "services.html", "locations.html", "location-*.html"],
+      "source": "Operational offer",
+      "evidence_available": "Collection fleet coverage across defined regional network",
+      "verification_status": "VERIFIED_SERVICE_OFFER",
+      "required_action": "Maintain clear geographical service boundary definitions."
+    },
+    {
+      "claim_id": "CLM-007",
+      "claim_text": "0% Finance Available",
+      "category": "Finance",
+      "pages_used": ["index.html", "services.html"],
+      "source": "Partner broker / lender",
+      "evidence_available": "Pending partner agreement documentation",
+      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
+      "required_action": "Include statutory disclosure; flag for formal partner verification."
+    },
+    {
+      "claim_id": "CLM-008",
+      "claim_text": "25+ / 35+ / 37 / 45 Centres or Depots",
+      "category": "Network Size",
+      "pages_used": ["Historical site copy"],
+      "source": "Arbitrary marketing counters",
+      "evidence_available": "Inconsistent counters across pages",
+      "verification_status": "REJECTED_CONTRADICTORY",
+      "required_action": "REMOVED from all production copy. Replaced with accurate Single Source of Truth terminology (1 Central Workshop + 45 Regional Collection Hubs)."
+    },
+    {
+      "claim_id": "CLM-009",
+      "claim_text": "Specialist workshop / rebuild benches located in local towns (e.g. Harrow, Enfield, etc.)",
+      "category": "Facility Reality",
+      "pages_used": ["Historical location pages"],
+      "source": "Automated location generator template",
+      "evidence_available": "No physical workshop in each town (service is provided via collection to central facility)",
+      "verification_status": "REJECTED_MISLEADING",
+      "required_action": "REMOVED from all location pages. Replaced with 'Gearbox collection & repair service covering [Location]'."
+    },
+    {
+      "claim_id": "CLM-010",
+      "claim_text": "Local vehicle demographic percentages and local gearbox failure pattern statistics",
+      "category": "Local Expertise",
+      "pages_used": ["Historical location pages"],
+      "source": "Unverified AI generator copy",
+      "evidence_available": "No empirical survey cited",
+      "verification_status": "REJECTED_UNSUPPORTED",
+      "required_action": "REMOVED from all location pages. Replaced with verified geographic transit corridors and collection logistics."
+    },
+    {
+      "claim_id": "CLM-011",
+      "claim_text": "Complimentary car wash on delivery",
+      "category": "Customer Service",
+      "pages_used": ["index.html", "location-*.html"],
+      "source": "Value-add marketing claim",
+      "evidence_available": "Operational handover protocol",
+      "verification_status": "UNVERIFIED",
+      "required_action": "Flag for operational confirmation."
+    }
+  ]
+}
