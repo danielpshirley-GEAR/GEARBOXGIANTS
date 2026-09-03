@@ -10,7 +10,7 @@
     domain: 'https://gearboxgiants.co.uk',
     pagePath: 'index.html',
     title: 'Gearbox Giants | UK Specialist Gearbox Repair & Reconditioning',
-    description: 'Specialist gearbox repair, replacement and reconditioning across 25+ UK centres. Free vehicle recovery, 100% warranty, up to 60% cheaper than main dealer.',
+    description: 'Specialist gearbox repair, replacement and reconditioning across 45 covered service areas. Free vehicle recovery on completed repairs, 12-Month / 12,000-Mile warranty.',
     canonicalUrl: 'https://gearboxgiants.co.uk/',
     ogImage: 'https://gearboxgiants.co.uk/assets/step_1_quote.jpg',
     locationName: 'London & South England',
@@ -18,11 +18,11 @@
     schemaType: 'AutoRepair',
     phone: '0208 058 9668',
     rating: '4.9',
-    reviewsCount: '342',
+    reviewsCount: '128',
     faqs: [
-      { q: "How long does a gearbox repair take?", a: "Most gearbox repairs and reconditioning jobs are completed within 48 to 72 hours, including collection, rebuilding, dyno testing, and delivery." },
-      { q: "Do you offer free vehicle collection?", a: "Yes, Gearbox Giants provides complimentary collection and return delivery across London, South England, and nationwide." },
-      { q: "What warranty is included with the gearbox repair?", a: "All our reconditioned and replacement gearboxes come with a comprehensive parts and labor warranty for complete peace of mind." }
+      { q: "How long does a gearbox repair take?", a: "We operate a prompt turnaround from vehicle collection, including specialist teardown, precision component rebuilding, and return delivery." },
+      { q: "Do you offer free vehicle collection?", a: "Yes, Gearbox Giants provides complimentary collection and return delivery on all completed repairs across London and South England." },
+      { q: "What warranty is included with the gearbox repair?", a: "Qualifying full gearbox rebuilds include our 12-Month / 12,000-Mile warranty covering parts and labour." }
     ]
   };
 

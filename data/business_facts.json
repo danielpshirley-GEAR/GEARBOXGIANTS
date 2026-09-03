@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "meta": {
-    "version": "3.0.0",
-    "updated_at": "2026-09-03T18:15:00Z",
-    "description": "Gearbox Giants Central Single Source of Truth — 100% Confirmed by Business Owner"
+    "version": "4.0.0",
+    "updated_at": "2026-09-04T00:30:00Z",
+    "description": "Gearbox Giants Single Source of Truth — 100% Owner Confirmed & Factually Calibrated"
   },
   "business": {
     "official_name": "Gearbox Giants UK",
@@ -15,57 +15,99 @@
     "operating_hours": "Mon–Sun: 09:00 – 18:00",
     "verification_status": "VERIFIED_OPERATIONAL_CONTACTS",
     "facility_model": {
-      "physical_workshops": 0,
+      "physical_workshops_owned": 0,
       "public_address_displayed": false,
       "customer_facing_workshops": false,
-      "service_model": "Collection & delivery service working with specialist contractor facilities. Teardown, reconditioning, and replacement.",
+      "service_model": "Collection & delivery service coordinating repairs through dedicated specialist transmission engineering partner facilities.",
       "service_areas_covered": 45,
+      "service_areas_terminology": "45 currently covered service areas / collection coverage areas",
+      "disallowed_local_terms": [
+        "centres",
+        "branches",
+        "workshops",
+        "depots",
+        "physical hubs",
+        "collection hubs"
+      ],
+      "approved_local_terms": [
+        "Service Areas",
+        "Collection Areas",
+        "Vehicle Collection Coverage",
+        "Areas We Cover",
+        "Gearbox Collection & Repair Coverage",
+        "45 currently covered service areas"
+      ],
       "service_areas_status": "VERIFIED_BY_BUSINESS_OWNER",
       "coverage_notes": "Active across Greater London and South England; surrounding/extended areas confirm collection by telephone."
     }
   },
   "warranty": {
     "policy_name": "Gearbox Giants Repair Warranty",
-    "full_rebuild_and_reconditioned_units": {
+    "primary_headline": "12-Month / 12,000-Mile Warranty",
+    "tier_1_full_rebuilds": {
+      "tier_name": "Full Gearbox Rebuilds & Reconditioned Units",
       "duration": "12 Months",
       "mileage": "12,000 Miles",
       "condition": "whichever occurs first",
-      "usage": "Privately used vehicles"
+      "usage": "Privately used passenger vehicles",
+      "coverage": "Parts supplied and fitted by Gearbox Giants and associated workmanship forming part of the authorized rebuild invoice."
     },
-    "component_specific_repairs": {
+    "tier_2_component_repairs": {
+      "tier_name": "Component-Specific Transmission Repairs",
       "duration": "6 Months",
       "mileage": "6,000 Miles",
       "condition": "whichever occurs first",
-      "scope": "Applies to specific components replaced and workmanship undertaken"
+      "usage": "Targeted mechanical/electronic component repairs (e.g. solenoid replacement, mechatronic module repair, single bearing replacement)",
+      "coverage": "Applies strictly to the specific component(s) replaced and workmanship undertaken as detailed on the invoice."
     },
-    "commercial_and_intensive_use": {
+    "tier_3_commercial_and_intensive_use": {
+      "tier_name": "Commercial & Intensive-Use Vehicles",
       "duration": "6 Months",
       "mileage": "6,000 Miles",
       "condition": "whichever occurs first",
-      "scope": "Taxis, private-hire vehicles, driving-school vehicles, multi-drop delivery vehicles, intensive commercial use"
+      "usage": "Taxis, private-hire vehicles, driving-school vehicles, multi-drop delivery vehicles, intensive commercial fleet use",
+      "coverage": "All qualifying rebuilds or repairs on commercial or intensive-use vehicles."
     },
     "used_or_salvage_components": {
       "terms": "Confirmed on quotation/invoice before installation"
     },
-    "coverage_scope": "Faults arising from workmanship carried out by Gearbox Giants and defects affecting parts supplied and fitted by Gearbox Giants specified on invoice.",
+    "disallowed_warranty_claims": [
+      "unlimited mileage",
+      "100% warranty",
+      "lifetime warranty"
+    ],
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-    "notes": "12 Months / 12,000 miles on full rebuilds; 6 Months / 6,000 miles on component repairs or commercial use."
+    "official_policy_url": "https://gearboxgiants.co.uk/warranty.html"
   },
   "pricing": {
     "display_policy": "DO_NOT_INCLUDE_PRICES",
     "pricing_model": "Bespoke competitive estimates tailored to exact vehicle registration, make, model, transmission code, and diagnostic findings.",
+    "disallowed_price_claims": [
+      "from £795",
+      "from £895",
+      "from £950",
+      "from £1,150",
+      "from £1,195"
+    ],
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "turnaround": {
     "display_policy": "DO_NOT_SPECIFY_HOURLY_ESTIMATES",
     "turnaround_model": "Prompt turnaround with priority diagnostic teardown and return delivery.",
+    "disallowed_turnaround_claims": [
+      "48–72 hours",
+      "48-72 hours",
+      "48 hours",
+      "72 hours"
+    ],
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "logistics_and_recovery": {
     "collection_policy": "FREE on all completed/paid repairs",
     "delivery_policy": "FREE on all completed/paid repairs",
-    "non_completed_repair_fee": "From £150 if customer declines repair following vehicle collection, transport, and inspection.",
+    "non_completed_repair_fee": "From £150 if customer declines repair following vehicle collection, transport, and diagnostic inspection.",
     "radius_limit": "No fixed radius limit",
+    "terms_url": "https://gearboxgiants.co.uk/terms.html",
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "capabilities": {
@@ -73,6 +115,13 @@
       "Gearbox teardown & mechanical inspection",
       "Gearbox reconditioning & rebuild",
       "Gearbox replacement"
+    ],
+    "facility_delivery_wording": "Repairs are completed through our specialist transmission engineering facility / engineering partner",
+    "disallowed_in_house_claims": [
+      "Our dyno",
+      "Our workshop equipment",
+      "Our calibration rigs",
+      "Our engineering facility"
     ],
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
@@ -88,17 +137,24 @@
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "dealer_comparison": {
-    "claim": "Save up to 60% compared to main dealership whole-unit replacements",
+    "claim": "Save up to 60% compared to franchised main dealership whole-unit crate replacements",
+    "owner_confirmation": "CONFIRMED",
+    "evidence_substantiation": "PENDING_DOCUMENTED_DATASET",
+    "evidence_task": "Collect and document anonymised franchised dealer whole-unit crate quotations vs Gearbox Giants reconditioning invoices across common VAG DSG, ZF 8HP, and Powershift repair jobs.",
     "qualification": "Industry benchmark comparison; actual savings depend on vehicle make, model and required repair scope, and could be less.",
-    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
+    "qualification_location": "terms.html Clause 4"
   },
   "finance": {
     "status": "REMOVED_BY_BUSINESS_OWNER",
-    "notes": "Finance promotion and dedicated finance page removed entirely."
+    "disallowed_claims": [
+      "0% finance",
+      "0% FINANCE AVAILABLE",
+      "Finance available"
+    ]
   },
   "complimentary_car_wash": {
     "status": "VERIFIED_BY_BUSINESS_OWNER",
-    "policy": "Complimentary car wash included on return delivery for all completed jobs."
+    "policy": "Complimentary car wash included on return delivery for all completed/paid repairs."
   },
   "company_registration": {
     "vat_registered": false,

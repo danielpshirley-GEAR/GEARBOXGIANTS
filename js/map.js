@@ -1,17 +1,17 @@
 /**
- * GEARBOX GIANTS - REGIONAL HUBS MAP & POSTCODE DISTANCE SORTING ENGINE
- * Exclusively displays and sorts the 6 UK Regional Centres by distance from postcode
+ * GEARBOX GIANTS - REGIONAL COVERAGE MAP & POSTCODE DISTANCE SORTING ENGINE
+ * Exclusively displays and sorts the 6 UK Regional Coverage Areas by distance from postcode
  */
 
 (function () {
   'use strict';
 
-  // The 6 Official UK Regional Hubs
+  // The 6 Official UK Regional Coverage Areas
   const REGIONS_DATA = [
     {
       id: "london",
       name: "Greater London",
-      sub: "Super Centres & Dedicated Hubs",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 51.515,
       lng: -0.280,
@@ -27,14 +27,14 @@
     {
       id: "berkshire",
       name: "Berkshire & Surrey",
-      sub: "Specialist Workshop Hubs",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 51.454,
       lng: -0.978,
       townsHtml: `
         <li>Reading • Slough • Bracknell</li>
         <li>Guildford • Woking • Camberley</li>
-        <li>Berkshire County Network</li>
+        <li>Berkshire & Surrey Coverage</li>
       `,
       primaryBtnHtml: `<button class="btn btn-primary btn-full" onclick="window.openQuoteModal('Berkshire')">Get Berkshire Quote →</button>`,
       quoteRegion: "Berkshire/Surrey"
@@ -42,7 +42,7 @@
     {
       id: "south",
       name: "Hampshire & Sussex",
-      sub: "Coastal & Southern Depots",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 50.909,
       lng: -1.404,
@@ -57,14 +57,14 @@
     {
       id: "east",
       name: "Essex & East Anglia",
-      sub: "Eastern Transmission Centres",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 51.735,
       lng: 0.468,
       townsHtml: `
         <li>Chelmsford • Essex County</li>
-        <li>Cambridge • Cambridgeshire Hub</li>
-        <li>Kent • Ashford Depot</li>
+        <li>Cambridge • Cambridgeshire Area</li>
+        <li>Kent & Ashford Area</li>
       `,
       primaryBtnHtml: `<button class="btn btn-primary btn-full" onclick="window.openQuoteModal('East Anglia')">Get East Anglia Quote →</button>`,
       quoteRegion: "Essex/East Anglia"
@@ -72,12 +72,12 @@
     {
       id: "oxford",
       name: "Oxfordshire & Bucks",
-      sub: "Midlands Corridor Hubs",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 51.752,
       lng: -1.257,
       townsHtml: `
-        <li>Oxford • Oxfordshire Hub</li>
+        <li>Oxford • Oxfordshire Area</li>
         <li>Aylesbury • Buckinghamshire</li>
         <li>Watford • Hertfordshire</li>
       `,
@@ -87,13 +87,13 @@
     {
       id: "midlands",
       name: "Bedfordshire & North",
-      sub: "Northern Reach Depots",
+      sub: "Vehicle Collection & Repair Coverage",
       badge: "",
       lat: 52.138,
       lng: -0.466,
       townsHtml: `
-        <li>Bedfordshire County Centre</li>
-        <li>Northamptonshire Regional Hub</li>
+        <li>Bedfordshire County Area</li>
+        <li>Northamptonshire Coverage</li>
         <li>Full M1 / A1 Recovery Service</li>
       `,
       primaryBtnHtml: `<button class="btn btn-primary btn-full" onclick="window.openQuoteModal('Midlands')">Get Midlands Quote →</button>`,

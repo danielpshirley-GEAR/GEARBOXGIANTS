@@ -340,7 +340,7 @@ export class ReportGenerator {
             <div class="cost-estimator-wrapper">
               <div class="cost-breakdown-card">
                 <h4 class="cost-title">Estimated Specialist Repair Range (${vehicle.gearboxFamily})</h4>
-                <p class="cost-subtitle">Based on UK transmission specialist benchmark labor rates vs Main Dealership quotes.</p>
+                <p class="cost-subtitle">Based on UK transmission specialist benchmark labour rates vs Main Dealership quotes.</p>
 
                 <div class="cost-figures-grid">
                   <div class="cost-fig-box">
@@ -348,7 +348,7 @@ export class ReportGenerator {
                     <span class="cost-fig-val">£${diagnostic.estimatedCost.partsMin} – £${diagnostic.estimatedCost.partsMax}</span>
                   </div>
                   <div class="cost-fig-box">
-                    <span class="cost-fig-label">Specialist Labor & Calibration</span>
+                    <span class="cost-fig-label">Specialist Labour & Calibration</span>
                     <span class="cost-fig-val">£${diagnostic.estimatedCost.laborMin} – £${diagnostic.estimatedCost.laborMax}</span>
                   </div>
                   <div class="cost-fig-box highlight">

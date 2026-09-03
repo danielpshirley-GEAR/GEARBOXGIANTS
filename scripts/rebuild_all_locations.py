@@ -25,7 +25,7 @@ LOCATION_CONFIGS = [
         "hero_headline": "WEST LONDON GEARBOX SPECIALISTS",
         "hero_sub": "Dealer-Grade Transmission Diagnostics, Precision Rebuilds & Free Recovery Across All West London Boroughs.",
         "meta_title": "West London Gearbox Specialists | Transmission Repair & Rebuilds",
-        "meta_desc": "West London's specialist gearbox centre. Fast diagnosis, mechatronic repairs, manual & automatic rebuilds with free vehicle recovery across Ealing, Uxbridge, Harrow, Hounslow & Wembley.",
+        "meta_desc": "West London specialist gearbox repair. Fast diagnosis, mechatronic repairs, manual & automatic rebuilds with free vehicle recovery across Ealing, Uxbridge, Harrow, Hounslow & Wembley.",
         "transit_logistics": "Operates rapid flatbed collection across the A40 Western Avenue, M4 corridor, North Circular (A406), and Heathrow cargo logistics belt. Fully ULEZ-compliant recovery fleet operating 7 days a week.",
         "vehicle_demographics": "Heavy concentration of executive automatics (BMW ZF 8HP, Mercedes 9G-Tronic), high-density urban hybrid e-CVTs (Toyota/Lexus), and stop-start commuter dual-clutch units (VAG DQ200/DQ381 DSG) vulnerable to mechatronic pressure drops in West London congestion.",
         "dealer_comparison": "Main dealerships along the Great West Road and Western Avenue typically quote high sums for complete replacement units with long lead times. Gearbox Giants reconditions your existing unit with upgraded OEM components at substantial savings.",
@@ -64,7 +64,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "South London gearbox repair and reconditioning. Specialist diagnostics and rebuilds across Croydon, Bromley, Wandsworth, Greenwich, Lambeth, Lewisham & Southwark with full 12-month warranty.",
         "transit_logistics": "Comprehensive recovery coverage spanning the South Circular (A205), A3 corridor, A23 Purley Way, and A2 Dover Road artery, navigating ULEZ and Low Emission Zones seamlessly.",
         "vehicle_demographics": "Extensive mix of family SUVs (Land Rover Discovery Sport / Evoque ZF 9HP, Audi Q5 S-Tronic), commuter hatchbacks (Ford Fiesta Powershift, VW Polo DSG), and high-torque diesel commercials suffering from dual-mass flywheel judder and torque converter shudder.",
-        "dealer_comparison": "South London main agents frequently enforce 3–5 week workshop booking queues with £5,000+ unit replacement quotes. We provide fast flatbed collection, teardown inspection within 24 hours, and rebuilds backed by our 12-month / 12,000-mile warranty.",
+        "dealer_comparison": "South London main agents frequently enforce 3–5 week dealership booking queues with £5,000+ unit replacement quotes. We provide fast flatbed collection, teardown inspection within 24 hours, and rebuilds backed by our 12-month / 12,000-mile warranty.",
         "sub_areas": ["Croydon & Purley", "Bromley & Beckenham", "Wandsworth & Clapham", "Greenwich & Blackheath", "Wimbledon & Merton", "Dulwich & Southwark"]
     },
     {
@@ -82,7 +82,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "North London gearbox specialists. Precision repairs and reconditioning across Barnet, Enfield, Islington, Finchley, Camden, Haringey & Tottenham with free recovery & 12-month warranty.",
         "transit_logistics": "Strategic transporter positioning along the M1 / A1 Apex Corner corridor, A406 North Circular artery, and A10 Great Cambridge Road for rapid breakdown recovery.",
         "vehicle_demographics": "High density of premium performance vehicles (BMW M-Sport, Mercedes-AMG, Audi RS dual-clutch / S-Tronic), prestige German family estates, and commercial courier vans facing constant stop-start transmission thermal cycling.",
-        "dealer_comparison": "North London franchised dealerships routinely charge £200+/hour in diagnostic labour. We rebuild transmissions to strict OEM tolerances with upgraded high-load bearings, steel-reinforced mechatronic valve housings, and dynamic dyno bench testing.",
+        "dealer_comparison": "North London franchised dealerships routinely charge £200+/hour in diagnostic labour. We rebuild transmissions to strict OEM tolerances with upgraded high-load bearings, steel-reinforced mechatronic valve housings, and dynamic bench testing.",
         "sub_areas": ["Barnet & Whetstone", "Enfield & Southgate", "Finchley & Golders Green", "Islington & Highbury", "Haringey & Wood Green", "Camden & Hampstead"]
     },
     {
@@ -98,7 +98,7 @@ LOCATION_CONFIGS = [
         "hero_sub": "Fast Diagnostic Testing, Complete Transmission Reconditioning & Free Doorstep Collection in Croydon.",
         "meta_title": "Croydon Gearbox Specialists | Expert Gearbox Repair & Reconditioning",
         "meta_desc": "Expert gearbox repairs in Croydon. Manual, automatic & DSG transmission rebuilds with free recovery across Purley Way, Addiscombe, Thornton Heath, Purley & South Croydon.",
-        "transit_logistics": "Rapid dispatch via the A23 / Purley Way commercial corridor, connecting Croydon, Coulsdon, and South London to our advanced transmission workshop facility.",
+        "transit_logistics": "Rapid dispatch via the A23 / Purley Way commercial corridor, connecting Croydon, Coulsdon, and South London to our specialist transmission engineering partner facility.",
         "vehicle_demographics": "Heavy commercial van concentration along industrial estates, high commuter vehicle volumes (Vauxhall Astra/Corsa, Ford Focus, Nissan Qashqai CVT), and hybrid urban fleets.",
         "dealer_comparison": "Avoid the delays of Purley Way main dealers. Our team performs full teardowns, ultrasonic component cleaning, high-wear gear replacement, and delivers your vehicle back cleaned with a 12-month warranty.",
         "sub_areas": ["Central Croydon & Addiscombe", "Purley & Kenley", "Thornton Heath & Norbury", "South Croydon & Selsdon", "Coulsdon & Purley Way"]
@@ -153,7 +153,7 @@ LOCATION_CONFIGS = [
         "meta_title": "Enfield Gearbox Specialists | Manual & Automatic Transmission Repair",
         "meta_desc": "Enfield gearbox specialist providing expert transmission repairs across Enfield Town, Edmonton, Southgate, Ponders End & Waltham Cross with free vehicle collection & 12-month warranty.",
         "transit_logistics": "Direct arterial collection via the A10 Great Cambridge Road and M25 Junction 25, servicing residential and industrial trade corridors.",
-        "vehicle_demographics": "Major hub for commercial trade vehicles (Ford Transit, Mercedes Sprinter, Vauxhall Movano) and daily commuter cars experiencing heavy gear wear and clutch slippage.",
+        "vehicle_demographics": "Major corridor for commercial trade vehicles (Ford Transit, Mercedes Sprinter, Vauxhall Movano) and daily commuter cars experiencing heavy gear wear and clutch slippage.",
         "dealer_comparison": "Save up to 60% compared to franchised dealer replacement units. We test, re-machine, and rebuild your transmission with heavy-duty uprated components engineered for lasting durability.",
         "sub_areas": ["Enfield Town & Chase", "Edmonton & Silver Street", "Southgate & Oakwood", "Ponders End & Brimsdown", "Hadley Wood & Cockfosters"]
     },
@@ -207,8 +207,8 @@ LOCATION_CONFIGS = [
         "meta_title": "Uxbridge Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
         "meta_desc": "Expert gearbox repair in Uxbridge & Hillingdon Borough. Specialist dual-clutch DSG, automatic & manual rebuilds with free doorstep recovery and 12-month / 12,000-mile warranty.",
         "transit_logistics": "Immediate dispatch along the M40 / A40 Western Avenue, M25 Junction 16, and A4020 for rapid customer collection across West London and South Bucks.",
-        "vehicle_demographics": "Fleet vehicles serving Stockley Park business hub, Heathrow logistics transit vans, and residential commuter cars.",
-        "dealer_comparison": "Why pay main dealer surcharges? We use state-of-the-art diagnostic tools, OEM replacement components, and dyno test every completed transmission before handover.",
+        "vehicle_demographics": "Fleet vehicles serving Stockley Park business district, Heathrow logistics transit vans, and residential commuter cars.",
+        "dealer_comparison": "Why pay main dealer surcharges? We use state-of-the-art diagnostic tools, OEM replacement components, and test every completed transmission before handover.",
         "sub_areas": ["Uxbridge Central & Moor", "Ickenham & Hillingdon", "Cowley & Yiewsley", "Harefield & Denham", "Stockley Park & Hayes End"]
     },
     {
@@ -239,12 +239,12 @@ LOCATION_CONFIGS = [
         "lat": "51.6500",
         "lng": "-0.2000",
         "hero_headline": "BARNET GEARBOX SPECIALISTS",
-        "hero_sub": "North London's Specialist Gearbox Centre. Precision Rebuilds & Free Recovery Across Barnet & Finchley.",
+        "hero_sub": "North London's Specialist Gearbox Service. Precision Rebuilds & Free Recovery Across Barnet & Finchley.",
         "meta_title": "Barnet Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
         "meta_desc": "Specialist gearbox repair in Barnet. Expert transmission diagnostics & reconditioning across High Barnet, Chipping Barnet, Finchley, Whetstone & Hendon with free collection.",
         "transit_logistics": "Direct access via the A1 Barnet Bypass, A41 Watford Way, and M25 Junction 23 for prompt vehicle collection.",
         "vehicle_demographics": "High concentration of German executive saloons, family SUVs (Audi Q7, BMW X5), and commuter cars navigating hilly suburban North London routes.",
-        "dealer_comparison": "Our certified master technicians diagnose electronic and mechanical shifting faults, saving you thousands compared to main dealer crate replacements.",
+        "dealer_comparison": "Our transmission engineers diagnose electronic and mechanical shifting faults, saving you thousands compared to main dealer crate replacements.",
         "sub_areas": ["High Barnet & Arkley", "Chipping Barnet & Hadley", "Whetstone & Totteridge", "Finchley & Golders Green", "Hendon & Mill Hill"]
     },
 
@@ -259,7 +259,7 @@ LOCATION_CONFIGS = [
         "lat": "51.4543",
         "lng": "-0.9781",
         "hero_headline": "READING GEARBOX SPECIALISTS",
-        "hero_sub": "Berkshire's Premier Gearbox Repair Workshop. Dealership-Grade Rebuilds & Free Recovery in Reading.",
+        "hero_sub": "Specialist Gearbox Repair & Free Recovery Across Reading & Thames Valley. Dealership-Grade Rebuilds & Free Recovery in Reading.",
         "meta_title": "Reading Gearbox Specialists | Expert Transmission Repairs & Rebuilds",
         "meta_desc": "Reading's leading gearbox specialist. Expert manual, automatic & DSG transmission reconditioning across Reading, Caversham, Tilehurst, Earley & Woodley with free recovery & 12-month warranty.",
         "transit_logistics": "Rapid recovery along the M4 corridor (Junctions 10, 11, 12), A33 relief road, and A4 Bath Road covering the entire Thames Valley region.",
@@ -313,12 +313,12 @@ LOCATION_CONFIGS = [
         "lat": "51.2362",
         "lng": "-0.5704",
         "hero_headline": "GUILDFORD GEARBOX SPECIALISTS",
-        "hero_sub": "Surrey's Specialist Transmission Centre. Expert Rebuilds & Free Recovery Across Guildford & Surrey Hills.",
+        "hero_sub": "Specialist Transmission Repair & Free Recovery Across Guildford & Surrey Hills. Expert Rebuilds & Free Recovery Across Guildford & Surrey Hills.",
         "meta_title": "Guildford Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
         "meta_desc": "Guildford's premier gearbox repair specialists. Automatic, DSG, CVT and manual gearbox reconditioning across Guildford, Godalming, Cranleigh & Shalford with free vehicle recovery.",
         "transit_logistics": "Direct recovery coverage via the A3 London-Portsmouth trunk road, A31 Hog's Back, and A281 corridor.",
         "vehicle_demographics": "Prestige SUVs, 4x4 transfer cases (Land Rover, BMW xDrive, Audi Quattro), and executive commuter cars driven on hilly Surrey terrain.",
-        "dealer_comparison": "Avoid the high labour rates of Moorfield Road main dealers. We provide component-level remanufacturing, valve body re-machining, and dyno testing backed by a 12-month warranty.",
+        "dealer_comparison": "Avoid the high labour rates of Moorfield Road main dealers. We provide component-level remanufacturing, valve body re-machining, and rigorous testing backed by a 12-month warranty.",
         "sub_areas": ["Guildford Town & Burpham", "Onslow Village & Park Barn", "Merrow & Boxgrove", "Godalming & Farncombe", "Cranleigh & Bramley"]
     },
     {
@@ -352,9 +352,9 @@ LOCATION_CONFIGS = [
         "hero_sub": "Specialist Gearbox Repair, Mechatronic Diagnostics & Free Recovery in Camberley, Frimley & Blackwater.",
         "meta_title": "Camberley Gearbox Specialists | Transmission Repair & Rebuilds",
         "meta_desc": "Specialist gearbox repair in Camberley & Surrey Heath. Manual, automatic and DSG gearbox rebuilds across Camberley, Frimley, Blackwater, Yateley & Bagshot with free collection.",
-        "transit_logistics": "Strategic transport hub situated on the M3 Junction 4 and A30 London Road connecting Surrey, Hampshire, and Berkshire.",
+        "transit_logistics": "Strategic transport connection situated on the M3 Junction 4 and A30 London Road connecting Surrey, Hampshire, and Berkshire.",
         "vehicle_demographics": "Commuter SUVs, light commercial delivery vehicles, and family saloons experiencing motorway-mileage transmission wear and torque converter slip.",
-        "dealer_comparison": "Our dedicated gearbox workshop focuses purely on transmission engineering, ensuring faster diagnosis and significantly lower repair costs than general franchised dealers.",
+        "dealer_comparison": "Our specialist transmission engineers focus purely on transmission engineering, ensuring faster diagnosis and significantly lower repair costs than general franchised dealers.",
         "sub_areas": ["Camberley Town Centre", "Frimley & Frimley Green", "Blackwater & Hawley", "Bagshot & Lightwater", "Yateley & Sandhurst"]
     },
     {
@@ -403,13 +403,13 @@ LOCATION_CONFIGS = [
         "lat": "51.4500",
         "lng": "-0.9700",
         "hero_headline": "BERKSHIRE GEARBOX SPECIALISTS",
-        "hero_sub": "County-Wide Transmission Rebuild Centres. Free Flatbed Recovery Across Reading, Slough, Bracknell, Maidenhead & Windsor.",
+        "hero_sub": "County-Wide Transmission Rebuild Coverage. Free Flatbed Recovery Across Reading, Slough, Bracknell, Maidenhead & Windsor.",
         "meta_title": "Berkshire Gearbox Specialists | County-Wide Transmission Rebuilds",
         "meta_desc": "Berkshire's specialist gearbox network. Dealership-grade automatic, DSG and manual gearbox repairs across Reading, Slough, Bracknell, Maidenhead, Newbury & Wokingham with free recovery.",
         "transit_logistics": "Complete coverage of the M4 artery (Junctions 5 to 14), A329(M), and A4 Bath Road corridor with rapid response recovery transporters.",
         "vehicle_demographics": "Thames Valley technology fleet vehicles, executive commuters, and commercial logistics distribution vans.",
         "dealer_comparison": "Save up to 60% on main dealer prices across Berkshire with our 12-month / 12,000-mile warranty.",
-        "sub_areas": ["Reading Hub", "Slough & Windsor", "Bracknell Forest", "Maidenhead & Cookham", "Wokingham & Winnersh", "Newbury & West Berkshire"]
+        "sub_areas": ["Reading Area", "Slough & Windsor", "Bracknell Forest", "Maidenhead & Cookham", "Wokingham & Winnersh", "Newbury & West Berkshire"]
     },
 
     # --- HAMPSHIRE & SUSSEX (7 LOCATIONS) ---
@@ -423,7 +423,7 @@ LOCATION_CONFIGS = [
         "lat": "50.9097",
         "lng": "-1.4044",
         "hero_headline": "SOUTHAMPTON GEARBOX SPECIALISTS",
-        "hero_sub": "South Coast's Leading Transmission Engineering Workshop. Free Recovery & Precision Rebuilds in Southampton.",
+        "hero_sub": "South Coast's Leading Transmission Engineering Service. Free Recovery & Precision Rebuilds in Southampton.",
         "meta_title": "Southampton Gearbox Specialists | Automatic & Manual Transmission Repairs",
         "meta_desc": "Specialist gearbox repair in Southampton. Automatic, manual, DSG & CVT gearbox reconditioning across Southampton, Eastleigh, Totton, Hedge End & Waterside with free collection.",
         "transit_logistics": "Direct transporter routes along the M27 coastal motorway (Junctions 3, 5, 7, 8), M3 terminus, and A33 artery covering all Hampshire maritime and port logistics zones.",
@@ -485,7 +485,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "Expert gearbox repairs in Basingstoke. Manual, automatic, DSG and CVT gearbox reconditioning across Basingstoke, Chineham, Kempshott & Oakley with free collection & 12-month warranty.",
         "transit_logistics": "Direct connection via M3 Junction 6, A339, and A33 arterial route connecting Hampshire and Berkshire.",
         "vehicle_demographics": "Roundabout-heavy urban road network accelerating differential gear wear and automatic clutch actuation cycles, alongside long-distance M3 commuters.",
-        "dealer_comparison": "Houndmills trade dealers charge high replacement markups. We rebuild transmissions with heavy-duty OEM components and provide full dyno testing before return delivery.",
+        "dealer_comparison": "Houndmills trade dealers charge high replacement markups. We rebuild transmissions with heavy-duty OEM components and provide full quality testing before return delivery.",
         "sub_areas": ["Basingstoke Town & Houndmills", "Chineham & Sherfield", "Kempshott & Hatch Warren", "Oakley & Worting", "Old Basing & Lychpit"]
     },
     {
@@ -504,7 +504,7 @@ LOCATION_CONFIGS = [
         "transit_logistics": "Complete M3 and M27 motorway coverage, servicing all Hampshire towns with dedicated flatbed transporters.",
         "vehicle_demographics": "Port logistics commercial fleets, coastal commuter automatics, and rural Hampshire 4WD drivetrains.",
         "dealer_comparison": "Save thousands compared to Hampshire main dealerships with our 12-month / 12,000-mile warranty.",
-        "sub_areas": ["Southampton Hub", "Portsmouth & Southsea", "Basingstoke & Deane", "Farnborough & Aldershot", "Winchester & Eastleigh", "Andover & Test Valley"]
+        "sub_areas": ["Southampton Area", "Portsmouth & Southsea", "Basingstoke & Deane", "Farnborough & Aldershot", "Winchester & Eastleigh", "Andover & Test Valley"]
     },
     {
         "id": "sussex",
@@ -516,13 +516,13 @@ LOCATION_CONFIGS = [
         "lat": "50.9000",
         "lng": "0.0000",
         "hero_headline": "SUSSEX GEARBOX SPECIALISTS",
-        "hero_sub": "County-Wide Transmission Engineering Centre. Free Vehicle Collection Across Brighton, Crawley, Worthing, Eastbourne & Chichester.",
+        "hero_sub": "County-Wide Transmission Engineering Coverage. Free Vehicle Collection Across Brighton, Crawley, Worthing, Eastbourne & Chichester.",
         "meta_title": "Sussex Gearbox Specialists | County-Wide Transmission Repair Network",
         "meta_desc": "Specialist gearbox repair across East and West Sussex. Manual, automatic and DSG transmission reconditioning across Brighton, Crawley, Worthing, Horsham & Eastbourne with free recovery.",
         "transit_logistics": "Operates along the A23, A27, and M23 corridors servicing all Sussex coastal and inland towns.",
         "vehicle_demographics": "Coastal lifestyle SUVs, airport logistics vans, and commuter vehicles facing coastal traffic conditions.",
         "dealer_comparison": "Component-level remanufacturing saves Sussex motorists up to 60% compared to main dealer quotes.",
-        "sub_areas": ["Brighton & Hove Hub", "Crawley & Gatwick", "Worthing & Shoreham", "Eastbourne & Lewes", "Chichester & Bognor", "Horsham & Mid Sussex"]
+        "sub_areas": ["Brighton & Hove Area", "Crawley & Gatwick", "Worthing & Shoreham", "Eastbourne & Lewes", "Chichester & Bognor", "Horsham & Mid Sussex"]
     },
 
     # --- ESSEX & EAST ANGLIA (5 LOCATIONS) ---
@@ -537,10 +537,10 @@ LOCATION_CONFIGS = [
         "lat": "51.7356",
         "lng": "0.4686",
         "hero_headline": "CHELMSFORD GEARBOX SPECIALISTS",
-        "hero_sub": "Essex's Specialist Gearbox Workshop. Dealership-Grade Transmission Repairs & Free Recovery in Chelmsford.",
+        "hero_sub": "Essex's Specialist Gearbox Service. Dealership-Grade Transmission Repairs & Free Recovery in Chelmsford.",
         "meta_title": "Chelmsford Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
         "meta_desc": "Expert gearbox repairs in Chelmsford. Manual, automatic and DSG transmission reconditioning across Chelmsford, Springfield, Broomfield, Great Baddow & Danbury with free recovery.",
-        "transit_logistics": "Fast collection along the A12 trunk road, A130, and A414 connecting Central Essex directly to our transmission workshop.",
+        "transit_logistics": "Fast collection along the A12 trunk road, A130, and A414 connecting Central Essex directly to our specialist transmission engineering partner facility.",
         "vehicle_demographics": "High proportion of executive London commuter saloons (BMW, Audi, Mercedes), agricultural trade pickups, and family SUVs.",
         "dealer_comparison": "Chelmsford main dealerships charge £180+/hour in diagnostic labour. We rebuild transmissions with genuine OEM components, offering up to 60% savings.",
         "sub_areas": ["Chelmsford Central & Moulsham", "Springfield & Chelmer Village", "Broomfield & Writtle", "Great Baddow & Danbury", "South Woodham Ferrers"]
@@ -556,12 +556,12 @@ LOCATION_CONFIGS = [
         "lat": "52.2053",
         "lng": "0.1218",
         "hero_headline": "CAMBRIDGE GEARBOX SPECIALISTS",
-        "hero_sub": "Cambridgeshire's Specialist Transmission Centre. Precision Rebuilds & Free Recovery in Cambridge.",
+        "hero_sub": "Cambridgeshire's Specialist Transmission Service. Precision Rebuilds & Free Recovery in Cambridge.",
         "meta_title": "Cambridge Gearbox Specialists | Automatic & Manual Transmission Repairs",
         "meta_desc": "Specialist gearbox repair in Cambridge. Expert automatic, manual & DSG gearbox reconditioning across Cambridge, Milton, Histon, Trumpington & Ely with free collection & 12-month warranty.",
-        "transit_logistics": "Direct transporter dispatch via the M11 corridor (Junctions 11–14), A14 freight trunk route, and A428 connecting Cambridgeshire science parks and residential hubs.",
+        "transit_logistics": "Direct transporter dispatch via the M11 corridor (Junctions 11–14), A14 freight trunk route, and A428 connecting Cambridgeshire science parks and residential communities.",
         "vehicle_demographics": "High proportion of modern hybrid vehicles (Toyota/Lexus e-CVT, BMW/Mercedes plug-in hybrids), commuter dual-clutches, and tech corridor commercial vans.",
-        "dealer_comparison": "Cambridge dealership service departments charge exorbitant rates. We provide transparent, fixed-price reconditioning with dynamic dyno testing before return delivery.",
+        "dealer_comparison": "Cambridge dealership service departments charge exorbitant rates. We provide transparent, fixed-price reconditioning with rigorous bench testing before return delivery.",
         "sub_areas": ["Cambridge City Centre", "Chesterton & Milton", "Trumpington & Great Shelford", "Histon & Impington", "Bar Hill & Cambourne", "Ely & Waterbeach"]
     },
     {
@@ -599,7 +599,7 @@ LOCATION_CONFIGS = [
         "transit_logistics": "Comprehensive coverage of the A12, A127, A13, and M25 Junctions 26–31 with dedicated flatbed transporters.",
         "vehicle_demographics": "High trade and commercial vehicle density, dual-clutch Powershift/DSG family cars, and London commuter vehicles.",
         "dealer_comparison": "Component-level reconditioning saves Essex motorists up to 60% compared to franchised main dealer replacement costs.",
-        "sub_areas": ["Chelmsford Hub", "Colchester & Tendring", "Southend & Basildon", "Brentwood & Shenfield", "Harlow & Epping Forest", "Braintree & Witham"]
+        "sub_areas": ["Chelmsford Area", "Colchester & Tendring", "Southend & Basildon", "Brentwood & Shenfield", "Harlow & Epping Forest", "Braintree & Witham"]
     },
     {
         "id": "kent",
@@ -614,10 +614,10 @@ LOCATION_CONFIGS = [
         "hero_sub": "Garden of England Transmission Specialists. Free Doorstep Recovery Across Maidstone, Canterbury, Dartford & Ashford.",
         "meta_title": "Kent Gearbox Specialists | County-Wide Transmission Repair Network",
         "meta_desc": "Specialist gearbox repairs across Kent. Automatic, manual and DSG transmission reconditioning across Maidstone, Canterbury, Dartford, Bromley, Ashford & Medway with free recovery.",
-        "transit_logistics": "Direct access via M20, M2, and A2 corridors connecting all Kent towns directly to our engineering workshop.",
+        "transit_logistics": "Direct access via M20, M2, and A2 corridors connecting all Kent towns directly to our specialist transmission engineering partner facility.",
         "vehicle_demographics": "Cross-channel freight support vans, rural SUV drivetrains, and London commuter vehicles.",
-        "dealer_comparison": "Dyno-tested precision rebuilds with full 12-month / 12,000-mile warranty at 50–60% below main dealer quotes.",
-        "sub_areas": ["Maidstone Hub", "Ashford International", "Canterbury & East Kent", "Dartford & Thames Gateway", "Medway Towns", "Tunbridge Wells & Sevenoaks"]
+        "dealer_comparison": "Precision rebuilds with full 12-month / 12,000-mile warranty at 50–60% below main dealer quotes.",
+        "sub_areas": ["Maidstone Area", "Ashford International", "Canterbury & East Kent", "Dartford & Thames Gateway", "Medway Towns", "Tunbridge Wells & Sevenoaks"]
     },
 
     # --- OXFORDSHIRE & BUCKS (4 LOCATIONS) ---
@@ -669,13 +669,13 @@ LOCATION_CONFIGS = [
         "lat": "52.1386",
         "lng": "-0.4667",
         "hero_headline": "BEDFORDSHIRE GEARBOX SPECIALISTS",
-        "hero_sub": "County-Wide Transmission Engineering Centre. Free Flatbed Recovery Across Bedford, Luton, Dunstable & Biggleswade.",
+        "hero_sub": "County-Wide Transmission Engineering Coverage. Free Flatbed Recovery Across Bedford, Luton, Dunstable & Biggleswade.",
         "meta_title": "Bedfordshire Gearbox Specialists | County-Wide Transmission Rebuilds",
         "meta_desc": "Bedfordshire's specialist gearbox network. Dealership-grade manual, automatic & DSG repairs across Bedford, Luton, Dunstable, Leighton Buzzard & Kempston with free recovery.",
         "transit_logistics": "Direct access via M1 (Junctions 10 to 14), A1(M) corridor, and A421 expressway connecting East and West Bedfordshire.",
         "vehicle_demographics": "Major distribution warehouse commercial fleet vans, airport transit vehicles, and Bedford commuter saloons.",
         "dealer_comparison": "Bedford and Luton motorists save thousands on transmission repairs compared to local main dealer replacements.",
-        "sub_areas": ["Bedford & Kempston", "Luton Hub", "Dunstable & Houghton Regis", "Leighton Buzzard", "Biggleswade & Sandy", "Flitwick & Ampthill"]
+        "sub_areas": ["Bedford & Kempston", "Luton Area", "Dunstable & Houghton Regis", "Leighton Buzzard", "Biggleswade & Sandy", "Flitwick & Ampthill"]
     },
     {
         "id": "northamptonshire",
@@ -690,10 +690,10 @@ LOCATION_CONFIGS = [
         "hero_sub": "Logistics Golden Triangle Transmission Specialists. Free Recovery Across Northampton, Kettering, Corby & Wellingborough.",
         "meta_title": "Northamptonshire Gearbox Specialists | County-Wide Transmission Repair",
         "meta_desc": "Specialist gearbox repair in Northamptonshire. Automatic, manual & DSG gearbox reconditioning across Northampton, Kettering, Corby, Wellingborough & Daventry with free collection.",
-        "transit_logistics": "Servicing the M1 corridor (Junctions 15 to 18), A14, A45, and A43 connecting all major distribution hubs.",
+        "transit_logistics": "Servicing the M1 corridor (Junctions 15 to 18), A14, A45, and A43 connecting all major logistics routes.",
         "vehicle_demographics": "Heavy commercial logistics van fleets, motorsport-grade drivetrains, and regional commuter saloons.",
         "dealer_comparison": "We recondition and rebuild transmissions at up to 60% below franchised main dealer replacement quotes.",
-        "sub_areas": ["Northampton Hub", "Kettering & Barton Seagrave", "Corby & Weldon", "Wellingborough & Rushden", "Daventry & Brackley", "Towcester & Silverstone Corridor"]
+        "sub_areas": ["Northampton Area", "Kettering & Barton Seagrave", "Corby & Weldon", "Wellingborough & Rushden", "Daventry & Brackley", "Towcester & Silverstone Corridor"]
     },
 
     # --- MIDLANDS & SOUTH WEST EXPANSIONS (8 HIGH-VALUE HUBS) ---
@@ -707,9 +707,9 @@ LOCATION_CONFIGS = [
         "lat": "52.4862",
         "lng": "-1.8904",
         "hero_headline": "BIRMINGHAM GEARBOX SPECIALISTS",
-        "hero_sub": "West Midlands Premier Gearbox Engineering Workshop. Precision Rebuilds & Free Recovery Across Greater Birmingham.",
+        "hero_sub": "West Midlands Premier Gearbox Engineering Service. Precision Rebuilds & Free Recovery Across Greater Birmingham.",
         "meta_title": "Birmingham Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
-        "meta_desc": "Birmingham's specialist transmission centre. Complete DSG, automatic & manual gearbox reconditioning across Birmingham, Solihull, Sutton Coldfield & Edgbaston with free collection.",
+        "meta_desc": "Birmingham's specialist transmission service. Complete DSG, automatic & manual gearbox reconditioning across Birmingham, Solihull, Sutton Coldfield & Edgbaston with free collection.",
         "transit_logistics": "Rapid recovery along the M6 (Junctions 5–9), M5, M42, and A38(M) Aston Expressway with fully Clean Air Zone compliant transporters.",
         "vehicle_demographics": "Heavy commercial distribution transit vans, executive German saloons (BMW ZF 8HP, Mercedes 9G-Tronic), and high-mileage commuter dual-clutch hatchbacks.",
         "dealer_comparison": "Birmingham main dealers charge premium replacement fees. We rebuild transmissions with genuine OEM components, offering up to 60% savings.",
@@ -761,7 +761,7 @@ LOCATION_CONFIGS = [
         "lat": "51.8787",
         "lng": "-0.4200",
         "hero_headline": "LUTON GEARBOX SPECIALISTS",
-        "hero_sub": "Bedfordshire's Specialist Gearbox Workshop. Dealership-Grade Transmission Repairs & Free Recovery in Luton.",
+        "hero_sub": "Bedfordshire's Specialist Gearbox Service. Dealership-Grade Transmission Repairs & Free Recovery in Luton.",
         "meta_title": "Luton Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
         "meta_desc": "Expert gearbox repairs in Luton. Manual, automatic and DSG transmission reconditioning across Luton, Dunstable, Leagrave, Stopsley & Airport corridor with free recovery.",
         "transit_logistics": "Fast vehicle collection along the M1 (Junctions 10 & 11), A505 relief artery, and A6 connecting South Bedfordshire.",
@@ -779,7 +779,7 @@ LOCATION_CONFIGS = [
         "lat": "51.8959",
         "lng": "0.8919",
         "hero_headline": "COLCHESTER GEARBOX SPECIALISTS",
-        "hero_sub": "North Essex Premier Transmission Workshop. Precision Rebuilds & Free Recovery in Colchester & Tendring.",
+        "hero_sub": "North Essex Premier Transmission Service. Precision Rebuilds & Free Recovery in Colchester & Tendring.",
         "meta_title": "Colchester Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
         "meta_desc": "Specialist gearbox repair in Colchester. Expert manual, automatic & DSG transmission reconditioning across Colchester, Stanway, Lexden, Mile End & Wivenhoe with free collection.",
         "transit_logistics": "Operates along the A12 trunk corridor, A120 to Harwich/Stansted, and A133 covering North Essex and the Tendring peninsula.",
@@ -833,7 +833,7 @@ LOCATION_CONFIGS = [
         "lat": "51.4545",
         "lng": "-2.5879",
         "hero_headline": "BRISTOL GEARBOX SPECIALISTS",
-        "hero_sub": "South West's Specialist Transmission Engineering Centre. Free Vehicle Collection Across Greater Bristol & Bath.",
+        "hero_sub": "South West's Specialist Transmission Engineering Service. Free Vehicle Collection Across Greater Bristol & Bath.",
         "meta_title": "Bristol Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
         "meta_desc": "Specialist gearbox repair in Bristol. Expert automatic, manual & DSG gearbox reconditioning across Bristol, Clifton, Bedminster, Filton & Kingswood with free recovery & 12-month warranty.",
         "transit_logistics": "Comprehensive coverage of the M4/M5 Almondsbury interchange, M32 city artery, and A4 Portway with Clean Air Zone compliant transporters.",
@@ -857,7 +857,7 @@ def render_html_page(loc):
               <h4 style="color:#ffffff; font-size:1.05rem; font-weight:800; margin:0;">{area}</h4>
             </div>
             <p style="color:#94a3b8; font-size:0.85rem; margin:0; line-height:1.4;">
-              Full recovery coverage, doorstep inspection, and rapid transport directly to our specialist transmission engineering workshop.
+              Full recovery coverage, doorstep inspection, and rapid transport directly to our specialist transmission engineering partner facility.
             </p>
           </div>
         """
@@ -1117,7 +1117,7 @@ def render_html_page(loc):
           </h1>
 
           <p class="hero-desc-cinematic">
-            Dedicated vehicle collection covering {loc['name']}. Precision reconditioning, mechatronic repairs, and dyno testing at our central transmission engineering facility with 12-month / 12,000-mile warranty.
+            Dedicated vehicle collection covering {loc['name']}. Precision reconditioning, mechatronic repairs, and quality testing completed through our specialist transmission partner facilities with 12-month / 12,000-mile warranty.
           </p>
 
           <!-- Clean Registration Form -->
@@ -1212,7 +1212,7 @@ def render_html_page(loc):
             Complete Gearbox Engineering For All Vehicle Types
           </h2>
           <p style="color:#94a3b8; font-size:1rem;">
-            Precision rebuild benches, electronic diagnostic rigs, and dynamic dyno testing for vehicles collected across {loc['name']}.
+            Precision rebuild benches, electronic diagnostic rigs, and dynamic component testing for vehicles collected across {loc['name']}.
           </p>
         </div>
 
@@ -1420,6 +1420,12 @@ def update_sitemap():
         ("https://gearboxgiants.co.uk/services.html", "0.9", "weekly"),
         ("https://gearboxgiants.co.uk/fault-finding.html", "0.9", "weekly"),
         ("https://gearboxgiants.co.uk/locations.html", "0.9", "weekly"),
+        ("https://gearboxgiants.co.uk/quote.html", "0.9", "weekly"),
+        ("https://gearboxgiants.co.uk/warranty.html", "0.8", "monthly"),
+        ("https://gearboxgiants.co.uk/terms.html", "0.7", "monthly"),
+        ("https://gearboxgiants.co.uk/privacy.html", "0.7", "monthly"),
+        ("https://gearboxgiants.co.uk/cookies.html", "0.6", "monthly"),
+        ("https://gearboxgiants.co.uk/complaints.html", "0.6", "monthly"),
     ]
 
     sitemap_lines = [

@@ -1,126 +1,115 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "generated_at": "2026-09-03T18:15:00Z",
+  "generated_at": "2026-09-04T00:30:00Z",
   "claims": [
     {
       "claim_id": "CLM-001",
       "claim_text": "Up to 60% cheaper than main dealer",
       "category": "Pricing & Comparison",
       "pages_used": ["index.html", "services.html", "location-*.html"],
-      "source": "Owner confirmation",
-      "evidence_available": "Industry benchmark comparison for whole-unit crate replacements vs component reconditioning; qualified in terms.html",
-      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-      "required_action": "Retain claim in copy; add qualification in Terms and Conditions that savings depend on vehicle make/model and could be less."
+      "owner_confirmation": "CONFIRMED",
+      "evidence_substantiation": "PENDING_DOCUMENTED_DATASET",
+      "evidence_task": "Collect anonymised like-for-like dealer quotes and Gearbox Giants invoices over time.",
+      "required_action": "Retain claim in copy; statutory qualification published in terms.html Clause 4."
     },
     {
       "claim_id": "CLM-002",
       "claim_text": "Main dealer crate replacement benchmarks",
       "category": "Pricing & Comparison",
       "pages_used": ["services.html", "location-*.html"],
-      "source": "Owner confirmation",
-      "evidence_available": "General industry benchmark pricing",
-      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
+      "owner_confirmation": "CONFIRMED",
+      "evidence_substantiation": "GENERAL_INDUSTRY_BENCHMARK",
       "required_action": "Frame as general industry benchmarks in copy."
     },
     {
       "claim_id": "CLM-003",
-      "claim_text": "Specific starting prices (£795, £895, £1,150, £1,195)",
+      "claim_text": "Specific starting prices (£795, £895, £950, £1,150, £1,195)",
       "category": "Pricing",
       "pages_used": ["Historical site copy"],
-      "source": "Owner directive",
-      "evidence_available": "N/A - Prices removed per business owner instruction",
-      "verification_status": "REMOVED_BY_BUSINESS_OWNER",
-      "required_action": "Remove all specific price figures from site; replace with tailored quotes upon registration inquiry."
+      "owner_confirmation": "REMOVED_BY_OWNER",
+      "evidence_substantiation": "N/A",
+      "required_action": "PURGED from all public pages; replaced with tailored quotes upon registration lookup."
     },
     {
       "claim_id": "CLM-004",
-      "claim_text": "12-Month / 12,000-Mile Gearbox Warranty",
+      "claim_text": "12-Month / 12,000-Mile Gearbox Warranty (Full Rebuilds) & 6-Month / 6,000-Mile (Components/Commercial)",
       "category": "Warranty",
       "pages_used": ["index.html", "services.html", "fault-finding.html", "locations.html", "warranty.html", "location-*.html"],
-      "source": "Official Gearbox Giants Repair Warranty Policy provided by business owner",
-      "evidence_available": "Official 17-clause Gearbox Giants Repair Warranty document",
-      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-      "required_action": "Published full 17-clause policy on warranty.html; standardized 12-Month / 12,000-Mile wording across all pages."
+      "owner_confirmation": "CONFIRMED",
+      "evidence_substantiation": "OFFICIAL_17_CLAUSE_DOCUMENT",
+      "required_action": "Published on warranty.html; standardized tier definitions in SSOT and across site."
     },
     {
       "claim_id": "CLM-005",
       "claim_text": "Specific hourly turnaround estimates (48–72 hours)",
       "category": "Operations",
       "pages_used": ["Historical site copy"],
-      "source": "Owner directive",
-      "evidence_available": "N/A - Turnaround numbers removed per business owner instruction",
-      "verification_status": "REMOVED_BY_BUSINESS_OWNER",
-      "required_action": "Remove 48-72h claims; use prompt turnaround terminology."
+      "owner_confirmation": "REMOVED_BY_OWNER",
+      "evidence_substantiation": "N/A",
+      "required_action": "PURGED from all public pages; use prompt turnaround terminology."
     },
     {
       "claim_id": "CLM-006",
-      "claim_text": "Free vehicle recovery & return delivery on completed jobs",
+      "claim_text": "Free vehicle recovery & return delivery on completed jobs (from £150 if declined)",
       "category": "Logistics",
       "pages_used": ["index.html", "services.html", "locations.html", "location-*.html", "terms.html"],
-      "source": "Owner confirmation",
-      "evidence_available": "Business policy confirmed on 2026-09-03: Free for completed jobs; from £150 if job is not completed/declined.",
-      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-      "required_action": "Disclose policy clearly in FAQs and terms.html."
+      "owner_confirmation": "CONFIRMED",
+      "evidence_substantiation": "POLICY_PUBLISHED_IN_TERMS",
+      "required_action": "Disclosed clearly in FAQs and terms.html Clause 2."
     },
     {
       "claim_id": "CLM-007",
       "claim_text": "0% Finance Available / Finance Page",
       "category": "Finance",
       "pages_used": ["Historical site copy & finance.html"],
-      "source": "Owner directive",
-      "evidence_available": "N/A - Finance removed per business owner instruction",
-      "verification_status": "REMOVED_BY_BUSINESS_OWNER",
-      "required_action": "Delete finance.html and remove all finance mentions from tickers, navigation, and footers."
+      "owner_confirmation": "REMOVED_BY_OWNER",
+      "evidence_substantiation": "N/A",
+      "required_action": "PURGED entirely from all files, sitemaps, navigation, and tickers."
     },
     {
       "claim_id": "CLM-008",
-      "claim_text": "25+ / 35+ / 37 / 45 Centres or Depots",
+      "claim_text": "25+ / 35+ / 37 Centres or Depots",
       "category": "Network Size",
       "pages_used": ["Historical site copy"],
-      "source": "Owner confirmation",
-      "evidence_available": "Service area collection model",
-      "verification_status": "REJECTED_CONTRADICTORY",
-      "required_action": "REMOVED from all production copy. Location pages represent collection service areas."
+      "owner_confirmation": "REJECTED_CONTRADICTORY",
+      "evidence_substantiation": "MISLEADING_TERMINOLOGY",
+      "required_action": "PURGED from all production copy. 45 locations are described strictly as '45 currently covered service areas'."
     },
     {
       "claim_id": "CLM-009",
-      "claim_text": "Customer-facing local workshops / public facility addresses",
+      "claim_text": "Customer-facing local workshops / physical hub addresses",
       "category": "Facility Reality",
       "pages_used": ["Historical site copy"],
-      "source": "Owner confirmation",
-      "evidence_available": "No customer-facing workshops; service via vehicle recovery",
-      "verification_status": "REJECTED_MISLEADING",
-      "required_action": "REMOVED from all location pages. Clarified that service is collection-based."
+      "owner_confirmation": "REJECTED_MISLEADING",
+      "evidence_substantiation": "CONTRACTOR_PARTNER_FACILITY_MODEL",
+      "required_action": "PURGED from all location pages. Clarified that repairs are completed through specialist transmission engineering partner facilities."
     },
     {
       "claim_id": "CLM-010",
       "claim_text": "Local vehicle demographic percentages and failure statistics",
       "category": "Local Expertise",
       "pages_used": ["Historical site copy"],
-      "source": "AI generator copy",
-      "evidence_available": "None",
-      "verification_status": "REJECTED_UNSUPPORTED",
-      "required_action": "REMOVED from all location pages."
+      "owner_confirmation": "REJECTED_UNSUPPORTED",
+      "evidence_substantiation": "NONE",
+      "required_action": "PURGED from all location pages."
     },
     {
       "claim_id": "CLM-011",
       "claim_text": "Complimentary Car Wash on Delivery for Completed Jobs",
       "category": "Service Feature",
       "pages_used": ["index.html", "services.html", "quote.html", "location-*.html"],
-      "source": "Owner confirmation",
-      "evidence_available": "Confirmed standard USP on all completed jobs",
-      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-      "required_action": "Retain on tickers and feature copy for completed repairs."
+      "owner_confirmation": "CONFIRMED",
+      "evidence_substantiation": "STANDARD_OPERATIONAL_USP",
+      "required_action": "Retained across tickers and feature copy for completed repairs."
     },
     {
       "claim_id": "CLM-012",
       "claim_text": "Master Technicians / Certified Engineers",
       "category": "Technician Titles",
       "pages_used": ["Historical site copy"],
-      "source": "Owner directive",
-      "evidence_available": "Owner approved titles: Gearbox Specialists, Transmission Engineers",
-      "verification_status": "REJECTED_UNSUPPORTED",
-      "required_action": "Replace with approved titles: 'Gearbox Specialists' and 'Transmission Engineers'."
+      "owner_confirmation": "REJECTED_UNSUPPORTED",
+      "evidence_substantiation": "NONE",
+      "required_action": "PURGED from all files; replaced with approved titles: 'Gearbox Specialists' and 'Transmission Engineers'."
     }
   ]
 }

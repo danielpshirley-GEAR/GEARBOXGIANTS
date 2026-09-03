@@ -617,12 +617,11 @@
             <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.35rem; font-size:1.05rem; padding:0.85rem 1.5rem; border-radius:8px; font-weight:800; letter-spacing:0.02em;">
               Submit Quote Request →
             </button>
-
             <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1rem; font-size:0.76rem; color:var(--text-muted); flex-wrap:wrap;">
               <span> 100% Confidential</span>
-              <span>12-Month Warranty</span>
-              <span> Free Collection</span>
-              <span> 0% Finance</span>
+              <span> 12-Month / 12,000-Mile Warranty</span>
+              <span> Free Collection (Completed Repairs)</span>
+              <span> Free Valet On Return</span>
             </div>
           </form>
         </div>
