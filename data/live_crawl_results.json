@@ -18,7 +18,7 @@
     },
     {
       "check": "home_zero_finance",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "check": "warranty_clauses",
