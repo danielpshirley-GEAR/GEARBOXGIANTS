@@ -1,0 +1,40 @@
+{
+  "urls_tested": 22,
+  "urls_passed": 22,
+  "failures": [],
+  "assertions": [
+    {
+      "check": "finance_removed",
+      "status": "PASS",
+      "code": 404
+    },
+    {
+      "check": "home_warranty",
+      "status": "PASS"
+    },
+    {
+      "check": "home_zero_unlimited",
+      "status": "PASS"
+    },
+    {
+      "check": "home_zero_finance",
+      "status": "FAIL"
+    },
+    {
+      "check": "warranty_clauses",
+      "status": "PASS"
+    },
+    {
+      "check": "terms_disclosures",
+      "status": "PASS"
+    },
+    {
+      "check": "services_sanitized",
+      "status": "PASS"
+    },
+    {
+      "check": "location_terms",
+      "status": "PASS"
+    }
+  ]
+}
