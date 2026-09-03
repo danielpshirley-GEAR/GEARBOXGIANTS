@@ -3,7 +3,7 @@
     "total_urls": 55,
     "passed_urls": 55,
     "failed_urls": 0,
-    "avg_similarity_pct": 87.5
+    "avg_similarity_pct": 87.4
   },
   "crawl_results": [
     {
@@ -669,7 +669,7 @@
       "url": "https://gearboxgiants.co.uk/location-uxbridge.html",
       "title": "Uxbridge Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
       "h1": "UXBRIDGE GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Expert gearbox repair in Uxbridge & Hillingdon Borough. Specialist dual-clutch DSG, automatic & manual rebuilds with free doorstep recovery and 12-month unlimited mileage warranty.",
+      "meta_desc": "Expert gearbox repair in Uxbridge & Hillingdon Borough. Specialist dual-clutch DSG, automatic & manual rebuilds with free doorstep recovery and 12-month / 12,000-mile warranty.",
       "canonical": "https://gearboxgiants.co.uk/location-uxbridge.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -765,9 +765,9 @@
     {
       "file": "warranty.html",
       "url": "https://gearboxgiants.co.uk/warranty.html",
-      "title": "Warranty Policy & Terms | Gearbox Giants UK",
-      "h1": "Warranty Policy",
-      "meta_desc": "Comprehensive 12-Month Unlimited Mileage Warranty details, eligible repair coverage, exclusions, and claims procedure for Gearbox Giants.",
+      "title": "Gearbox Giants Repair Warranty | 12-Month / 12,000-Mile Warranty",
+      "h1": "Gearbox Giants Repair Warranty",
+      "meta_desc": "Official Gearbox Giants Repair Warranty terms. 12-Month / 12,000-Mile coverage on qualifying full gearbox rebuilds and reconditioned units.",
       "canonical": "https://gearboxgiants.co.uk/warranty.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -1188,17 +1188,12 @@
     {
       "loc1": "berkshire",
       "loc2": "reading",
-      "jaccard_similarity_pct": 91.6
+      "jaccard_similarity_pct": 91.5
     },
     {
       "loc1": "farnborough",
       "loc2": "reading",
-      "jaccard_similarity_pct": 91.3
-    },
-    {
-      "loc1": "barnet",
-      "loc2": "croydon",
-      "jaccard_similarity_pct": 91.0
+      "jaccard_similarity_pct": 91.2
     },
     {
       "loc1": "camberley",
@@ -1206,13 +1201,13 @@
       "jaccard_similarity_pct": 91.0
     },
     {
-      "loc1": "croydon",
-      "loc2": "harrow",
-      "jaccard_similarity_pct": 91.0
+      "loc1": "barnet",
+      "loc2": "croydon",
+      "jaccard_similarity_pct": 90.9
     },
     {
-      "loc1": "essex",
-      "loc2": "hampshire",
+      "loc1": "croydon",
+      "loc2": "harrow",
       "jaccard_similarity_pct": 90.9
     },
     {
@@ -1221,9 +1216,14 @@
       "jaccard_similarity_pct": 90.7
     },
     {
+      "loc1": "essex",
+      "loc2": "hampshire",
+      "jaccard_similarity_pct": 90.6
+    },
+    {
       "loc1": "aldershot",
       "loc2": "basingstoke",
-      "jaccard_similarity_pct": 90.5
+      "jaccard_similarity_pct": 90.4
     },
     {
       "loc1": "aldershot",
@@ -1241,16 +1241,6 @@
       "jaccard_similarity_pct": 90.4
     },
     {
-      "loc1": "chelmsford",
-      "loc2": "essex",
-      "jaccard_similarity_pct": 90.4
-    },
-    {
-      "loc1": "essex",
-      "loc2": "northamptonshire",
-      "jaccard_similarity_pct": 90.4
-    },
-    {
       "loc1": "farnborough",
       "loc2": "woking",
       "jaccard_similarity_pct": 90.4
@@ -1259,6 +1249,16 @@
       "loc1": "hampshire",
       "loc2": "kent",
       "jaccard_similarity_pct": 90.4
+    },
+    {
+      "loc1": "bedfordshire",
+      "loc2": "luton",
+      "jaccard_similarity_pct": 90.3
+    },
+    {
+      "loc1": "kent",
+      "loc2": "sussex",
+      "jaccard_similarity_pct": 90.2
     }
   ],
   "legal_audit": [
@@ -1284,7 +1284,7 @@
       "file": "warranty.html",
       "url": "https://gearboxgiants.co.uk/warranty.html",
       "exists_on_disk": true,
-      "size_bytes": 5394,
+      "size_bytes": 16283,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"

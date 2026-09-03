@@ -64,7 +64,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "South London gearbox repair and reconditioning. Specialist diagnostics and rebuilds across Croydon, Bromley, Wandsworth, Greenwich, Lambeth, Lewisham & Southwark with full 12-month warranty.",
         "transit_logistics": "Comprehensive recovery coverage spanning the South Circular (A205), A3 corridor, A23 Purley Way, and A2 Dover Road artery, navigating ULEZ and Low Emission Zones seamlessly.",
         "vehicle_demographics": "Extensive mix of family SUVs (Land Rover Discovery Sport / Evoque ZF 9HP, Audi Q5 S-Tronic), commuter hatchbacks (Ford Fiesta Powershift, VW Polo DSG), and high-torque diesel commercials suffering from dual-mass flywheel judder and torque converter shudder.",
-        "dealer_comparison": "South London main agents frequently enforce 3–5 week workshop booking queues with £5,000+ unit replacement quotes. We provide fast flatbed collection, teardown inspection within 24 hours, and rebuilds backed by our 12-month unlimited mileage warranty.",
+        "dealer_comparison": "South London main agents frequently enforce 3–5 week workshop booking queues with £5,000+ unit replacement quotes. We provide fast flatbed collection, teardown inspection within 24 hours, and rebuilds backed by our 12-month / 12,000-mile warranty.",
         "sub_areas": ["Croydon & Purley", "Bromley & Beckenham", "Wandsworth & Clapham", "Greenwich & Blackheath", "Wimbledon & Merton", "Dulwich & Southwark"]
     },
     {
@@ -205,7 +205,7 @@ LOCATION_CONFIGS = [
         "hero_headline": "UXBRIDGE GEARBOX SPECIALISTS",
         "hero_sub": "Complete Transmission Diagnostics, Precision Reconditioning & Free Recovery in Uxbridge & Hillingdon.",
         "meta_title": "Uxbridge Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
-        "meta_desc": "Expert gearbox repair in Uxbridge & Hillingdon Borough. Specialist dual-clutch DSG, automatic & manual rebuilds with free doorstep recovery and 12-month unlimited mileage warranty.",
+        "meta_desc": "Expert gearbox repair in Uxbridge & Hillingdon Borough. Specialist dual-clutch DSG, automatic & manual rebuilds with free doorstep recovery and 12-month / 12,000-mile warranty.",
         "transit_logistics": "Immediate dispatch along the M40 / A40 Western Avenue, M25 Junction 16, and A4020 for rapid customer collection across West London and South Bucks.",
         "vehicle_demographics": "Fleet vehicles serving Stockley Park business hub, Heathrow logistics transit vans, and residential commuter cars.",
         "dealer_comparison": "Why pay main dealer surcharges? We use state-of-the-art diagnostic tools, OEM replacement components, and dyno test every completed transmission before handover.",
@@ -408,7 +408,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "Berkshire's specialist gearbox network. Dealership-grade automatic, DSG and manual gearbox repairs across Reading, Slough, Bracknell, Maidenhead, Newbury & Wokingham with free recovery.",
         "transit_logistics": "Complete coverage of the M4 artery (Junctions 5 to 14), A329(M), and A4 Bath Road corridor with rapid response recovery transporters.",
         "vehicle_demographics": "Thames Valley technology fleet vehicles, executive commuters, and commercial logistics distribution vans.",
-        "dealer_comparison": "Save up to 60% on main dealer prices across Berkshire with our 12-month unlimited mileage warranty.",
+        "dealer_comparison": "Save up to 60% on main dealer prices across Berkshire with our 12-month / 12,000-mile warranty.",
         "sub_areas": ["Reading Hub", "Slough & Windsor", "Bracknell Forest", "Maidenhead & Cookham", "Wokingham & Winnersh", "Newbury & West Berkshire"]
     },
 
@@ -503,7 +503,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "Hampshire's specialist gearbox repair network. Dealership-grade transmission reconditioning across Southampton, Portsmouth, Basingstoke, Farnborough, Winchester & Andover.",
         "transit_logistics": "Complete M3 and M27 motorway coverage, servicing all Hampshire towns with dedicated flatbed transporters.",
         "vehicle_demographics": "Port logistics commercial fleets, coastal commuter automatics, and rural Hampshire 4WD drivetrains.",
-        "dealer_comparison": "Save thousands compared to Hampshire main dealerships with our 12-month unlimited mileage warranty.",
+        "dealer_comparison": "Save thousands compared to Hampshire main dealerships with our 12-month / 12,000-mile warranty.",
         "sub_areas": ["Southampton Hub", "Portsmouth & Southsea", "Basingstoke & Deane", "Farnborough & Aldershot", "Winchester & Eastleigh", "Andover & Test Valley"]
     },
     {
@@ -616,7 +616,7 @@ LOCATION_CONFIGS = [
         "meta_desc": "Specialist gearbox repairs across Kent. Automatic, manual and DSG transmission reconditioning across Maidstone, Canterbury, Dartford, Bromley, Ashford & Medway with free recovery.",
         "transit_logistics": "Direct access via M20, M2, and A2 corridors connecting all Kent towns directly to our engineering workshop.",
         "vehicle_demographics": "Cross-channel freight support vans, rural SUV drivetrains, and London commuter vehicles.",
-        "dealer_comparison": "Dyno-tested precision rebuilds with full 12-month unlimited mileage warranty at 50–60% below main dealer quotes.",
+        "dealer_comparison": "Dyno-tested precision rebuilds with full 12-month / 12,000-mile warranty at 50–60% below main dealer quotes.",
         "sub_areas": ["Maidstone Hub", "Ashford International", "Canterbury & East Kent", "Dartford & Thames Gateway", "Medway Towns", "Tunbridge Wells & Sevenoaks"]
     },
 
@@ -881,7 +881,7 @@ def render_html_page(loc):
         },
         {
             "q": f"What warranty is provided with your {loc['name']} gearbox repairs?",
-            "a": f"Every reconditioned gearbox and transmission rebuild comes backed by our comprehensive 12-month unlimited mileage warranty covering all parts and labour, giving you complete peace of mind."
+            "a": f"Qualifying full gearbox rebuilds and reconditioned gearbox installations include our 12-Month / 12,000-Mile warranty covering parts and labour, giving you complete peace of mind."
         }
     ]
 
@@ -1117,7 +1117,7 @@ def render_html_page(loc):
           </h1>
 
           <p class="hero-desc-cinematic">
-            Dedicated vehicle collection covering {loc['name']}. Precision reconditioning, mechatronic repairs, and dyno testing at our central transmission engineering facility with 12-month unlimited mileage warranty.
+            Dedicated vehicle collection covering {loc['name']}. Precision reconditioning, mechatronic repairs, and dyno testing at our central transmission engineering facility with 12-month / 12,000-mile warranty.
           </p>
 
           <!-- Clean Registration Form -->
@@ -1146,7 +1146,7 @@ def render_html_page(loc):
         <div class="marquee-content">
           <span>FREE FLATBED RECOVERY ACROSS {loc['name'].upper()}</span>
           <span class="ticker-dot">✦</span>
-          <span>12-MONTH UNLIMITED MILEAGE WARRANTY</span>
+          <span>12-MONTH / 12,000-MILE WARRANTY</span>
           <span class="ticker-dot">✦</span>
           <span>ALL MAKES & MODELS &bull; DSG &bull; AUTO &bull; MANUAL</span>
           <span class="ticker-dot">✦</span>

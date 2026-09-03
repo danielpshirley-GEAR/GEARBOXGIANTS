@@ -34,13 +34,13 @@
     },
     {
       "claim_id": "CLM-004",
-      "claim_text": "12-Month Unlimited Mileage Warranty",
+      "claim_text": "12-Month / 12,000-Mile Gearbox Warranty (6-Month / 6,000-Mile for component repairs or commercial use)",
       "category": "Warranty",
-      "pages_used": ["index.html", "services.html", "fault-finding.html", "locations.html", "location-*.html"],
-      "source": "Internal business policy",
-      "evidence_available": "Terms document draft",
-      "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
-      "required_action": "Standardized across all pages; requires formal sign-off by business owner."
+      "pages_used": ["index.html", "services.html", "fault-finding.html", "locations.html", "warranty.html", "location-*.html"],
+      "source": "Official Gearbox Giants Repair Warranty Policy provided by business owner",
+      "evidence_available": "Official 17-clause Gearbox Giants Repair Warranty document confirmed by business owner on 2026-09-03",
+      "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
+      "required_action": "Propagated 12-Month / 12,000-Mile wording across all pages, removed all unverified 'unlimited mileage' claims, and published full 17-clause terms on warranty.html."
     },
     {
       "claim_id": "CLM-005",

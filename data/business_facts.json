@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "meta": {
-    "version": "2.0.0",
-    "updated_at": "2026-09-02T23:50:00Z",
+    "version": "2.1.0",
+    "updated_at": "2026-09-03T13:06:00Z",
     "description": "Gearbox Giants Central Single Source of Truth with Explicit Verification Status"
   },
   "business": {
@@ -27,12 +27,32 @@
     }
   },
   "warranty": {
-    "policy_name": "12-Month Unlimited Mileage Warranty",
-    "duration": "12 Months",
-    "mileage": "Unlimited Mileage",
-    "coverage": "Parts & Labour on reconditioned units and major overhauls",
-    "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
-    "notes": "Historically conflicted with 12,000-mile wording; standardized subject to final business owner confirmation."
+    "policy_name": "Gearbox Giants Repair Warranty",
+    "full_rebuild_and_reconditioned_units": {
+      "duration": "12 Months",
+      "mileage": "12,000 Miles",
+      "condition": "whichever occurs first",
+      "usage": "Privately used vehicles"
+    },
+    "component_specific_repairs": {
+      "duration": "6 Months",
+      "mileage": "6,000 Miles",
+      "condition": "whichever occurs first",
+      "scope": "Applies to specific components replaced and workmanship undertaken"
+    },
+    "commercial_and_intensive_use": {
+      "duration": "6 Months",
+      "mileage": "6,000 Miles",
+      "condition": "whichever occurs first",
+      "scope": "Taxis, private-hire vehicles, driving-school vehicles, multi-drop delivery vehicles, intensive commercial use"
+    },
+    "used_or_salvage_components": {
+      "terms": "Confirmed on quotation/invoice before installation"
+    },
+    "coverage_scope": "Faults arising from workmanship carried out by Gearbox Giants and defects affecting parts supplied and fitted by Gearbox Giants specified on invoice.",
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
+    "verified_at": "2026-09-03T13:05:47Z",
+    "notes": "Officially confirmed by business owner: 12 Months or 12,000 miles (whichever occurs first) on full rebuilds / reconditioned units for private vehicles, and 6 Months / 6,000 miles for component repairs or commercial use."
   },
   "turnaround": {
     "diagnostic_estimate": "Same day to 24 hours from arrival at central facility",
