@@ -44,7 +44,7 @@ def run_empirical_audit():
 
     all_html_files = sorted(glob.glob(os.path.join(BASE_DIR, "*.html")))
     core_files = ["index.html", "services.html", "fault-finding.html", "locations.html"]
-    legal_files = ["privacy.html", "terms.html", "warranty.html", "finance.html", "cookies.html", "complaints.html"]
+    legal_files = ["privacy.html", "terms.html", "warranty.html", "cookies.html", "complaints.html"]
     location_files = [f for f in all_html_files if os.path.basename(f).startswith("location-")]
 
     # 1. Technical Crawl of All Deployed URLs

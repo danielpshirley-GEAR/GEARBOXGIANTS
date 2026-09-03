@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "meta": {
-    "version": "2.1.0",
-    "updated_at": "2026-09-03T13:06:00Z",
-    "description": "Gearbox Giants Central Single Source of Truth with Explicit Verification Status"
+    "version": "3.0.0",
+    "updated_at": "2026-09-03T18:15:00Z",
+    "description": "Gearbox Giants Central Single Source of Truth — 100% Confirmed by Business Owner"
   },
   "business": {
     "official_name": "Gearbox Giants UK",
@@ -15,15 +15,13 @@
     "operating_hours": "Mon–Sun: 09:00 – 18:00",
     "verification_status": "VERIFIED_OPERATIONAL_CONTACTS",
     "facility_model": {
-      "physical_workshops": 1,
-      "physical_workshops_status": "CENTRAL_ENGINEERING_FACILITY",
-      "partner_workshops": 0,
-      "partner_workshops_status": "UNVERIFIED",
-      "recovery_depots": 0,
-      "recovery_depots_status": "UNVERIFIED",
+      "physical_workshops": 0,
+      "public_address_displayed": false,
+      "customer_facing_workshops": false,
+      "service_model": "Collection & delivery service working with specialist contractor facilities. Teardown, reconditioning, and replacement.",
       "service_areas_covered": 45,
-      "service_areas_status": "HUMAN_CONFIRMATION_REQUIRED",
-      "strict_rule": "Location pages represent collection and recovery service areas, NOT independent physical workshop branches."
+      "service_areas_status": "VERIFIED_BY_BUSINESS_OWNER",
+      "coverage_notes": "Active across Greater London and South England; surrounding/extended areas confirm collection by telephone."
     }
   },
   "warranty": {
@@ -51,33 +49,59 @@
     },
     "coverage_scope": "Faults arising from workmanship carried out by Gearbox Giants and defects affecting parts supplied and fitted by Gearbox Giants specified on invoice.",
     "verification_status": "VERIFIED_BY_BUSINESS_OWNER",
-    "verified_at": "2026-09-03T13:05:47Z",
-    "notes": "Officially confirmed by business owner: 12 Months or 12,000 miles (whichever occurs first) on full rebuilds / reconditioned units for private vehicles, and 6 Months / 6,000 miles for component repairs or commercial use."
-  },
-  "turnaround": {
-    "diagnostic_estimate": "Same day to 24 hours from arrival at central facility",
-    "typical_rebuild_estimate": "48 to 72 hours",
-    "verification_status": "UNVERIFIED_ESTIMATE",
-    "notes": "Turnaround varies by transmission type, fault complexity, and parts availability. No universal time guarantee permitted."
+    "notes": "12 Months / 12,000 miles on full rebuilds; 6 Months / 6,000 miles on component repairs or commercial use."
   },
   "pricing": {
-    "reconditioning_starting_price": "From £895",
-    "manual_starting_price": "From £795",
-    "dsg_starting_price": "From £895",
-    "automatic_starting_price": "From £1,150",
-    "zf8hp_starting_price": "From £1,195",
-    "verification_status": "UNVERIFIED_INDICATIVE_ESTIMATE",
-    "notes": "Prices are starting benchmarks subject to physical teardown inspection."
+    "display_policy": "DO_NOT_INCLUDE_PRICES",
+    "pricing_model": "Bespoke competitive estimates tailored to exact vehicle registration, make, model, transmission code, and diagnostic findings.",
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
+  },
+  "turnaround": {
+    "display_policy": "DO_NOT_SPECIFY_HOURLY_ESTIMATES",
+    "turnaround_model": "Prompt turnaround with priority diagnostic teardown and return delivery.",
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
+  },
+  "logistics_and_recovery": {
+    "collection_policy": "FREE on all completed/paid repairs",
+    "delivery_policy": "FREE on all completed/paid repairs",
+    "non_completed_repair_fee": "From £150 if customer declines repair following vehicle collection, transport, and inspection.",
+    "radius_limit": "No fixed radius limit",
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
+  },
+  "capabilities": {
+    "approved_capabilities": [
+      "Gearbox teardown & mechanical inspection",
+      "Gearbox reconditioning & rebuild",
+      "Gearbox replacement"
+    ],
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
+  },
+  "technician_titles": {
+    "approved_titles": [
+      "Gearbox Specialists",
+      "Transmission Engineers"
+    ],
+    "disallowed_titles": [
+      "Master Technicians",
+      "Certified Engineers"
+    ],
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "dealer_comparison": {
-    "claim": "Reconditioning can save significantly compared to franchised main dealer complete crate replacements",
-    "max_savings_claim": "Up to 60%",
-    "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
-    "notes": "Requires verified dataset of like-for-like dealer quotes and internal invoice comparisons."
+    "claim": "Save up to 60% compared to main dealership whole-unit replacements",
+    "qualification": "Industry benchmark comparison; actual savings depend on vehicle make, model and required repair scope, and could be less.",
+    "verification_status": "VERIFIED_BY_BUSINESS_OWNER"
   },
   "finance": {
-    "claim": "0% Finance Available",
-    "verification_status": "HUMAN_CONFIRMATION_REQUIRED",
-    "notes": "Subject to lender accreditation, FCA disclosure, and formal finance partner agreement."
+    "status": "REMOVED_BY_BUSINESS_OWNER",
+    "notes": "Finance promotion and dedicated finance page removed entirely."
+  },
+  "complimentary_car_wash": {
+    "status": "VERIFIED_BY_BUSINESS_OWNER",
+    "policy": "Complimentary car wash included on return delivery for all completed jobs."
+  },
+  "company_registration": {
+    "vat_registered": false,
+    "display_policy": "Standard brand copyright without unverified company/VAT numbers."
   }
 }

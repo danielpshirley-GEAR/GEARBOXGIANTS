@@ -1,9 +1,9 @@
 {
   "crawl_summary": {
-    "total_urls": 55,
-    "passed_urls": 55,
+    "total_urls": 54,
+    "passed_urls": 54,
     "failed_urls": 0,
-    "avg_similarity_pct": 87.4
+    "avg_similarity_pct": 87.3
   },
   "crawl_results": [
     {
@@ -41,20 +41,6 @@
       "h1": "HOW TO FIND YOUR GEARBOX FAULT.",
       "meta_desc": "Use our interactive gearbox fault finder to diagnose transmission issues, grinding noises, delayed shifts, mechatronic errors, leaks, and warning lights with free specialist quote.",
       "canonical": "https://gearboxgiants.co.uk/fault-finding.html",
-      "has_schema": true,
-      "has_legal_links": true,
-      "us_spelling_labor": false,
-      "misleading_workshop": false,
-      "all_tests_passed": true,
-      "score": 100
-    },
-    {
-      "file": "finance.html",
-      "url": "https://gearboxgiants.co.uk/finance.html",
-      "title": "0% Finance Information | Gearbox Giants UK",
-      "h1": "Finance Information",
-      "meta_desc": "Spread the cost of gearbox repair with 0% interest and flexible monthly payment plans via approved automotive credit partners.",
-      "canonical": "https://gearboxgiants.co.uk/finance.html",
       "has_schema": true,
       "has_legal_links": true,
       "us_spelling_labor": false,
@@ -107,9 +93,9 @@
     {
       "file": "location-aylesbury.html",
       "url": "https://gearboxgiants.co.uk/location-aylesbury.html",
-      "title": "Aylesbury Gearbox Specialists | Automatic & Manual Transmission Repair",
+      "title": "Aylesbury Gearbox Specialists | Automatic & Manual Transmission Rebuilds",
       "h1": "AYLESBURY GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Expert gearbox repair in Aylesbury. Manual, automatic & DSG transmission rebuilds across Aylesbury, Stoke Mandeville, Wendover & Tring with free collection & 12-month warranty.",
+      "meta_desc": "Specialist gearbox repair in Aylesbury. Manual, automatic and DSG transmission reconditioning across Aylesbury, Wendover, Tring, Thame & Buckingham with free collection & warranty.",
       "canonical": "https://gearboxgiants.co.uk/location-aylesbury.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -151,7 +137,7 @@
       "url": "https://gearboxgiants.co.uk/location-bedfordshire.html",
       "title": "Bedfordshire Gearbox Specialists | County-Wide Transmission Rebuilds",
       "h1": "BEDFORDSHIRE GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Specialist gearbox repairs across Bedfordshire. Expert automatic, manual and DSG transmission rebuilds across Bedford, Luton, Dunstable, Kempston & Biggleswade with free recovery.",
+      "meta_desc": "Bedfordshire's specialist gearbox network. Dealership-grade manual, automatic & DSG repairs across Bedford, Luton, Dunstable, Leighton Buzzard & Kempston with free recovery.",
       "canonical": "https://gearboxgiants.co.uk/location-bedfordshire.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -485,9 +471,9 @@
     {
       "file": "location-milton-keynes.html",
       "url": "https://gearboxgiants.co.uk/location-milton-keynes.html",
-      "title": "Milton Keynes Gearbox Specialists | Automatic & DSG Transmission Rebuilds",
+      "title": "Milton Keynes Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
       "h1": "MILTON KEYNES GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Specialist gearbox repair in Milton Keynes. Manual, automatic and DSG transmission reconditioning across Central MK, Bletchley, Newport Pagnell & Stony Stratford with free recovery.",
+      "meta_desc": "Specialist gearbox repair in Milton Keynes. Precision manual, automatic & DSG transmission rebuilds across Central MK, Bletchley, Newport Pagnell & Wolverton with free collection.",
       "canonical": "https://gearboxgiants.co.uk/location-milton-keynes.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -527,9 +513,9 @@
     {
       "file": "location-oxford.html",
       "url": "https://gearboxgiants.co.uk/location-oxford.html",
-      "title": "Oxford Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
+      "title": "Oxford Gearbox Specialists | Automatic & Manual Transmission Repairs",
       "h1": "OXFORD GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Specialist gearbox repair in Oxford. Expert manual, automatic & DSG transmission reconditioning across Oxford, Cowley, Headington, Botley & Abingdon with free vehicle recovery.",
+      "meta_desc": "Specialist gearbox repair in Oxford. Expert automatic, manual & DSG gearbox reconditioning across Oxford, Abingdon, Witney, Bicester & Didcot with free vehicle recovery.",
       "canonical": "https://gearboxgiants.co.uk/location-oxford.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -541,9 +527,9 @@
     {
       "file": "location-portsmouth.html",
       "url": "https://gearboxgiants.co.uk/location-portsmouth.html",
-      "title": "Portsmouth Gearbox Specialists | Automatic & Manual Transmission Repairs",
+      "title": "Portsmouth Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
       "h1": "PORTSMOUTH GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Specialist gearbox repair in Portsmouth. Expert automatic, manual & DSG gearbox reconditioning across Portsmouth, Southsea, Cosham, Havant & Waterlooville with free recovery.",
+      "meta_desc": "Specialist gearbox repair in Portsmouth. Expert manual, automatic & DSG transmission reconditioning across Southsea, Cosham, Havant, Waterlooville & Fareham with free recovery.",
       "canonical": "https://gearboxgiants.co.uk/location-portsmouth.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -751,9 +737,9 @@
     {
       "file": "terms.html",
       "url": "https://gearboxgiants.co.uk/terms.html",
-      "title": "Terms & Conditions | Gearbox Giants UK",
+      "title": "Terms & Conditions of Service | Gearbox Giants UK",
       "h1": "Terms & Conditions of Service",
-      "meta_desc": "Terms and Conditions of service for Gearbox Giants transmission diagnostic, reconditioning, and vehicle recovery services.",
+      "meta_desc": "Official Terms and Conditions of service for Gearbox Giants transmission diagnostic, reconditioning, replacement, and vehicle recovery services.",
       "canonical": "https://gearboxgiants.co.uk/terms.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -1188,77 +1174,77 @@
     {
       "loc1": "berkshire",
       "loc2": "reading",
-      "jaccard_similarity_pct": 91.5
-    },
-    {
-      "loc1": "farnborough",
-      "loc2": "reading",
       "jaccard_similarity_pct": 91.2
-    },
-    {
-      "loc1": "camberley",
-      "loc2": "farnborough",
-      "jaccard_similarity_pct": 91.0
     },
     {
       "loc1": "barnet",
       "loc2": "croydon",
-      "jaccard_similarity_pct": 90.9
+      "jaccard_similarity_pct": 91.1
     },
     {
-      "loc1": "croydon",
-      "loc2": "harrow",
+      "loc1": "bedfordshire",
+      "loc2": "kent",
       "jaccard_similarity_pct": 90.9
     },
     {
       "loc1": "berkshire",
       "loc2": "hampshire",
-      "jaccard_similarity_pct": 90.7
+      "jaccard_similarity_pct": 90.9
     },
     {
-      "loc1": "essex",
-      "loc2": "hampshire",
-      "jaccard_similarity_pct": 90.6
+      "loc1": "camberley",
+      "loc2": "farnborough",
+      "jaccard_similarity_pct": 90.9
     },
     {
-      "loc1": "aldershot",
-      "loc2": "basingstoke",
-      "jaccard_similarity_pct": 90.4
+      "loc1": "farnborough",
+      "loc2": "reading",
+      "jaccard_similarity_pct": 90.9
+    },
+    {
+      "loc1": "croydon",
+      "loc2": "harrow",
+      "jaccard_similarity_pct": 90.8
     },
     {
       "loc1": "aldershot",
       "loc2": "farnborough",
-      "jaccard_similarity_pct": 90.4
-    },
-    {
-      "loc1": "aldershot",
-      "loc2": "woking",
-      "jaccard_similarity_pct": 90.4
-    },
-    {
-      "loc1": "brighton",
-      "loc2": "croydon",
-      "jaccard_similarity_pct": 90.4
+      "jaccard_similarity_pct": 90.6
     },
     {
       "loc1": "farnborough",
       "loc2": "woking",
-      "jaccard_similarity_pct": 90.4
+      "jaccard_similarity_pct": 90.6
     },
     {
-      "loc1": "hampshire",
-      "loc2": "kent",
-      "jaccard_similarity_pct": 90.4
+      "loc1": "brighton",
+      "loc2": "croydon",
+      "jaccard_similarity_pct": 90.5
     },
     {
-      "loc1": "bedfordshire",
-      "loc2": "luton",
+      "loc1": "aldershot",
+      "loc2": "basingstoke",
       "jaccard_similarity_pct": 90.3
     },
     {
-      "loc1": "kent",
-      "loc2": "sussex",
-      "jaccard_similarity_pct": 90.2
+      "loc1": "aldershot",
+      "loc2": "woking",
+      "jaccard_similarity_pct": 90.3
+    },
+    {
+      "loc1": "berkshire",
+      "loc2": "essex",
+      "jaccard_similarity_pct": 90.3
+    },
+    {
+      "loc1": "chelmsford",
+      "loc2": "croydon",
+      "jaccard_similarity_pct": 90.3
+    },
+    {
+      "loc1": "essex",
+      "loc2": "hampshire",
+      "jaccard_similarity_pct": 90.3
     }
   ],
   "legal_audit": [
@@ -1266,7 +1252,7 @@
       "file": "privacy.html",
       "url": "https://gearboxgiants.co.uk/privacy.html",
       "exists_on_disk": true,
-      "size_bytes": 5309,
+      "size_bytes": 5241,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"
@@ -1275,7 +1261,7 @@
       "file": "terms.html",
       "url": "https://gearboxgiants.co.uk/terms.html",
       "exists_on_disk": true,
-      "size_bytes": 5204,
+      "size_bytes": 6418,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"
@@ -1284,16 +1270,7 @@
       "file": "warranty.html",
       "url": "https://gearboxgiants.co.uk/warranty.html",
       "exists_on_disk": true,
-      "size_bytes": 16283,
-      "http_status_expected": 200,
-      "robots": "noindex, nofollow (Draft Protection)",
-      "status": "PASS"
-    },
-    {
-      "file": "finance.html",
-      "url": "https://gearboxgiants.co.uk/finance.html",
-      "exists_on_disk": true,
-      "size_bytes": 5099,
+      "size_bytes": 16215,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"
@@ -1302,7 +1279,7 @@
       "file": "cookies.html",
       "url": "https://gearboxgiants.co.uk/cookies.html",
       "exists_on_disk": true,
-      "size_bytes": 4537,
+      "size_bytes": 4469,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"
@@ -1311,7 +1288,7 @@
       "file": "complaints.html",
       "url": "https://gearboxgiants.co.uk/complaints.html",
       "exists_on_disk": true,
-      "size_bytes": 4926,
+      "size_bytes": 4858,
       "http_status_expected": 200,
       "robots": "noindex, nofollow (Draft Protection)",
       "status": "PASS"
