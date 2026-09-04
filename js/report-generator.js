@@ -315,7 +315,7 @@ export class ReportGenerator {
           <!-- TAB 4: WORKSHOP ACTION CHECKLIST -->
           <div class="report-tab-content" id="tab-checklist">
             <div class="checklist-wrapper">
-              <p class="checklist-intro">Handover diagnostic procedure checklist for workshop Master Technicians:</p>
+              <p class="checklist-intro">Handover diagnostic procedure checklist for transmission specialists:</p>
               <ul class="workshop-checklist">
                 ${diagnostic.mechanicChecklist.map((item, idx) => `
                   <li class="checklist-item">
