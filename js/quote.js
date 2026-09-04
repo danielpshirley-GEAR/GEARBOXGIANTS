@@ -1414,7 +1414,7 @@
     if (document.getElementById('quote-make-select-page')) {
       populateMakeDropdown('page');
 
-      // Check URL query parameters (e.g. quote.html?reg=BK64FYM)
+      // Check URL query parameters (e.g. quote.html?reg=BK64FYM&symptom=dsg-juddering&landing_page=fault-dsg-juddering)
       const urlParams = new URLSearchParams(window.location.search);
       const regParam = urlParams.get('reg');
       if (regParam) {
@@ -1422,6 +1422,23 @@
         if (pageInput) {
           pageInput.value = formatUkPlate(regParam);
           executeRegLookup(regParam, 'page');
+        }
+      }
+
+      const symptomParam = urlParams.get('symptom');
+      if (symptomParam) {
+        const descInput = document.getElementById('quote-desc');
+        if (descInput && !descInput.value) {
+          const formattedSymptom = symptomParam.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          descInput.value = `Reported Symptom: ${formattedSymptom}`;
+        }
+      }
+
+      const landingPageParam = urlParams.get('landing_page');
+      if (landingPageParam) {
+        const landingInput = document.getElementById('quote-landing-page');
+        if (landingInput) {
+          landingInput.value = landingPageParam;
         }
       }
     }

@@ -103,8 +103,68 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gearboxgiants.co.uk/fault-finding.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://gearboxgiants.co.uk/fault-finding</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/gearbox-slipping</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/automatic-gearbox-jerking</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/dsg-juddering</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/car-wont-go-into-gear</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/car-goes-into-gear-but-wont-move</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/no-reverse-gear</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/gearbox-warning-light</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/delayed-gear-engagement</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/gearbox-whining-noise</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gearboxgiants.co.uk/faults/gearbox-limp-mode</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
