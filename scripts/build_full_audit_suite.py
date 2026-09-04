@@ -51,7 +51,7 @@ def run_empirical_audit():
     crawl_results = []
     for fpath in all_html_files:
         fname = os.path.basename(fpath)
-        if fname in ["seo-maker.html", "quote.html"]:
+        if fname in ["seo-maker.html", "quote.html", "homepage-comparison.html", "index-before-audit.html"]:
             continue
 
         with open(fpath, "r", encoding="utf-8") as fp:

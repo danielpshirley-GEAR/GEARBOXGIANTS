@@ -3,7 +3,7 @@
     "total_urls": 54,
     "passed_urls": 54,
     "failed_urls": 0,
-    "avg_similarity_pct": 87.3
+    "avg_similarity_pct": 87.4
   },
   "crawl_results": [
     {
@@ -53,7 +53,7 @@
       "url": "https://gearboxgiants.co.uk/",
       "title": "Gearbox Giants | UK Specialist Gearbox Repair, Replacement & Reconditioning",
       "h1": "GEARBOX REPAIR MADE SIMPLE. YOUR VEHICLE FIXED IN JUST 3 STEPS",
-      "meta_desc": "Specialist gearbox repair, replacement and reconditioning across 25+ UK centres. Free vehicle recovery, 100% warranty, up to 60% cheaper than main dealership.",
+      "meta_desc": "Specialist gearbox repair, replacement and reconditioning across 45 covered service areas. Free vehicle recovery on completed repairs, 12-Month / 12,000-Mile warranty, up to 60% cheaper than main dealership.",
       "canonical": "https://gearboxgiants.co.uk/",
       "has_schema": true,
       "has_legal_links": true,
@@ -165,7 +165,7 @@
       "url": "https://gearboxgiants.co.uk/location-birmingham.html",
       "title": "Birmingham Gearbox Specialists | Automatic, DSG & Manual Gearbox Repair",
       "h1": "BIRMINGHAM GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "Birmingham's specialist transmission centre. Complete DSG, automatic & manual gearbox reconditioning across Birmingham, Solihull, Sutton Coldfield & Edgbaston with free collection.",
+      "meta_desc": "Birmingham's specialist transmission service. Complete DSG, automatic & manual gearbox reconditioning across Birmingham, Solihull, Sutton Coldfield & Edgbaston with free collection.",
       "canonical": "https://gearboxgiants.co.uk/location-birmingham.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -431,7 +431,7 @@
       "url": "https://gearboxgiants.co.uk/location-london.html",
       "title": "West London Gearbox Specialists | Transmission Repair & Rebuilds",
       "h1": "WEST LONDON GEARBOX SPECIALISTS PRECISION RECONDITIONING & FREE RECOVERY",
-      "meta_desc": "West London's specialist gearbox centre. Fast diagnosis, mechatronic repairs, manual & automatic rebuilds with free vehicle recovery across Ealing, Uxbridge, Harrow, Hounslow & Wembley.",
+      "meta_desc": "West London specialist gearbox repair. Fast diagnosis, mechatronic repairs, manual & automatic rebuilds with free vehicle recovery across Ealing, Uxbridge, Harrow, Hounslow & Wembley.",
       "canonical": "https://gearboxgiants.co.uk/location-london.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -695,9 +695,9 @@
     {
       "file": "locations.html",
       "url": "https://gearboxgiants.co.uk/locations.html",
-      "title": "Service Locations & Centres | Gearbox Giants UK",
-      "h1": "GEARBOX GIANTS CENTRES & HUBS.",
-      "meta_desc": "Over 25+ specialist gearbox centres and recovery hubs across London and South England. Find your nearest location with free collection and delivery.",
+      "title": "Service & Collection Areas | Gearbox Giants UK",
+      "h1": "GEARBOX REPAIR WITH FREE VEHICLE RECOVERY",
+      "meta_desc": "Specialist gearbox repair and vehicle collection coverage across Greater London, Berkshire, Surrey, Sussex, Hampshire, Kent, Essex, and the Midlands across 45 currently covered service areas.",
       "canonical": "https://gearboxgiants.co.uk/locations.html",
       "has_schema": true,
       "has_legal_links": true,
@@ -1174,11 +1174,16 @@
     {
       "loc1": "berkshire",
       "loc2": "reading",
-      "jaccard_similarity_pct": 91.2
+      "jaccard_similarity_pct": 91.5
     },
     {
       "loc1": "barnet",
       "loc2": "croydon",
+      "jaccard_similarity_pct": 91.4
+    },
+    {
+      "loc1": "croydon",
+      "loc2": "harrow",
       "jaccard_similarity_pct": 91.1
     },
     {
@@ -1202,9 +1207,14 @@
       "jaccard_similarity_pct": 90.9
     },
     {
-      "loc1": "croydon",
-      "loc2": "harrow",
+      "loc1": "brighton",
+      "loc2": "croydon",
       "jaccard_similarity_pct": 90.8
+    },
+    {
+      "loc1": "aldershot",
+      "loc2": "camberley",
+      "jaccard_similarity_pct": 90.6
     },
     {
       "loc1": "aldershot",
@@ -1217,33 +1227,23 @@
       "jaccard_similarity_pct": 90.6
     },
     {
-      "loc1": "brighton",
+      "loc1": "chelmsford",
       "loc2": "croydon",
       "jaccard_similarity_pct": 90.5
     },
     {
       "loc1": "aldershot",
       "loc2": "basingstoke",
-      "jaccard_similarity_pct": 90.3
+      "jaccard_similarity_pct": 90.4
+    },
+    {
+      "loc1": "croydon",
+      "loc2": "south-london",
+      "jaccard_similarity_pct": 90.4
     },
     {
       "loc1": "aldershot",
       "loc2": "woking",
-      "jaccard_similarity_pct": 90.3
-    },
-    {
-      "loc1": "berkshire",
-      "loc2": "essex",
-      "jaccard_similarity_pct": 90.3
-    },
-    {
-      "loc1": "chelmsford",
-      "loc2": "croydon",
-      "jaccard_similarity_pct": 90.3
-    },
-    {
-      "loc1": "essex",
-      "loc2": "hampshire",
       "jaccard_similarity_pct": 90.3
     }
   ],

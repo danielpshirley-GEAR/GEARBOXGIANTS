@@ -1,0 +1,1773 @@
+{
+  "timestamp": "2026-09-04T00:07:45Z",
+  "target_domain": "https://gearboxgiants.co.uk",
+  "total_routes_tested": 110,
+  "routes_passed": 110,
+  "routes_failed": 0,
+  "finance_404_verified": true,
+  "legal_links_ui_verified": true,
+  "total_violations_found": 0,
+  "violations": [],
+  "results": [
+    {
+      "requested_url": "https://gearboxgiants.co.uk/",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/",
+      "response_size": 56951,
+      "response_hash": "75fca2026b1145f33cb1a8f2e4fc0f03",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/index.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/index.html?audit=1788480443",
+          "status": 307,
+          "location": "/?audit=1788480443"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/",
+      "response_size": 56951,
+      "response_hash": "75fca2026b1145f33cb1a8f2e4fc0f03",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/services",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/services",
+      "response_size": 44630,
+      "response_hash": "778720668ccc95bc2836f5ab96d74069",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/services.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/services.html?audit=1788480443",
+          "status": 307,
+          "location": "/services?audit=1788480443"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/services",
+      "response_size": 44630,
+      "response_hash": "778720668ccc95bc2836f5ab96d74069",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/fault-finding",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/fault-finding",
+      "response_size": 25026,
+      "response_hash": "0dac2b0e6211108525ab9b92914bf60a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/fault-finding.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/fault-finding.html?audit=1788480443",
+          "status": 307,
+          "location": "/fault-finding?audit=1788480443"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/fault-finding",
+      "response_size": 25026,
+      "response_hash": "0dac2b0e6211108525ab9b92914bf60a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/locations",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/locations",
+      "response_size": 30447,
+      "response_hash": "9151c82e70a4512147aa56e6842c9c74",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/locations.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/locations.html?audit=1788480443",
+          "status": 307,
+          "location": "/locations?audit=1788480443"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/locations",
+      "response_size": 30447,
+      "response_hash": "9151c82e70a4512147aa56e6842c9c74",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/quote",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/quote",
+      "response_size": 24726,
+      "response_hash": "825e6a6bb706ebb5eb7b2cddfde08dcf",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/quote.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/quote.html?audit=1788480444",
+          "status": 307,
+          "location": "/quote?audit=1788480444"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/quote",
+      "response_size": 24726,
+      "response_hash": "825e6a6bb706ebb5eb7b2cddfde08dcf",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/privacy",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/privacy",
+      "response_size": 5234,
+      "response_hash": "9cff3dc951cdd29470070f820f36805f",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/privacy.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/privacy.html?audit=1788480444",
+          "status": 307,
+          "location": "/privacy?audit=1788480444"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/privacy",
+      "response_size": 5234,
+      "response_hash": "9cff3dc951cdd29470070f820f36805f",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/terms",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/terms",
+      "response_size": 6414,
+      "response_hash": "bb56532a00f419640a073fb1bf1ccd0a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/terms.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/terms.html?audit=1788480444",
+          "status": 307,
+          "location": "/terms?audit=1788480444"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/terms",
+      "response_size": 6414,
+      "response_hash": "bb56532a00f419640a073fb1bf1ccd0a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/warranty",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/warranty",
+      "response_size": 16212,
+      "response_hash": "8d67e46f00b2a5a218d078eac870c5bb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/warranty.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/warranty.html?audit=1788480445",
+          "status": 307,
+          "location": "/warranty?audit=1788480445"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/warranty",
+      "response_size": 16212,
+      "response_hash": "8d67e46f00b2a5a218d078eac870c5bb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/cookies",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/cookies",
+      "response_size": 4464,
+      "response_hash": "7bcb7498c2b58ece53dc920d18a38869",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/cookies.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/cookies.html?audit=1788480445",
+          "status": 307,
+          "location": "/cookies?audit=1788480445"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/cookies",
+      "response_size": 4464,
+      "response_hash": "7bcb7498c2b58ece53dc920d18a38869",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/complaints",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/complaints",
+      "response_size": 4851,
+      "response_hash": "a91c5ff465bbbdeaf2db7d2b76fbf50b",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/complaints.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/complaints.html?audit=1788480445",
+          "status": 307,
+          "location": "/complaints?audit=1788480445"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/complaints",
+      "response_size": 4851,
+      "response_hash": "a91c5ff465bbbdeaf2db7d2b76fbf50b",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-london",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-london",
+      "response_size": 40430,
+      "response_hash": "49b6fbcd433a251d79ee664f2a76cd01",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-london.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-london.html?audit=1788480446",
+          "status": 307,
+          "location": "/location-london?audit=1788480446"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-london",
+      "response_size": 40430,
+      "response_hash": "49b6fbcd433a251d79ee664f2a76cd01",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-east-london",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-east-london",
+      "response_size": 40424,
+      "response_hash": "92dd4a1b838a7006249a924d2c150fb2",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-east-london.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-east-london.html?audit=1788480446",
+          "status": 307,
+          "location": "/location-east-london?audit=1788480446"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-east-london",
+      "response_size": 40424,
+      "response_hash": "92dd4a1b838a7006249a924d2c150fb2",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-south-london",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-south-london",
+      "response_size": 40505,
+      "response_hash": "e980fd1f5a06f308b730d132e463829f",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-south-london.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-south-london.html?audit=1788480446",
+          "status": 307,
+          "location": "/location-south-london?audit=1788480446"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-south-london",
+      "response_size": 40505,
+      "response_hash": "e980fd1f5a06f308b730d132e463829f",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-north-london",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-north-london",
+      "response_size": 40476,
+      "response_hash": "94df5e40b79aba24f66c594d6d26b182",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-north-london.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-north-london.html?audit=1788480447",
+          "status": 307,
+          "location": "/location-north-london?audit=1788480447"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-north-london",
+      "response_size": 40476,
+      "response_hash": "94df5e40b79aba24f66c594d6d26b182",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-croydon",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-croydon",
+      "response_size": 39232,
+      "response_hash": "ec21b7a5b43c34240498d1466f9d71e4",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-croydon.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-croydon.html?audit=1788480447",
+          "status": 307,
+          "location": "/location-croydon?audit=1788480447"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-croydon",
+      "response_size": 39232,
+      "response_hash": "ec21b7a5b43c34240498d1466f9d71e4",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-watford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-watford",
+      "response_size": 39228,
+      "response_hash": "465f8a4c740e527a8a4dc768f38a78ec",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-watford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-watford.html?audit=1788480447",
+          "status": 307,
+          "location": "/location-watford?audit=1788480447"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-watford",
+      "response_size": 39228,
+      "response_hash": "465f8a4c740e527a8a4dc768f38a78ec",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-harrow",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-harrow",
+      "response_size": 39111,
+      "response_hash": "91685dcdb84c2078433c7bb835b0f2ce",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-harrow.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-harrow.html?audit=1788480447",
+          "status": 307,
+          "location": "/location-harrow?audit=1788480447"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-harrow",
+      "response_size": 39111,
+      "response_hash": "91685dcdb84c2078433c7bb835b0f2ce",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-enfield",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-enfield",
+      "response_size": 39230,
+      "response_hash": "08349d860fc63ba3f0b894628a496c15",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-enfield.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-enfield.html?audit=1788480448",
+          "status": 307,
+          "location": "/location-enfield?audit=1788480448"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-enfield",
+      "response_size": 39230,
+      "response_hash": "08349d860fc63ba3f0b894628a496c15",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-romford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-romford",
+      "response_size": 39264,
+      "response_hash": "a918a6a403310d4655ede0787cd329a6",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-romford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-romford.html?audit=1788480448",
+          "status": 307,
+          "location": "/location-romford?audit=1788480448"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-romford",
+      "response_size": 39264,
+      "response_hash": "a918a6a403310d4655ede0787cd329a6",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bromley",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-bromley",
+      "response_size": 39208,
+      "response_hash": "4c8ccf0914c6bfed7690954d418a8dca",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bromley.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-bromley.html?audit=1788480448",
+          "status": 307,
+          "location": "/location-bromley?audit=1788480448"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-bromley",
+      "response_size": 39208,
+      "response_hash": "4c8ccf0914c6bfed7690954d418a8dca",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-uxbridge",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-uxbridge",
+      "response_size": 39259,
+      "response_hash": "cca1432446f5939011e7f95b377f443c",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-uxbridge.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-uxbridge.html?audit=1788480449",
+          "status": 307,
+          "location": "/location-uxbridge?audit=1788480449"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-uxbridge",
+      "response_size": 39259,
+      "response_hash": "cca1432446f5939011e7f95b377f443c",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-richmond",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-richmond",
+      "response_size": 39204,
+      "response_hash": "eb14ce7d9702ae4df2c1394046c73fdb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-richmond.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-richmond.html?audit=1788480449",
+          "status": 307,
+          "location": "/location-richmond?audit=1788480449"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-richmond",
+      "response_size": 39204,
+      "response_hash": "eb14ce7d9702ae4df2c1394046c73fdb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-barnet",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-barnet",
+      "response_size": 39158,
+      "response_hash": "f7235660333848951505d6fc1b99c008",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-barnet.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-barnet.html?audit=1788480449",
+          "status": 307,
+          "location": "/location-barnet?audit=1788480449"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-barnet",
+      "response_size": 39158,
+      "response_hash": "f7235660333848951505d6fc1b99c008",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-reading",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-reading",
+      "response_size": 39275,
+      "response_hash": "8720475b97a67303058825e031f7184a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-reading.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-reading.html?audit=1788480450",
+          "status": 307,
+          "location": "/location-reading?audit=1788480450"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-reading",
+      "response_size": 39275,
+      "response_hash": "8720475b97a67303058825e031f7184a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-slough",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-slough",
+      "response_size": 39117,
+      "response_hash": "6a8bc5dfab7d45dc6d1988a018362562",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-slough.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-slough.html?audit=1788480450",
+          "status": 307,
+          "location": "/location-slough?audit=1788480450"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-slough",
+      "response_size": 39117,
+      "response_hash": "6a8bc5dfab7d45dc6d1988a018362562",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bracknell",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-bracknell",
+      "response_size": 39258,
+      "response_hash": "3a78a244de02623bb98ba9dea852d3bc",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bracknell.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-bracknell.html?audit=1788480450",
+          "status": 307,
+          "location": "/location-bracknell?audit=1788480450"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-bracknell",
+      "response_size": 39258,
+      "response_hash": "3a78a244de02623bb98ba9dea852d3bc",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-guildford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-guildford",
+      "response_size": 39271,
+      "response_hash": "671d621c074dc9cbab1a9dfd1a849eeb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-guildford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-guildford.html?audit=1788480451",
+          "status": 307,
+          "location": "/location-guildford?audit=1788480451"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-guildford",
+      "response_size": 39271,
+      "response_hash": "671d621c074dc9cbab1a9dfd1a849eeb",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-woking",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-woking",
+      "response_size": 39072,
+      "response_hash": "67e6f96c839f375bfda90ba3cc8f3718",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-woking.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-woking.html?audit=1788480451",
+          "status": 307,
+          "location": "/location-woking?audit=1788480451"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-woking",
+      "response_size": 39072,
+      "response_hash": "67e6f96c839f375bfda90ba3cc8f3718",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-camberley",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-camberley",
+      "response_size": 39267,
+      "response_hash": "2b3761f9160ac89ccc93c0322a08ba51",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-camberley.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-camberley.html?audit=1788480451",
+          "status": 307,
+          "location": "/location-camberley?audit=1788480451"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-camberley",
+      "response_size": 39267,
+      "response_hash": "2b3761f9160ac89ccc93c0322a08ba51",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-farnborough",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-farnborough",
+      "response_size": 39311,
+      "response_hash": "2b57d1d31403a87949e7e687b47654c7",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-farnborough.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-farnborough.html?audit=1788480452",
+          "status": 307,
+          "location": "/location-farnborough?audit=1788480452"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-farnborough",
+      "response_size": 39311,
+      "response_hash": "2b57d1d31403a87949e7e687b47654c7",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-aldershot",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-aldershot",
+      "response_size": 39226,
+      "response_hash": "96f8b3506295e30d9d1ec905a15f0a85",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-aldershot.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-aldershot.html?audit=1788480452",
+          "status": 307,
+          "location": "/location-aldershot?audit=1788480452"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-aldershot",
+      "response_size": 39226,
+      "response_hash": "96f8b3506295e30d9d1ec905a15f0a85",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-berkshire",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-berkshire",
+      "response_size": 40093,
+      "response_hash": "69e5a72e338ddc3260111fcaaaa1e8a8",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-berkshire.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-berkshire.html?audit=1788480452",
+          "status": 307,
+          "location": "/location-berkshire?audit=1788480452"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-berkshire",
+      "response_size": 40093,
+      "response_hash": "69e5a72e338ddc3260111fcaaaa1e8a8",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-southampton",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-southampton",
+      "response_size": 40315,
+      "response_hash": "c015f69ddf425296ef2d99e28318d97c",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-southampton.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-southampton.html?audit=1788480453",
+          "status": 307,
+          "location": "/location-southampton?audit=1788480453"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-southampton",
+      "response_size": 40315,
+      "response_hash": "c015f69ddf425296ef2d99e28318d97c",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-brighton",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-brighton",
+      "response_size": 39269,
+      "response_hash": "01c7f429ec2afbabf7206987a4ba8927",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-brighton.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-brighton.html?audit=1788480453",
+          "status": 307,
+          "location": "/location-brighton?audit=1788480453"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-brighton",
+      "response_size": 39269,
+      "response_hash": "01c7f429ec2afbabf7206987a4ba8927",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-crawley",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-crawley",
+      "response_size": 39209,
+      "response_hash": "d798e7d37fe210d4b6cec6f376b2c83a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-crawley.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-crawley.html?audit=1788480454",
+          "status": 307,
+          "location": "/location-crawley?audit=1788480454"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-crawley",
+      "response_size": 39209,
+      "response_hash": "d798e7d37fe210d4b6cec6f376b2c83a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-basingstoke",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-basingstoke",
+      "response_size": 39372,
+      "response_hash": "c550be62e68661f61167e67c0b2250d1",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-basingstoke.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-basingstoke.html?audit=1788480454",
+          "status": 307,
+          "location": "/location-basingstoke?audit=1788480454"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-basingstoke",
+      "response_size": 39372,
+      "response_hash": "c550be62e68661f61167e67c0b2250d1",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-hampshire",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-hampshire",
+      "response_size": 39992,
+      "response_hash": "b28aa235ac1b4d057c81d2f34dc9eda3",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-hampshire.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-hampshire.html?audit=1788480454",
+          "status": 307,
+          "location": "/location-hampshire?audit=1788480454"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-hampshire",
+      "response_size": 39992,
+      "response_hash": "b28aa235ac1b4d057c81d2f34dc9eda3",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-sussex",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-sussex",
+      "response_size": 39900,
+      "response_hash": "5c876021dd3c0acff4b2771b3f9f768e",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-sussex.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-sussex.html?audit=1788480455",
+          "status": 307,
+          "location": "/location-sussex?audit=1788480455"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-sussex",
+      "response_size": 39900,
+      "response_hash": "5c876021dd3c0acff4b2771b3f9f768e",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-chelmsford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-chelmsford",
+      "response_size": 39400,
+      "response_hash": "bc906f0958976b2028d85940c7e11147",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-chelmsford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-chelmsford.html?audit=1788480455",
+          "status": 307,
+          "location": "/location-chelmsford?audit=1788480455"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-chelmsford",
+      "response_size": 39400,
+      "response_hash": "bc906f0958976b2028d85940c7e11147",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-cambridge",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-cambridge",
+      "response_size": 40173,
+      "response_hash": "9ce16fe56e2a8738969577a89485e6d6",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-cambridge.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-cambridge.html?audit=1788480455",
+          "status": 307,
+          "location": "/location-cambridge?audit=1788480455"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-cambridge",
+      "response_size": 40173,
+      "response_hash": "9ce16fe56e2a8738969577a89485e6d6",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-ashford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-ashford",
+      "response_size": 39181,
+      "response_hash": "c233184a0fb72028be4122a0e10fcd53",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-ashford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-ashford.html?audit=1788480455",
+          "status": 307,
+          "location": "/location-ashford?audit=1788480455"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-ashford",
+      "response_size": 39181,
+      "response_hash": "c233184a0fb72028be4122a0e10fcd53",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-essex",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-essex",
+      "response_size": 39830,
+      "response_hash": "73ab09559fe7f828801dfa590dd18df5",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-essex.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-essex.html?audit=1788480456",
+          "status": 307,
+          "location": "/location-essex?audit=1788480456"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-essex",
+      "response_size": 39830,
+      "response_hash": "73ab09559fe7f828801dfa590dd18df5",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-kent",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-kent",
+      "response_size": 39804,
+      "response_hash": "62df3613f80c65488334f8821fd57c15",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-kent.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-kent.html?audit=1788480456",
+          "status": 307,
+          "location": "/location-kent?audit=1788480456"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-kent",
+      "response_size": 39804,
+      "response_hash": "62df3613f80c65488334f8821fd57c15",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-oxford",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-oxford",
+      "response_size": 39858,
+      "response_hash": "543fed601ae25b52ffb25fccc36641cc",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-oxford.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-oxford.html?audit=1788480457",
+          "status": 307,
+          "location": "/location-oxford?audit=1788480457"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-oxford",
+      "response_size": 39858,
+      "response_hash": "543fed601ae25b52ffb25fccc36641cc",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-aylesbury",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-aylesbury",
+      "response_size": 40073,
+      "response_hash": "720a5f6b2e4990d643072cb1810c6094",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-aylesbury.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-aylesbury.html?audit=1788480457",
+          "status": 307,
+          "location": "/location-aylesbury?audit=1788480457"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-aylesbury",
+      "response_size": 40073,
+      "response_hash": "720a5f6b2e4990d643072cb1810c6094",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bedfordshire",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-bedfordshire",
+      "response_size": 40173,
+      "response_hash": "7f162986b14d703b46ea9f849fa9fb95",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bedfordshire.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-bedfordshire.html?audit=1788480457",
+          "status": 307,
+          "location": "/location-bedfordshire?audit=1788480457"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-bedfordshire",
+      "response_size": 40173,
+      "response_hash": "7f162986b14d703b46ea9f849fa9fb95",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-northamptonshire",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-northamptonshire",
+      "response_size": 40506,
+      "response_hash": "f6f68e0a3c78138a584e33d2c5099516",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-northamptonshire.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-northamptonshire.html?audit=1788480458",
+          "status": 307,
+          "location": "/location-northamptonshire?audit=1788480458"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-northamptonshire",
+      "response_size": 40506,
+      "response_hash": "f6f68e0a3c78138a584e33d2c5099516",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-birmingham",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-birmingham",
+      "response_size": 40172,
+      "response_hash": "e0657937c183d62696d6d6401e0380ed",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-birmingham.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-birmingham.html?audit=1788480458",
+          "status": 307,
+          "location": "/location-birmingham?audit=1788480458"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-birmingham",
+      "response_size": 40172,
+      "response_hash": "e0657937c183d62696d6d6401e0380ed",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-milton-keynes",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-milton-keynes",
+      "response_size": 40399,
+      "response_hash": "0e08f5fe126f4475ce6b2c1499342203",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-milton-keynes.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-milton-keynes.html?audit=1788480458",
+          "status": 307,
+          "location": "/location-milton-keynes?audit=1788480458"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-milton-keynes",
+      "response_size": 40399,
+      "response_hash": "0e08f5fe126f4475ce6b2c1499342203",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-portsmouth",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-portsmouth",
+      "response_size": 40185,
+      "response_hash": "fc6135351517029c00bf299ab2dfd1a3",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-portsmouth.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-portsmouth.html?audit=1788480459",
+          "status": 307,
+          "location": "/location-portsmouth?audit=1788480459"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-portsmouth",
+      "response_size": 40185,
+      "response_hash": "fc6135351517029c00bf299ab2dfd1a3",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-luton",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-luton",
+      "response_size": 39782,
+      "response_hash": "2382256daf799a96b5b6e2d52574e758",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-luton.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-luton.html?audit=1788480459",
+          "status": 307,
+          "location": "/location-luton?audit=1788480459"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-luton",
+      "response_size": 39782,
+      "response_hash": "2382256daf799a96b5b6e2d52574e758",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-colchester",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-colchester",
+      "response_size": 40104,
+      "response_hash": "895559693016d9e3f37e822631f5ee17",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-colchester.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-colchester.html?audit=1788480459",
+          "status": 307,
+          "location": "/location-colchester?audit=1788480459"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-colchester",
+      "response_size": 40104,
+      "response_hash": "895559693016d9e3f37e822631f5ee17",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-maidstone",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-maidstone",
+      "response_size": 40044,
+      "response_hash": "36c101653908dad9bf4c4224eec2d2e4",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-maidstone.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-maidstone.html?audit=1788480460",
+          "status": 307,
+          "location": "/location-maidstone?audit=1788480460"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-maidstone",
+      "response_size": 40044,
+      "response_hash": "36c101653908dad9bf4c4224eec2d2e4",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-swindon",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-swindon",
+      "response_size": 40065,
+      "response_hash": "15b80dbc94a4a159add96f770822490a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-swindon.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-swindon.html?audit=1788480460",
+          "status": 307,
+          "location": "/location-swindon?audit=1788480460"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-swindon",
+      "response_size": 40065,
+      "response_hash": "15b80dbc94a4a159add96f770822490a",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bristol",
+      "http_status": 200,
+      "redirect_chain": [],
+      "final_url": "https://gearboxgiants.co.uk/location-bristol",
+      "response_size": 40081,
+      "response_hash": "54993c51624d55fc7dea55114f3eecf2",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    },
+    {
+      "requested_url": "https://gearboxgiants.co.uk/location-bristol.html",
+      "http_status": 200,
+      "redirect_chain": [
+        {
+          "from": "https://gearboxgiants.co.uk/location-bristol.html?audit=1788480460",
+          "status": 307,
+          "location": "/location-bristol?audit=1788480460"
+        }
+      ],
+      "final_url": "https://gearboxgiants.co.uk/location-bristol",
+      "response_size": 40081,
+      "response_hash": "54993c51624d55fc7dea55114f3eecf2",
+      "cf_cache_status": "N/A",
+      "cache_control": "N/A",
+      "etag": "N/A",
+      "last_modified": "N/A",
+      "violations": []
+    }
+  ]
+}
