@@ -1,0 +1,8 @@
+{
+  "total_spent_usd": 0.0,
+  "budget_limit_usd": 50.0,
+  "currency": "USD",
+  "status": "BUDGET_AVAILABLE",
+  "last_updated": "2026-09-05T00:53:00+01:00",
+  "requests": []
+}
