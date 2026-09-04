@@ -1,0 +1,79 @@
+{
+  "": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Vehicle Transmission Fitment & Confidence Matrix for Dynamic Quote Journeys",
+  "entries": [
+    {
+      "make": "VOLKSWAGEN",
+      "model": "GOLF",
+      "engine_cc_min": 999,
+      "engine_cc_max": 1498,
+      "fuel": "PETROL",
+      "year_from": 2013,
+      "year_to": 2020,
+      "possible_transmissions": [
+        {
+          "category": "MANUAL",
+          "name": "6-Speed Manual Transmission",
+          "code": "MQ250 / 0AJ",
+          "confidence": "REQUIRES_USER_CONFIRMATION"
+        },
+        {
+          "category": "DSG",
+          "name": "7-Speed DSG Dual-Clutch",
+          "code": "DQ200 (0CW)",
+          "confidence": "REQUIRES_USER_CONFIRMATION"
+        }
+      ],
+      "selection_prompt": "Volkswagen Golf 1.0/1.4/1.5 TSI models were manufactured with either a 6-Speed Manual or 7-Speed DSG transmission. Please confirm your vehicle transmission below."
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "GOLF GTI",
+      "engine_cc_min": 1984,
+      "engine_cc_max": 1984,
+      "fuel": "PETROL",
+      "year_from": 2013,
+      "year_to": 2019,
+      "possible_transmissions": [
+        {
+          "category": "MANUAL",
+          "name": "6-Speed Manual Transmission",
+          "code": "MQ350 / 02Q",
+          "confidence": "REQUIRES_USER_CONFIRMATION"
+        },
+        {
+          "category": "DSG",
+          "name": "6-Speed Wet DSG (DQ250) / 7-Speed Wet DSG (DQ381)",
+          "code": "DQ250 / DQ381",
+          "confidence": "REQUIRES_USER_CONFIRMATION"
+        }
+      ],
+      "selection_prompt": "Volkswagen Golf GTI 2.0 TSI models use either a 6-Speed Manual or 6/7-Speed Wet DSG transmission. Please confirm your vehicle transmission below."
+    },
+    {
+      "make": "BMW",
+      "model": "3 SERIES",
+      "engine_cc_min": 1995,
+      "engine_cc_max": 2993,
+      "fuel": "DIESEL",
+      "year_from": 2012,
+      "year_to": 2019,
+      "possible_transmissions": [
+        {
+          "category": "AUTO",
+          "name": "8-Speed Steptronic Automatic (ZF 8HP)",
+          "code": "ZF 8HP45 / 8HP50",
+          "confidence": "HIGH_CONFIDENCE_AUTO"
+        },
+        {
+          "category": "MANUAL",
+          "name": "6-Speed Manual Transmission",
+          "code": "GS6-45DZ",
+          "confidence": "REQUIRES_USER_CONFIRMATION"
+        }
+      ],
+      "selection_prompt": "BMW 3 Series models utilize either an 8-Speed Steptronic Automatic (ZF 8HP) or 6-Speed Manual. Please confirm your transmission below."
+    }
+  ]
+}

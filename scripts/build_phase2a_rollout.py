@@ -1,0 +1,255 @@
+#!/usr/bin/env python3
+import os
+import re
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SERVICES_DIR = os.path.join(BASE_DIR, 'services')
+os.makedirs(SERVICES_DIR, exist_ok=True)
+
+# ---------------------------------------------------------------------------
+# 1. CORE SERVICE PAGES
+# ---------------------------------------------------------------------------
+
+# PAGE 1: GENERAL GEARBOX REPAIR
+gearbox_repair_html = """<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gearbox Repair Services & Diagnostics | Gearbox Giants</title>
+  <meta name="description" content="Specialist gearbox repair, diagnostic assessment, and reconditioning across automatic, manual, DSG, CVT, and Powershift transmissions with collection across 45 service areas.">
+  <link rel="canonical" href="https://gearboxgiants.co.uk/services/gearbox-repair">
+  
+  <meta property="og:title" content="Gearbox Repair Services & Diagnostics | Gearbox Giants">
+  <meta property="og:description" content="Specialist diagnostics, mechanical repairs, and reconditioning for all major transmission types across England and Wales.">
+  <meta property="og:url" content="https://gearboxgiants.co.uk/services/gearbox-repair">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Gearbox Repair Services & Diagnostics",
+    "url": "https://gearboxgiants.co.uk/services/gearbox-repair",
+    "description": "Specialist diagnostic assessment, mechanical repair, and transmission reconditioning for automatic, manual, and dual-clutch vehicles.",
+    "about": {
+      "@type": "Service",
+      "name": "Gearbox Repair & Diagnostic Services",
+      "serviceType": "Automotive Transmission Repair",
+      "provider": {
+        "@id": "https://gearboxgiants.co.uk/#organization"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="logo-main">GEARBOX</span>
+        <span class="logo-sub">GIANTS</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/services" class="active">Services</a>
+        <a href="/locations">Coverage Areas</a>
+        <a href="/fault-finding">Fault Finder</a>
+        <a href="/warranty">Warranty</a>
+        <a href="/quote" class="nav-cta-btn">Get a Quote</a>
+      </nav>
+      <div class="header-contact">
+        <a href="tel:02080589668" class="phone-link">
+          <span class="phone-icon">📞</span>
+          <span class="phone-text">0208 058 9668</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <section class="location-hero">
+      <div class="hero-content">
+        <div class="hero-badge">Specialist Transmission Engineering</div>
+        <h1>Specialist Gearbox Repair & Diagnostics</h1>
+        <p class="hero-lead">
+          Professional diagnostic assessment, targeted mechanical repair, and complete reconditioning across automatic, manual, dual-clutch (DSG), CVT, and commercial transmissions.
+        </p>
+        
+        <div class="hero-action-card">
+          <form class="quick-quote-form" action="/quote" method="GET">
+            <input type="hidden" name="service" value="general-gearbox-repair">
+            <input type="hidden" name="landing_page" value="services-gearbox-repair">
+            <div class="reg-input-group">
+              <span class="gb-flag">GB</span>
+              <input type="text" name="reg" placeholder="ENTER REG" class="vrm-input" required maxlength="8" autocomplete="off">
+            </div>
+            <button type="submit" class="cta-primary-btn">Check Vehicle & Get Quote</button>
+          </form>
+          <div class="hero-trust-row">
+            <a href="/warranty" style="color: inherit; text-decoration: none;"><span>✓ Up to 12-Month / 12,000-Mile Warranty</span></a>
+            <span>✓ Vehicle Collection Across 45 Covered Service Areas</span>
+            <span>✓ All Transmission Types Handled</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logistics-section">
+      <div class="section-container">
+        <h2>What to Know When Facing a Transmission Fault</h2>
+        
+        <div class="two-col-layout">
+          <div class="info-block">
+            <h3>Understanding Your Gearbox Problem</h3>
+            <p>
+              Modern transmissions are complex electro-hydraulic or precision mechanical assemblies. Faults rarely resolve themselves and typically progress from minor warning symptoms (such as low-speed shudder, delayed engagement, or bearing whine) into severe mechanical failure if left unattended.
+            </p>
+          </div>
+          <div class="info-block">
+            <h3>Is It Safe to Continue Driving?</h3>
+            <p>
+              If your vehicle has lost drive, entered transmission limp mode, displays an active dashboard warning symbol, or produces severe crunching or grinding noises, continued driving can cause extensive internal damage or create a safety hazard. Stop safely and arrange a professional assessment.
+            </p>
+          </div>
+        </div>
+
+        <div class="two-col-layout" style="margin-top: 1.5rem;">
+          <div class="info-block">
+            <h3>Can a Gearbox Be Repaired Rather Than Replaced?</h3>
+            <p>
+              Yes. In many instances, individual sub-assemblies (such as valve bodies, mechatronic modules, torque converters, or input shaft bearings) can be repaired or replaced without requiring an entire replacement gearbox. A thorough diagnostic inspection determines whether a targeted repair or full overhaul is required.
+            </p>
+          </div>
+          <div class="info-block">
+            <h3>Turnaround & Warranty Terms</h3>
+            <p>
+              Turnaround is job-dependent, typically taking between <strong>3 to 7 working days</strong> following diagnostic assessment and parts allocation. Qualifying full rebuilds for private vehicles include our <strong>12-Month / 12,000-Mile Warranty</strong>; component repairs and commercial vehicles carry a <strong>6-Month / 6,000-Mile Warranty</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faults-section">
+      <div class="section-container">
+        <h2>Explore Specialist Transmission Categories</h2>
+        <p class="section-intro">
+          Select your transmission type below to explore detailed technical symptoms, common fault codes, and dedicated repair pathways:
+        </p>
+
+        <div class="fault-cards-grid">
+          <div class="fault-item">
+            <h4>DSG & Dual-Clutch Gearbox Repair</h4>
+            <p>Specialist diagnostics, dual-clutch replacement, and mechatronic unit rebuilding for VW, Audi S-Tronic, SEAT, and Škoda models experiencing takeoff judder or gear loss.</p>
+            <a href="/services/dsg-gearbox-repair" class="fault-link">Explore DSG Repair →</a>
+          </div>
+
+          <div class="fault-item">
+            <h4>Automatic Gearbox Repair & Rebuilds</h4>
+            <p>Dedicated torque converter overhaul, hydraulic valve body testing, and internal planetary gear repairs for ZF, Mercedes 7G/9G-Tronic, and Aisin automatic transmissions.</p>
+            <a href="/services/automatic-gearbox-repair" class="fault-link">Explore Automatic Repair →</a>
+          </div>
+
+          <div class="fault-item">
+            <h4>Manual Gearbox Repair & Bearing Renewal</h4>
+            <p>Specialist teardown, synchromesh replacement, and shaft bearing renewals for 5-speed and 6-speed manual gearboxes experiencing gear crunching or whining noises.</p>
+            <a href="/services/manual-gearbox-repair" class="fault-link">Explore Manual Repair →</a>
+          </div>
+
+          <div class="fault-item">
+            <h4>Complete Gearbox Reconditioning</h4>
+            <p>Full mechanical and electronic remanufacturing for heavily worn or damaged transmissions, restoring complete units to exact factory tolerances.</p>
+            <a href="/services/gearbox-reconditioning" class="fault-link">Explore Reconditioning →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-warranty-section">
+      <div class="section-container">
+        <div class="two-col-layout">
+          <div class="info-block">
+            <h3>Bespoke Diagnostic Assessment</h3>
+            <p>
+              Repair costs depend on the specific transmission code, the extent of internal wear, and whether component renewal or a full rebuild is necessary.
+            </p>
+            <p>
+              We provide clear, transparent quotations following initial vehicle registration lookup and diagnostic evaluation.
+            </p>
+            <a href="/quote?service=general-gearbox-repair" class="btn-secondary">Request an Assessment</a>
+          </div>
+
+          <div class="info-block highlight-box">
+            <h3>Official Warranty Protection</h3>
+            <p class="warranty-badge">WARRANTY INCLUDED ON QUALIFYING REPAIRS</p>
+            <p>
+              Qualifying full gearbox rebuilds and reconditioned gearbox installations for private passenger vehicles include our <strong>12-Month / 12,000-Mile Warranty</strong> (whichever occurs first), covering parts and specialist workmanship.
+            </p>
+            <p>
+              Component-specific repairs and commercial/intensive-use vehicles carry our <strong>6-Month / 6,000-Mile Warranty</strong>.
+            </p>
+            <a href="/warranty" class="warranty-link">View Full Warranty Terms →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta-section">
+      <div class="section-container">
+        <h2>Book Your Transmission Assessment</h2>
+        <p>Enter your registration to check your vehicle details and request a tailored quote.</p>
+        <div class="cta-buttons">
+          <a href="/quote?service=general-gearbox-repair" class="btn-primary-large">Get My Vehicle Assessed</a>
+          <a href="tel:02080589668" class="btn-outline-large">Call 0208 058 9668</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Gearbox Giants</h4>
+        <p>Specialist gearbox repair, reconditioning and recovery coordination across 45 covered service areas in England and Wales.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/automatic-gearbox-repair">Automatic Gearbox Repair</a></li>
+          <li><a href="/services/dsg-gearbox-repair">DSG Gearbox Repair</a></li>
+          <li><a href="/services/manual-gearbox-repair">Manual Gearbox Repair</a></li>
+          <li><a href="/services/gearbox-reconditioning">Gearbox Reconditioning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal & Warranty</h4>
+        <ul>
+          <li><a href="/warranty">Warranty Terms</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+          <li><a href="/complaints">Complaints Procedure</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:02080589668">0208 058 9668</a></p>
+        <p>Email: <a href="mailto:Contact@gearboxgiants.co.uk">Contact@gearboxgiants.co.uk</a></p>
+        <p>Hours: Mon–Sun 09:00 – 18:00</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>"""
+
+with open(os.path.join(SERVICES_DIR, 'gearbox-repair.html'), 'w', encoding='utf-8') as f:
+    f.write(gearbox_repair_html)
+
+print('Created services/gearbox-repair.html')
