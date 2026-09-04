@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "quarantined_at": "2026-09-05T00:52:00Z",
+  "reason": "Quarantined per Phase 3E Evidence Integrity rules. AI-generated prototype schema record without verified physical workshop documentation or customer consent.",
+  "records": [
+    {
+      "case_id": "CS-DSG-2026-001",
+      "verification_status": "UNVERIFIED_AI_GENERATED",
+      "publication_status": "BLOCKED",
+      "source_type": "AI_GENERATED",
+      "human_verified": false,
+      "publication_permission": false,
+      "origin": {
+        "source_file": "data/repair_case_studies.json",
+        "creation_commit": "5acccebbcfb9b8428af5442fb2d6f217c3b1f8b9",
+        "creation_timestamp": "2026-09-05T00:46:26+01:00"
+      },
+      "vehicle": {
+        "make": "Volkswagen",
+        "model": "Golf 1.4 TSI",
+        "year": 2016,
+        "engine": "1.4 TSI CZDA (Petrol)",
+        "transmission": "7-Speed Dry DSG (DQ200 / 0CW)",
+        "mileage": 68420
+      }
+    }
+  ]
+}

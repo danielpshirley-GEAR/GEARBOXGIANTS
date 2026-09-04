@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin: Ingest Verified Case Study | Gearbox Giants</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body style="background: #f1f5f9;">
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="logo-main">GEARBOX</span>
+        <span class="logo-sub">GIANTS ADMIN</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/admin/integrations">API Integrations</a>
+        <a href="/admin/case-studies/new" class="active">Ingest Case Study</a>
+        <a href="/gearboxes">Gearbox Hub</a>
+        <a href="/fault-finding">Fault Finder</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 900px; margin: 3rem auto; padding: 0 1.5rem;">
+    <h1 style="color: var(--primary, #1a4971); margin-bottom: 0.5rem;">Ingest Verified Workshop Case Study</h1>
+    <p style="color: #64748b; margin-bottom: 2rem;">Strict E-E-A-T Evidence Policy: Case studies must be backed by genuine job sheets, invoices, or technician notes. AI-generated case histories are strictly prohibited.</p>
+
+    <form style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 2rem; display: grid; gap: 1.25rem;">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div>
+          <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Vehicle Make & Model *</label>
+          <input type="text" placeholder="e.g. Volkswagen Golf 1.4 TSI" required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+        </div>
+        <div>
+          <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Build Year & Mileage *</label>
+          <input type="text" placeholder="e.g. 2016 / 68,420 miles" required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div>
+          <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Transmission Family / Code *</label>
+          <input type="text" placeholder="e.g. DQ200 (0CW 7-Speed Dry DSG)" required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+        </div>
+        <div>
+          <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Source Document Type *</label>
+          <select required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+            <option value="">Select source type...</option>
+            <option value="JOB_SHEET">Workshop Job Sheet</option>
+            <option value="INVOICE_RECORD">Customer Invoice Record</option>
+            <option value="CRM_RECORD">CRM System Record</option>
+            <option value="TECHNICIAN_SUBMISSION">Technician Submission</option>
+            <option value="OWNER_ENTERED">Owner-Entered Submission</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Customer Reported Symptom (Plain English) *</label>
+        <textarea rows="2" placeholder="Describe in plain English what the customer experienced..." required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;"></textarea>
+      </div>
+
+      <div>
+        <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Diagnostic Findings & DTC Codes *</label>
+        <textarea rows="2" placeholder="OBD scan results, live data measurements, physical inspection..." required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;"></textarea>
+      </div>
+
+      <div>
+        <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;">Repair Work Completed & Parts Replaced *</label>
+        <textarea rows="3" placeholder="List exact components overhauled or replaced..." required style="width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 4px;"></textarea>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; color: #1e293b; cursor: pointer;">
+          <input type="checkbox" required>
+          <strong>Human Verification:</strong> I confirm this case study is based on genuine physical workshop documentation and has been verified by a qualified technician.
+        </label>
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; color: #1e293b; margin-top: 0.5rem; cursor: pointer;">
+          <input type="checkbox" required>
+          <strong>Publication Consent:</strong> Anonymisation is applied and publication permission is confirmed.
+        </label>
+      </div>
+
+      <div>
+        <button type="submit" style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Submit Verified Case Study</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>

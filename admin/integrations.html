@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin: API Integrations & Telemetry | Gearbox Giants</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body style="background: #f1f5f9;">
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="logo-main">GEARBOX</span>
+        <span class="logo-sub">GIANTS ADMIN</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/admin/integrations" class="active">API Integrations</a>
+        <a href="/admin/case-studies/new">Ingest Case Study</a>
+        <a href="/gearboxes">Gearbox Hub</a>
+        <a href="/fault-finding">Fault Finder</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem;">
+    <h1 style="color: var(--primary, #1a4971); margin-bottom: 0.5rem;">API Integrations & Telemetry Dashboard</h1>
+    <p style="color: #64748b; margin-bottom: 2rem;">Real-time connection monitor for Google Search Console, GA4 Data API, and DataForSEO v3.</p>
+
+    <div style="display: grid; gap: 1.5rem;">
+      
+      <!-- GSC Card -->
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">Google Search Console (GSC)</h2>
+          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+        </div>
+        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          <strong>Target Property:</strong> <code>sc-domain:gearboxgiants.co.uk</code><br>
+          <strong>Required Scope:</strong> <code>https://www.googleapis.com/auth/webmasters.readonly</code> (Read-Only)<br>
+          <strong>Status:</strong> Awaiting OAuth credential configuration (<code>GSC_REFRESH_TOKEN</code> or <code>GOOGLE_APPLICATION_CREDENTIALS</code>).
+        </p>
+        <div style="margin-top: 1rem;">
+          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Connect Google Search Console</button>
+        </div>
+      </div>
+
+      <!-- GA4 Card -->
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">Google Analytics 4 (GA4)</h2>
+          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+        </div>
+        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          <strong>Client-Side Tracking:</strong> Cleaned & PII-sanitized (<code>js/analytics.js</code> ready for tag deployment).<br>
+          <strong>Measurement ID:</strong> Masked / Pending environment configuration.<br>
+          <strong>Data API Status:</strong> Pending numeric Property ID & service account authentication.
+        </p>
+        <div style="margin-top: 1rem;">
+          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Connect Google Analytics 4 API</button>
+        </div>
+      </div>
+
+      <!-- DataForSEO Card -->
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">DataForSEO API v3</h2>
+          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+        </div>
+        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          <strong>API Version:</strong> v3 (HTTP Basic Auth).<br>
+          <strong>Credentials:</strong> Server-side environment variables (<code>DATAFORSEO_LOGIN</code> / <code>DATAFORSEO_PASSWORD</code>).<br>
+          <strong>Budget Control:</strong> <code>SEO_DATA_BUDGET</code> tracking active ($50.00 ceiling).
+        </p>
+        <div style="margin-top: 1rem;">
+          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Test DataForSEO Connection</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Page-Query performance mapping for empirical GSC search telemetry",
+  "data_status": "DATA NOT AVAILABLE (Awaiting live GSC OAuth authentication)",
+  "last_sync": null,
+  "mappings": []
+}

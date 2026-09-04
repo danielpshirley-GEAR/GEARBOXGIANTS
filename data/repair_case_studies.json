@@ -1,40 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
-  "description": "Anonymised first-hand workshop repair records providing genuine E-E-A-T evidence",
-  "records": [
-    {
-      "case_id": "CS-DSG-2026-001",
-      "vehicle": {
-        "make": "Volkswagen",
-        "model": "Golf 1.4 TSI",
-        "year": 2016,
-        "engine": "1.4 TSI CZDA (Petrol)",
-        "transmission": "7-Speed Dry DSG (DQ200 / 0CW)",
-        "mileage": 68420
-      },
-      "customer_reported_symptom": "Shuddering vibration through the dashboard when pulling away in 1st gear and flashing spanner icon on instrument cluster.",
-      "diagnostic_findings": {
-        "dtc_codes": [
-          "P17BF (Hydraulic Pump Play Protection)"
-        ],
-        "live_data": "Clutch K1 adaptation thickness at lower limit (1.1mm); mechatronic accumulator pressure dropping below 42 bar after cold soak.",
-        "physical_inspection": "Micro-fracture detected in mechatronic lower valve body casting near accumulator thread."
-      },
-      "confirmed_fault": "Mechatronic accumulator pressure loss combined with secondary Clutch 1 friction disc wear.",
-      "work_completed": "Mechatronic unit removed; upgraded reinforced steel accumulator sub-housing installed with fresh high-pressure hydraulic pump; dual dry-clutch pack replaced, shimmed with precision dial gauge, and basic adaptation relearn completed via ODIS.",
-      "parts_replaced": [
-        "Reinforced Mechatronic Accumulator Sub-Assembly",
-        "LUK Dual Dry Clutch Pack (DQ200 Gen 2)",
-        "Mechatronic Hydraulic Fluid (1.0L G 004 000)",
-        "Gearbox Casing Oil (1.9L G 052 171)"
-      ],
-      "outcome": "Judder completely eliminated; hydraulic pressure holding stable at 52\u201360 bar; smooth pull-away confirmed on 12-mile road test.",
-      "turnaround_days": 4,
-      "warranty_tier": "12-Month / 12,000-Mile Private Vehicle Warranty",
-      "photos_available": true,
-      "permission_status": "CUSTOMER_CONSENT_GRANTED",
-      "publication_status": "APPROVED_FOR_CASE_STUDY"
-    }
-  ]
+  "version": "2.0.0",
+  "updated_at": "2026-09-05T00:52:00Z",
+  "description": "Genuine, verified first-hand workshop repair records. Strictly requires human verification and source evidence attachments before publication.",
+  "trust_model": {
+    "allowed_source_types": [
+      "OWNER_ENTERED",
+      "CRM_RECORD",
+      "JOB_SHEET",
+      "INVOICE_RECORD",
+      "TECHNICIAN_SUBMISSION",
+      "VERIFIED_IMPORT"
+    ],
+    "mandatory_requirements": [
+      "human_verified == true",
+      "publication_permission == true",
+      "source_reference present",
+      "evidence_attachment_status verified"
+    ],
+    "prohibited_source_types": [
+      "AI_GENERATED"
+    ]
+  },
+  "verified_records_count": 0,
+  "records": []
 }
