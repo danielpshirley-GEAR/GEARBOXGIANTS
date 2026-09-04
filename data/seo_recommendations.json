@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "updated_at": "2026-09-05T00:45:00Z",
+  "active_recommendations": [
+    {
+      "priority": "HIGH",
+      "target_url": "SITE_WIDE",
+      "opportunity": "Connect Live GSC & GA4 APIs",
+      "evidence": "GSC/GA4/DataForSEO APIs currently reporting 'DATA NOT AVAILABLE'.",
+      "recommended_action": "Authenticate API credentials to ingest real impressions, clicks, rankings, and conversion event streams.",
+      "status": "AWAITING_API_AUTHENTICATION",
+      "review_type": "TECHNICAL_SETUP"
+    },
+    {
+      "priority": "MEDIUM",
+      "target_url": "/gearboxes/bmw-zf-automatic",
+      "opportunity": "Incorporate Case Study CS-ZF-001 once completed",
+      "evidence": "Real workshop evidence elevates E-E-A-T score from 92 to 96.",
+      "recommended_action": "Ingest verified ZF 8HP mechatronic sleeve repair case into data/repair_case_studies.json.",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "review_type": "E_E_A_T_EXPANSION"
+    },
+    {
+      "priority": "MEDIUM",
+      "target_url": "/faults/dsg-juddering",
+      "opportunity": "Add natural customer question 'Shakes when pulling away in 1st'",
+      "evidence": "Customer vocabulary mapping indicates high frequency of colloquial shudder descriptions.",
+      "recommended_action": "Add targeted FAQ item addressing plain-English take-off shudder phrasing.",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "review_type": "CONTENT_TUNING"
+    },
+    {
+      "priority": "LOW",
+      "target_url": "/locations",
+      "opportunity": "Monitor 28 Standalone Locations vs 7 Hubs",
+      "evidence": "Similarity reduced to healthy thresholds; awaiting empirical traffic data before any merge decisions.",
+      "recommended_action": "Maintain monitoring state; do NOT execute redirects without Search Console verification.",
+      "status": "MONITORING_ACTIVE",
+      "review_type": "CONSOLIDATION_HOLD"
+    }
+  ]
+}

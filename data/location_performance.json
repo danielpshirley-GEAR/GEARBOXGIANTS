@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Location page performance, search evidence, and consolidation evaluation matrix",
+  "data_status": "DATA NOT AVAILABLE (Pending live Google Search Console / Google Analytics integration)",
+  "summary": {
+    "total_standalone_locations": 28,
+    "total_regional_hubs": 7,
+    "provisional_merges_status": "FROZEN_PENDING_EMPIRICAL_EVIDENCE"
+  },
+  "guidance": "Do NOT execute 301 redirects or delete location pages until empirical GSC clicks, impressions, average position, and organic conversions are collected for at least 90 days."
+}

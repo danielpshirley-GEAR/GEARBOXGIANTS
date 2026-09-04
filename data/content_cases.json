@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Mandatory Content Case evaluation gate for all future proposed URLs",
+  "evaluated_cases": [
+    {
+      "case_id": "CASE-MODEL-001",
+      "proposed_url": "/models/vw-golf-dsg-repair",
+      "primary_customer_question": "How much does it cost to fix a DSG gearbox on a VW Golf?",
+      "search_intent": "Vehicle-specific commercial repair",
+      "evidence_of_demand": "DATA NOT AVAILABLE (Requires live GSC / DataForSEO verification)",
+      "existing_internal_overlap": [
+        "/gearboxes/volkswagen-dsg",
+        "/services/dsg-gearbox-repair",
+        "/faults/dsg-juddering"
+      ],
+      "serp_evidence": "DATA NOT AVAILABLE",
+      "unique_value": "Model-specific fitment breakdown (1.4 TSI DQ200 vs GTI DQ250/DQ381)",
+      "commercial_relevance": "HIGH",
+      "evidence_sources": [
+        "VAG SSP-390",
+        "VAG SSP-308"
+      ],
+      "conversion_path": "VRM -> Fitment Check -> Symptom -> Quote",
+      "cannibalisation_risk": "HIGH_IF_NOT_DIFFERENTIATED",
+      "decision": "MODEL PAGE OPPORTUNITY \u2014 DATA REQUIRED (DO NOT BUILD)"
+    },
+    {
+      "case_id": "CASE-MODEL-002",
+      "proposed_url": "/models/bmw-3-series-automatic-repair",
+      "primary_customer_question": "Why is my BMW 320d automatic jerking when coming to a stop?",
+      "search_intent": "Vehicle-specific fault / service",
+      "evidence_of_demand": "DATA NOT AVAILABLE",
+      "existing_internal_overlap": [
+        "/gearboxes/bmw-zf-automatic",
+        "/faults/automatic-gearbox-jerking",
+        "/services/valve-body-repair"
+      ],
+      "serp_evidence": "DATA NOT AVAILABLE",
+      "unique_value": "BMW F30/G20 ZF 8HP specific valve body and mechatronic guidance",
+      "commercial_relevance": "HIGH",
+      "evidence_sources": [
+        "ZF 8HP Service Documentation"
+      ],
+      "conversion_path": "VRM -> Drivetrain Verification -> Symptom -> Quote",
+      "cannibalisation_risk": "HIGH_IF_NOT_DIFFERENTIATED",
+      "decision": "MODEL PAGE OPPORTUNITY \u2014 DATA REQUIRED (DO NOT BUILD)"
+    },
+    {
+      "case_id": "CASE-MODEL-003",
+      "proposed_url": "/models/ford-focus-powershift-repair",
+      "primary_customer_question": "What does transmission malfunction mean on a Ford Focus Powershift?",
+      "search_intent": "Vehicle-specific fault / service",
+      "evidence_of_demand": "DATA NOT AVAILABLE",
+      "existing_internal_overlap": [
+        "/gearboxes/ford-powershift",
+        "/services/powershift-repair",
+        "/faults/dsg-juddering"
+      ],
+      "serp_evidence": "DATA NOT AVAILABLE",
+      "unique_value": "Distinguishing Focus 1.6 dry-clutch DPS6 from Focus 2.0 TDCi wet-clutch MPS6",
+      "commercial_relevance": "HIGH",
+      "evidence_sources": [
+        "Ford Training 307-011",
+        "Getrag Data"
+      ],
+      "conversion_path": "VRM -> Engine check -> Symptom -> Quote",
+      "cannibalisation_risk": "HIGH_IF_NOT_DIFFERENTIATED",
+      "decision": "MODEL PAGE OPPORTUNITY \u2014 DATA REQUIRED (DO NOT BUILD)"
+    },
+    {
+      "case_id": "CASE-MODEL-004",
+      "proposed_url": "/models/nissan-qashqai-cvt-repair",
+      "primary_customer_question": "Why is my Nissan Qashqai CVT shuddering on take-off?",
+      "search_intent": "Vehicle-specific CVT diagnostic",
+      "evidence_of_demand": "DATA NOT AVAILABLE",
+      "existing_internal_overlap": [
+        "/gearboxes/xtronic-cvt",
+        "/services/cvt-gearbox-repair",
+        "/faults/cvt-gearbox-shuddering"
+      ],
+      "serp_evidence": "DATA NOT AVAILABLE",
+      "unique_value": "Qashqai J11 Jatco CVT8 specific fluid and variator pulley advice",
+      "commercial_relevance": "HIGH",
+      "evidence_sources": [
+        "Jatco Tech Review No. 11"
+      ],
+      "conversion_path": "VRM -> Fluid type check -> Symptom -> Quote",
+      "cannibalisation_risk": "HIGH_IF_NOT_DIFFERENTIATED",
+      "decision": "MODEL PAGE OPPORTUNITY \u2014 DATA REQUIRED (DO NOT BUILD)"
+    },
+    {
+      "case_id": "CASE-MODEL-005",
+      "proposed_url": "/models/audi-a3-s-tronic-repair",
+      "primary_customer_question": "What causes flashing gear numbers on an Audi A3 S-Tronic?",
+      "search_intent": "Vehicle-specific dual-clutch diagnostic",
+      "evidence_of_demand": "DATA NOT AVAILABLE",
+      "existing_internal_overlap": [
+        "/gearboxes/volkswagen-dsg",
+        "/services/dsg-mechatronic-repair",
+        "/faults/flashing-prnds-light"
+      ],
+      "serp_evidence": "DATA NOT AVAILABLE",
+      "unique_value": "Audi A3 8V S-Tronic mechatronic accumulator and clutch wear guidance",
+      "commercial_relevance": "HIGH",
+      "evidence_sources": [
+        "VAG SSP-390 / SSP-308"
+      ],
+      "conversion_path": "VRM -> Fitment check -> Symptom -> Quote",
+      "cannibalisation_risk": "HIGH_IF_NOT_DIFFERENTIATED",
+      "decision": "MODEL PAGE OPPORTUNITY \u2014 DATA REQUIRED (DO NOT BUILD)"
+    }
+  ]
+}

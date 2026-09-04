@@ -14,7 +14,12 @@
       "source_date": "2008",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The DQ200 is a 7-speed dry dual-clutch gearbox designed for engines producing up to 250 Nm of torque."
+      "customer_facing_wording": "The DQ200 is a 7-speed dry dual-clutch gearbox designed for engines producing up to 250 Nm of torque.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-DSG-002",
@@ -27,7 +32,12 @@
       "source_date": "2003",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The DQ250 is a 6-speed wet dual-clutch gearbox using multi-plate clutches bathed in transmission fluid for higher-torque engines."
+      "customer_facing_wording": "The DQ250 is a 6-speed wet dual-clutch gearbox using multi-plate clutches bathed in transmission fluid for higher-torque engines.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-DSG-003",
@@ -40,7 +50,12 @@
       "source_date": "2017",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The DQ381 is a modern 7-speed wet dual-clutch transmission engineered for mid-to-high power engines on modern platforms."
+      "customer_facing_wording": "The DQ381 is a modern 7-speed wet dual-clutch transmission engineered for mid-to-high power engines on modern platforms.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-DSG-004",
@@ -53,7 +68,12 @@
       "source_date": "2010",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The DQ500 is a heavy-duty 7-speed wet dual-clutch gearbox used in high-torque performance models and commercial vans."
+      "customer_facing_wording": "The DQ500 is a heavy-duty 7-speed wet dual-clutch gearbox used in high-torque performance models and commercial vans.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-ZF-001",
@@ -66,7 +86,12 @@
       "source_date": "2006",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The ZF 6HP is a 6-speed longitudinal automatic transmission with an integrated electronic Mechatronic control unit."
+      "customer_facing_wording": "The ZF 6HP is a 6-speed longitudinal automatic transmission with an integrated electronic Mechatronic control unit.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-ZF-002",
@@ -79,20 +104,33 @@
       "source_date": "2010",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The ZF 8HP is an advanced 8-speed automatic gearbox offering fast shifts, stop-start support, and high mechanical efficiency."
+      "customer_facing_wording": "The ZF 8HP is an advanced 8-speed automatic gearbox offering fast shifts, stop-start support, and high mechanical efficiency.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-ZF-003",
       "topic": "maintenance_intervals",
       "transmission_family": "ZF 6HP / 8HP Family",
-      "claim": "ZF specifies transmission oil and filter changes every 100,000 km (approx. 62,000 miles) or 8 years under arduous driving conditions using genuine ZF LifeguardFluid.",
-      "source_title": "ZF Service Information: Maintenance Recommendations for Passenger Car Automatic Transmissions",
+      "claim": "Under ZF TE-ML 11 operating instructions, passenger car 6HP and 8HP automatic transmissions are generally filled maintenance-free for standard use, but ZF recommends fluid and filter change after approximately 150,000 km, or earlier under severe operating conditions (high temperatures, high loads, sporty driving, or unknown history).",
+      "source_title": "ZF List of Lubricants TE-ML 11 / ZF Aftermarket Maintenance Guidance",
       "source_organisation": "ZF Aftermarket Technical Services",
-      "source_reference": "ZF SI 0000 000 001",
+      "source_reference": "ZF TE-ML 11 / ZF SI 0000 000 001",
       "source_date": "2019",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "ZF recommends transmission fluid and integrated sump filter servicing around 60,000 to 70,000 miles to maintain smooth hydraulic shifting."
+      "customer_facing_wording": "ZF recommends fluid and filter servicing around 150,000 km (or earlier under arduous driving conditions) to maintain optimal shift quality.",
+      "superseded_source": "Earlier indicative 100,000 km service note",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes/bmw-zf-automatic",
+        "/services/automatic-gearbox-repair",
+        "/services/valve-body-repair"
+      ]
     },
     {
       "claim_id": "TECH-FORD-001",
@@ -105,7 +143,12 @@
       "source_date": "2008",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The 6DCT450 is a 6-speed wet dual-clutch gearbox used in 2.0L diesel and higher-torque Ford vehicles, featuring oil-bathed clutch plates and damper springs."
+      "customer_facing_wording": "The 6DCT450 is a 6-speed wet dual-clutch gearbox used in 2.0L diesel and higher-torque Ford vehicles, featuring oil-bathed clutch plates and damper springs.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-FORD-002",
@@ -118,7 +161,12 @@
       "source_date": "2011",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The 6DCT250 is a 6-speed dry dual-clutch transmission used in smaller Ford models, operated by external electric shift actuators."
+      "customer_facing_wording": "The 6DCT250 is a 6-speed dry dual-clutch transmission used in smaller Ford models, operated by external electric shift actuators.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-CVT-001",
@@ -131,7 +179,12 @@
       "source_date": "2010",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The CVT7 is a compact continuously variable transmission combining variable pulleys with an auxiliary two-speed sub-gearbox for compact vehicles."
+      "customer_facing_wording": "The CVT7 is a compact continuously variable transmission combining variable pulleys with an auxiliary two-speed sub-gearbox for compact vehicles.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-CVT-002",
@@ -144,7 +197,12 @@
       "source_date": "2013",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The CVT8 is Jatco's main Continuously Variable Transmission for mid-sized crossover SUVs, providing smooth step-less ratio changes."
+      "customer_facing_wording": "The CVT8 is Jatco's main Continuously Variable Transmission for mid-sized crossover SUVs, providing smooth step-less ratio changes.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-MB-001",
@@ -157,7 +215,12 @@
       "source_date": "2004",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The 7G-Tronic (722.9) is a 7-speed automatic transmission with an integrated electronic conductor plate submerged in the oil sump."
+      "customer_facing_wording": "The 7G-Tronic (722.9) is a 7-speed automatic transmission with an integrated electronic conductor plate submerged in the oil sump.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     },
     {
       "claim_id": "TECH-MB-002",
@@ -170,7 +233,12 @@
       "source_date": "2014",
       "last_verified": "2026-09-05",
       "confidence": "OEM_VERIFIED",
-      "customer_facing_wording": "The 9G-Tronic (725.0) is Mercedes-Benz's 9-speed automatic transmission offering wide gear ratios, dual oil pumps, and high fuel efficiency."
+      "customer_facing_wording": "The 9G-Tronic (725.0) is Mercedes-Benz's 9-speed automatic transmission offering wide gear ratios, dual oil pumps, and high fuel efficiency.",
+      "source_status": "CURRENT",
+      "review_due": "2027-03-05",
+      "affected_pages": [
+        "/gearboxes"
+      ]
     }
   ]
 }
