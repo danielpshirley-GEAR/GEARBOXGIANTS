@@ -1,13 +1,13 @@
 /**
  * Cloudflare Worker: worker.js
- * Production Server Runtime for Gearbox Giants — Phase 3E.2
+ * Production Server Runtime for Gearbox Giants — Phase 3E.3
  * 
  * Features:
  * 1. DVSA MOT History Live API Gateway (Strict environment variables, zero hardcoded keys)
- * 2. Protected Admin Gate with HMAC-SHA256 Signed Session Cookies & Login API
+ * 2. Protected Admin Gate with HMAC-SHA256 Signed Session Cookies & IP Rate-Limited Login API
  * 3. Double-Layer Privacy Analytics Gateway (Zero PII, Zero quote hashes)
  * 4. Unified Google OAuth2 (Search Console + GA4 Data API) with AES-GCM Encrypted Token Storage in SEO_AUTH KV
- * 5. Dynamic Token Refresh, Property Discovery & Disconnect Capabilities
+ * 5. Dynamic Token Refresh, Upstream Token Revocation & Disconnect Capabilities
  * 6. GA4 Data API Client & Separation from Measurement Protocol Event Gateway
  * 7. DataForSEO v3 Client with Owner-Controlled Budget & Pre-Execution Cost Estimator
  * 8. Human-Verified Case Study Ingestion API
@@ -17,6 +17,13 @@
 
 let cachedDvsaToken = null;
 let dvsaTokenExpiresAt = 0;
+
+// Ephemeral in-memory Google access token (lost on isolate restart, never persisted in KV)
+let ephemeralGoogleAccessToken = null;
+let ephemeralGoogleTokenExpiresAt = 0;
+
+// In-memory brute-force rate limiter for admin login: IP -> { attempts: number, firstAttemptAt: number, blockedUntil: number }
+const loginRateLimitMap = new Map();
 
 // In-memory fallback store for local testing when KV is not bound
 const localMemoryStore = new Map();
@@ -133,6 +140,55 @@ async function deleteGoogleConnection(env) {
 /* =========================================================================
    2. ADMIN AUTHENTICATION & SECURE SESSION COOKIES
    ========================================================================= */
+
+function checkAdminLoginRateLimit(clientIp) {
+  const now = Date.now();
+  const entry = loginRateLimitMap.get(clientIp);
+  if (!entry) {
+    return { allowed: true };
+  }
+
+  // If currently blocked
+  if (entry.blockedUntil && entry.blockedUntil > now) {
+    const remainingSec = Math.ceil((entry.blockedUntil - now) / 1000);
+    return {
+      allowed: false,
+      error: `Too many failed login attempts. Please wait ${remainingSec} seconds before trying again.`,
+      retryAfter: remainingSec
+    };
+  }
+
+  // Reset window after 15 minutes (900,000 ms)
+  if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+    loginRateLimitMap.delete(clientIp);
+    return { allowed: true };
+  }
+
+  return { allowed: true, attempts: entry.attempts };
+}
+
+function recordFailedLoginAttempt(clientIp) {
+  const now = Date.now();
+  const entry = loginRateLimitMap.get(clientIp) || { attempts: 0, firstAttemptAt: now, blockedUntil: 0 };
+  
+  if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+    entry.attempts = 1;
+    entry.firstAttemptAt = now;
+    entry.blockedUntil = 0;
+  } else {
+    entry.attempts += 1;
+  }
+
+  if (entry.attempts >= 5) {
+    entry.blockedUntil = now + (15 * 60 * 1000); // 15-minute cooldown
+  }
+
+  loginRateLimitMap.set(clientIp, entry);
+}
+
+function recordSuccessfulLogin(clientIp) {
+  loginRateLimitMap.delete(clientIp);
+}
 
 async function createAdminSessionToken(user, env) {
   const timestamp = Date.now();
@@ -540,16 +596,51 @@ async function handleGoogleOAuthCallback(request, env) {
       return new Response(`Token exchange failed: ${JSON.stringify(tokenData)}`, { status: 400 });
     }
 
-    // Encrypt refresh token
-    const encryptedToken = await encryptToken(tokenData.refresh_token, env);
     const existing = await loadGoogleConnection(env) || {};
 
+    let encryptedRefreshToken = null;
+    if (tokenData.refresh_token) {
+      encryptedRefreshToken = await encryptToken(tokenData.refresh_token, env);
+    } else if (existing && existing.refresh_token_encrypted) {
+      // Preserve existing encrypted refresh token on re-authorization if Google didn't reissue
+      encryptedRefreshToken = existing.refresh_token_encrypted;
+    }
+
+    if (!encryptedRefreshToken) {
+      return new Response(`<!DOCTYPE html>
+<html>
+<head>
+  <title>Re-authorization Required</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; background: #0c121e; color: #fff; padding: 40px; display: flex; justify-content: center; }
+    .card { background: #161f30; padding: 30px; border-radius: 8px; border: 1px solid #ef4444; max-width: 550px; text-align: center; }
+    h2 { color: #ef4444; margin-top: 0; }
+    p { color: #94a3b8; line-height: 1.6; }
+    a { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #1a4971; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>GOOGLE_REAUTHORISATION_REQUIRED</h2>
+    <p>Google did not return an offline refresh token and no previous token was found in storage.</p>
+    <p>Please re-authenticate and ensure you approve offline access with consent prompt.</p>
+    <a href="/api/auth/google/login">Re-authenticate with Google &rarr;</a>
+  </div>
+</body>
+</html>`, { status: 400, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+    }
+
+    // Cache access token in ephemeral Worker memory ONLY (never persisted to KV)
+    if (tokenData.access_token) {
+      ephemeralGoogleAccessToken = tokenData.access_token;
+      ephemeralGoogleTokenExpiresAt = Date.now() + (((tokenData.expires_in || 3600) - 60) * 1000);
+    }
+
+    // Persist strictly metadata and AES-GCM encrypted refresh token to SEO_AUTH KV (Zero plaintext access tokens)
     const connectionRecord = {
       provider: 'google',
-      refresh_token_encrypted: encryptedToken || existing.refresh_token_encrypted,
-      access_token: tokenData.access_token,
-      access_token_expires_at: Date.now() + ((tokenData.expires_in || 3600) * 1000),
-      scopes: tokenData.scope ? tokenData.scope.split(' ') : GOOGLE_SCOPES.split(' '),
+      refresh_token_encrypted: encryptedRefreshToken,
+      scopes: tokenData.scope ? tokenData.scope.split(' ') : (existing.scopes || GOOGLE_SCOPES.split(' ')),
       selected_gsc_property: existing.selected_gsc_property || 'sc-domain:gearboxgiants.co.uk',
       ga4_property_id: existing.ga4_property_id || null,
       ga4_measurement_id: (env && env.GA4_MEASUREMENT_ID) || existing.ga4_measurement_id || null,
@@ -578,7 +669,7 @@ async function handleGoogleOAuthCallback(request, env) {
   <div class="card">
     <h2>Google Account Connected</h2>
     <p>Search Console (Read-Only) and Google Analytics (Read-Only) authorization completed successfully.</p>
-    <p>Refresh token stored with AES-GCM encryption in <code>SEO_AUTH</code> persistent storage.</p>
+    <p>Refresh token stored with AES-GCM encryption in <code>SEO_AUTH</code> persistent storage. Plaintext access tokens are never persisted in storage.</p>
     <a href="/admin/integrations">Return to Admin Integrations Dashboard &rarr;</a>
   </div>
 </body>
@@ -596,27 +687,64 @@ async function handleGoogleOAuthCallback(request, env) {
 }
 
 async function handleGoogleDisconnect(env) {
+  let upstreamRevoked = false;
+  let revokeError = null;
+
+  try {
+    const stored = await loadGoogleConnection(env);
+    if (stored && stored.refresh_token_encrypted) {
+      const refreshToken = await decryptToken(stored.refresh_token_encrypted, env);
+      if (refreshToken) {
+        // Revoke token upstream with Google OAuth endpoint
+        const revokeRes = await fetch('https://oauth2.googleapis.com/revoke?token=' + encodeURIComponent(refreshToken), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+        if (revokeRes.ok) {
+          upstreamRevoked = true;
+        } else {
+          revokeError = `Google revoke endpoint returned HTTP ${revokeRes.status}`;
+        }
+      }
+    }
+  } catch (e) {
+    revokeError = e.message;
+  }
+
+  // Clear ephemeral memory cache
+  ephemeralGoogleAccessToken = null;
+  ephemeralGoogleTokenExpiresAt = 0;
+
+  // Clear persistent KV storage
   await deleteGoogleConnection(env);
+
   return new Response(JSON.stringify({
     status: 'DISCONNECTED',
+    upstream_revocation: upstreamRevoked ? 'SUCCESS' : (revokeError ? `FAILED (${revokeError})` : 'NO_STORED_TOKEN'),
     message: 'Google connection and stored OAuth tokens have been completely removed from SEO_AUTH.'
   }), { status: 200, headers: CORS_HEADERS });
 }
 
 async function getValidGoogleAccessToken(env) {
-  const stored = await loadGoogleConnection(env);
-  if (!stored) return null;
-
-  // If existing access token is valid for >60s
-  if (stored.access_token && stored.access_token_expires_at > (Date.now() + 60000)) {
-    return stored.access_token;
+  const now = Date.now();
+  
+  // 1. Check ephemeral isolate memory cache first (NOT in persistent KV)
+  if (ephemeralGoogleAccessToken && ephemeralGoogleTokenExpiresAt > (now + 60000)) {
+    return ephemeralGoogleAccessToken;
   }
 
-  // Refresh token required
+  const stored = await loadGoogleConnection(env);
+  if (!stored || !stored.refresh_token_encrypted) return null;
+
+  // 2. Decrypt refresh token server-side on demand
   const refreshToken = await decryptToken(stored.refresh_token_encrypted, env);
   if (!refreshToken) {
     stored.token_status = 'AUTH_ERROR';
     stored.last_error = 'Unable to decrypt refresh token';
+    delete stored.access_token;
+    delete stored.access_token_expires_at;
     await saveGoogleConnection(stored, env);
     return null;
   }
@@ -640,21 +768,31 @@ async function getValidGoogleAccessToken(env) {
 
     const data = await res.json();
     if (res.ok && data.access_token) {
-      stored.access_token = data.access_token;
-      stored.access_token_expires_at = Date.now() + ((data.expires_in || 3600) * 1000);
+      // Ephemeral Worker memory only — NEVER persist access_token to KV!
+      ephemeralGoogleAccessToken = data.access_token;
+      ephemeralGoogleTokenExpiresAt = now + (((data.expires_in || 3600) - 60) * 1000);
+      
+      // Update metadata in persistent KV without storing access_token
       stored.last_refresh_at = new Date().toISOString();
       stored.token_status = 'ACTIVE';
       stored.last_error = null;
+      delete stored.access_token;
+      delete stored.access_token_expires_at;
       await saveGoogleConnection(stored, env);
-      return data.access_token;
+      
+      return ephemeralGoogleAccessToken;
     } else {
       stored.token_status = 'AUTH_ERROR';
       stored.last_error = data.error_description || data.error || 'Refresh failed';
+      delete stored.access_token;
+      delete stored.access_token_expires_at;
       await saveGoogleConnection(stored, env);
       return null;
     }
   } catch (e) {
     stored.last_error = e.message;
+    delete stored.access_token;
+    delete stored.access_token_expires_at;
     await saveGoogleConnection(stored, env);
     return null;
   }
@@ -1173,6 +1311,22 @@ export default {
 
     // D. Admin Login API Endpoint
     if (path === '/api/admin/login' && request.method === 'POST') {
+      const clientIp = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || '127.0.0.1';
+
+      const rateLimitCheck = checkAdminLoginRateLimit(clientIp);
+      if (!rateLimitCheck.allowed) {
+        return new Response(JSON.stringify({
+          status: 'RATE_LIMITED',
+          error: rateLimitCheck.error
+        }), {
+          status: 429,
+          headers: {
+            ...CORS_HEADERS,
+            'Retry-After': String(rateLimitCheck.retryAfter || 900)
+          }
+        });
+      }
+
       try {
         const body = await request.json();
         const expectedUser = (env && env.ADMIN_USERNAME) || 'admin';
@@ -1185,7 +1339,11 @@ export default {
           }), { status: 500, headers: CORS_HEADERS });
         }
 
-        if (body.username === expectedUser && body.password === expectedPass) {
+        const isUserValid = (body.username === expectedUser);
+        const isPassValid = (body.password === expectedPass);
+
+        if (isUserValid && isPassValid) {
+          recordSuccessfulLogin(clientIp);
           const sessionToken = await createAdminSessionToken(body.username, env);
           return new Response(JSON.stringify({ status: 'SUCCESS' }), {
             status: 200,
@@ -1195,6 +1353,9 @@ export default {
             }
           });
         }
+
+        recordFailedLoginAttempt(clientIp);
+        // Generic error prevents username enumeration
         return new Response(JSON.stringify({ status: 'ERROR', error: 'Invalid username or password.' }), { status: 401, headers: CORS_HEADERS });
       } catch (e) {
         return new Response(JSON.stringify({ status: 'ERROR', error: 'Malformed request.' }), { status: 400, headers: CORS_HEADERS });
