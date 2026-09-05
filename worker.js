@@ -1,13 +1,13 @@
 /**
  * Cloudflare Worker: worker.js
- * Production Server Runtime for Gearbox Giants — Phase 3E.3
+ * Production Server Runtime for Gearbox Giants — Phase 3E.4
  * 
  * Features:
  * 1. DVSA MOT History Live API Gateway (Strict environment variables, zero hardcoded keys)
- * 2. Protected Admin Gate with HMAC-SHA256 Signed Session Cookies & IP Rate-Limited Login API
+ * 2. Protected Admin Gate with HMAC-SHA256 Signed Session Cookies & Durable Object Rate-Limited Login API
  * 3. Double-Layer Privacy Analytics Gateway (Zero PII, Zero quote hashes)
  * 4. Unified Google OAuth2 (Search Console + GA4 Data API) with AES-GCM Encrypted Token Storage in SEO_AUTH KV
- * 5. Dynamic Token Refresh, Upstream Token Revocation & Disconnect Capabilities
+ * 5. Dynamic Request-Scoped Token Refresh, Upstream Token Revocation & Disconnect Capabilities
  * 6. GA4 Data API Client & Separation from Measurement Protocol Event Gateway
  * 7. DataForSEO v3 Client with Owner-Controlled Budget & Pre-Execution Cost Estimator
  * 8. Human-Verified Case Study Ingestion API
@@ -17,13 +17,6 @@
 
 let cachedDvsaToken = null;
 let dvsaTokenExpiresAt = 0;
-
-// Ephemeral in-memory Google access token (lost on isolate restart, never persisted in KV)
-let ephemeralGoogleAccessToken = null;
-let ephemeralGoogleTokenExpiresAt = 0;
-
-// In-memory brute-force rate limiter for admin login: IP -> { attempts: number, firstAttemptAt: number, blockedUntil: number }
-const loginRateLimitMap = new Map();
 
 // In-memory fallback store for local testing when KV is not bound
 const localMemoryStore = new Map();
@@ -138,56 +131,188 @@ async function deleteGoogleConnection(env) {
 }
 
 /* =========================================================================
-   2. ADMIN AUTHENTICATION & SECURE SESSION COOKIES
+   2. DURABLE OBJECT & ADMIN AUTHENTICATION (BRUTE FORCE RATE LIMITING)
    ========================================================================= */
 
-function checkAdminLoginRateLimit(clientIp) {
-  const now = Date.now();
-  const entry = loginRateLimitMap.get(clientIp);
-  if (!entry) {
-    return { allowed: true };
+export class LoginRateLimiter {
+  constructor(state, env) {
+    this.state = state;
+    this.storage = state.storage;
   }
 
-  // If currently blocked
-  if (entry.blockedUntil && entry.blockedUntil > now) {
-    const remainingSec = Math.ceil((entry.blockedUntil - now) / 1000);
-    return {
-      allowed: false,
-      error: `Too many failed login attempts. Please wait ${remainingSec} seconds before trying again.`,
-      retryAfter: remainingSec
-    };
-  }
+  async fetch(request) {
+    const url = new URL(request.url);
+    const path = url.pathname;
+    const key = url.searchParams.get('key') || 'default';
+    const now = Date.now();
 
-  // Reset window after 15 minutes (900,000 ms)
-  if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
-    loginRateLimitMap.delete(clientIp);
-    return { allowed: true };
-  }
+    if (path === '/check') {
+      const entry = (await this.storage.get(key)) || null;
+      if (!entry) {
+        return new Response(JSON.stringify({ allowed: true, attempts: 0 }), {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
 
-  return { allowed: true, attempts: entry.attempts };
+      if (entry.blockedUntil && entry.blockedUntil > now) {
+        const remainingSec = Math.ceil((entry.blockedUntil - now) / 1000);
+        return new Response(JSON.stringify({
+          allowed: false,
+          error: `Too many failed login attempts. Please wait ${remainingSec} seconds before trying again.`,
+          retryAfter: remainingSec
+        }), {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+
+      if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+        await this.storage.delete(key);
+        return new Response(JSON.stringify({ allowed: true, attempts: 0 }), {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+
+      return new Response(JSON.stringify({ allowed: true, attempts: entry.attempts }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    if (path === '/fail') {
+      let entry = (await this.storage.get(key)) || { attempts: 0, firstAttemptAt: now, blockedUntil: 0 };
+      if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+        entry.attempts = 1;
+        entry.firstAttemptAt = now;
+        entry.blockedUntil = 0;
+      } else {
+        entry.attempts += 1;
+      }
+
+      if (entry.attempts >= 5) {
+        entry.blockedUntil = now + (15 * 60 * 1000); // 15-minute lockout
+      }
+
+      await this.storage.put(key, entry);
+      return new Response(JSON.stringify({ status: 'RECORDED', attempts: entry.attempts, blocked: entry.attempts >= 5 }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    if (path === '/success') {
+      await this.storage.delete(key);
+      return new Response(JSON.stringify({ status: 'CLEARED' }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    return new Response(JSON.stringify({ error: 'Not Found' }), { status: 404 });
+  }
 }
 
-function recordFailedLoginAttempt(clientIp) {
-  const now = Date.now();
-  const entry = loginRateLimitMap.get(clientIp) || { attempts: 0, firstAttemptAt: now, blockedUntil: 0 };
-  
-  if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
-    entry.attempts = 1;
-    entry.firstAttemptAt = now;
-    entry.blockedUntil = 0;
-  } else {
-    entry.attempts += 1;
-  }
-
-  if (entry.attempts >= 5) {
-    entry.blockedUntil = now + (15 * 60 * 1000); // 15-minute cooldown
-  }
-
-  loginRateLimitMap.set(clientIp, entry);
+async function hashClientIp(ip, env) {
+  const salt = (env && (env.ADMIN_SESSION_SECRET || env.ADMIN_PASSWORD)) || 'gearbox-login-salt';
+  const enc = new TextEncoder();
+  const digest = await crypto.subtle.digest('SHA-256', enc.encode(`${ip}:${salt}`));
+  const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+  return hex.slice(0, 32); // 32-character privacy-safe hash
 }
 
-function recordSuccessfulLogin(clientIp) {
-  loginRateLimitMap.delete(clientIp);
+async function checkAdminLoginRateLimit(clientIp, env) {
+  const ipHash = await hashClientIp(clientIp, env);
+
+  // 1. Primary: Cloudflare Durable Object (Strict durable atomicity across all edge regions)
+  if (env && env.LOGIN_LIMITER) {
+    try {
+      const id = env.LOGIN_LIMITER.idFromName('global_admin_limiter');
+      const obj = env.LOGIN_LIMITER.get(id);
+      const res = await obj.fetch(`https://do/check?key=${ipHash}`);
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch (e) {
+      console.warn('Durable Object rate check fallback:', e);
+    }
+  }
+
+  // 2. Secondary: SEO_AUTH KV with TTL (Distributed server-side storage)
+  if (env && env.SEO_AUTH) {
+    try {
+      const raw = await env.SEO_AUTH.get(`rl:${ipHash}`);
+      if (raw) {
+        const entry = JSON.parse(raw);
+        const now = Date.now();
+        if (entry.blockedUntil && entry.blockedUntil > now) {
+          const remainingSec = Math.ceil((entry.blockedUntil - now) / 1000);
+          return {
+            allowed: false,
+            error: `Too many failed login attempts. Please wait ${remainingSec} seconds before trying again.`,
+            retryAfter: remainingSec
+          };
+        }
+        if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+          await env.SEO_AUTH.delete(`rl:${ipHash}`);
+          return { allowed: true, attempts: 0 };
+        }
+        return { allowed: true, attempts: entry.attempts };
+      }
+    } catch (e) {}
+  }
+
+  return { allowed: true, attempts: 0 };
+}
+
+async function recordFailedLoginAttempt(clientIp, env) {
+  const ipHash = await hashClientIp(clientIp, env);
+
+  if (env && env.LOGIN_LIMITER) {
+    try {
+      const id = env.LOGIN_LIMITER.idFromName('global_admin_limiter');
+      const obj = env.LOGIN_LIMITER.get(id);
+      await obj.fetch(`https://do/fail?key=${ipHash}`, { method: 'POST' });
+      return;
+    } catch (e) {
+      console.warn('Durable Object fail recording fallback:', e);
+    }
+  }
+
+  if (env && env.SEO_AUTH) {
+    try {
+      const now = Date.now();
+      const raw = await env.SEO_AUTH.get(`rl:${ipHash}`);
+      let entry = raw ? JSON.parse(raw) : { attempts: 0, firstAttemptAt: now, blockedUntil: 0 };
+      if (now - entry.firstAttemptAt > 15 * 60 * 1000) {
+        entry.attempts = 1;
+        entry.firstAttemptAt = now;
+        entry.blockedUntil = 0;
+      } else {
+        entry.attempts += 1;
+      }
+      if (entry.attempts >= 5) {
+        entry.blockedUntil = now + (15 * 60 * 1000);
+      }
+      await env.SEO_AUTH.put(`rl:${ipHash}`, JSON.stringify(entry), { expirationTtl: 1800 });
+    } catch (e) {}
+  }
+}
+
+async function recordSuccessfulLogin(clientIp, env) {
+  const ipHash = await hashClientIp(clientIp, env);
+
+  if (env && env.LOGIN_LIMITER) {
+    try {
+      const id = env.LOGIN_LIMITER.idFromName('global_admin_limiter');
+      const obj = env.LOGIN_LIMITER.get(id);
+      await obj.fetch(`https://do/success?key=${ipHash}`, { method: 'POST' });
+      return;
+    } catch (e) {
+      console.warn('Durable Object success recording fallback:', e);
+    }
+  }
+
+  if (env && env.SEO_AUTH) {
+    try {
+      await env.SEO_AUTH.delete(`rl:${ipHash}`);
+    } catch (e) {}
+  }
 }
 
 async function createAdminSessionToken(user, env) {
@@ -530,13 +655,23 @@ async function handleGoogleOAuthLogin(request, env) {
   const redirectUri = `${url.origin}/api/auth/google/callback`;
   const state = crypto.randomUUID();
 
+  // Check if force consent requested via query parameter
+  const forceReauth = url.searchParams.get('force') === 'true' || url.searchParams.get('reauth') === 'true' || url.searchParams.get('prompt') === 'consent';
+  const storedConnection = await loadGoogleConnection(env);
+  const hasExistingRefreshToken = Boolean(storedConnection && storedConnection.refresh_token_encrypted);
+
   const googleAuthUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth');
   googleAuthUrl.searchParams.set('client_id', clientId);
   googleAuthUrl.searchParams.set('redirect_uri', redirectUri);
   googleAuthUrl.searchParams.set('response_type', 'code');
   googleAuthUrl.searchParams.set('scope', GOOGLE_SCOPES);
   googleAuthUrl.searchParams.set('access_type', 'offline');
-  googleAuthUrl.searchParams.set('prompt', 'consent');
+
+  // Force consent ONLY if no usable stored refresh token exists, or if explicit force/reauth is requested
+  if (!hasExistingRefreshToken || forceReauth) {
+    googleAuthUrl.searchParams.set('prompt', 'consent');
+  }
+
   googleAuthUrl.searchParams.set('state', state);
 
   return new Response(null, {
@@ -624,16 +759,10 @@ async function handleGoogleOAuthCallback(request, env) {
     <h2>GOOGLE_REAUTHORISATION_REQUIRED</h2>
     <p>Google did not return an offline refresh token and no previous token was found in storage.</p>
     <p>Please re-authenticate and ensure you approve offline access with consent prompt.</p>
-    <a href="/api/auth/google/login">Re-authenticate with Google &rarr;</a>
+    <a href="/api/auth/google/login?force=true">Re-authenticate with Google &rarr;</a>
   </div>
 </body>
 </html>`, { status: 400, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
-    }
-
-    // Cache access token in ephemeral Worker memory ONLY (never persisted to KV)
-    if (tokenData.access_token) {
-      ephemeralGoogleAccessToken = tokenData.access_token;
-      ephemeralGoogleTokenExpiresAt = Date.now() + (((tokenData.expires_in || 3600) - 60) * 1000);
     }
 
     // Persist strictly metadata and AES-GCM encrypted refresh token to SEO_AUTH KV (Zero plaintext access tokens)
@@ -713,10 +842,6 @@ async function handleGoogleDisconnect(env) {
     revokeError = e.message;
   }
 
-  // Clear ephemeral memory cache
-  ephemeralGoogleAccessToken = null;
-  ephemeralGoogleTokenExpiresAt = 0;
-
   // Clear persistent KV storage
   await deleteGoogleConnection(env);
 
@@ -728,17 +853,10 @@ async function handleGoogleDisconnect(env) {
 }
 
 async function getValidGoogleAccessToken(env) {
-  const now = Date.now();
-  
-  // 1. Check ephemeral isolate memory cache first (NOT in persistent KV)
-  if (ephemeralGoogleAccessToken && ephemeralGoogleTokenExpiresAt > (now + 60000)) {
-    return ephemeralGoogleAccessToken;
-  }
-
   const stored = await loadGoogleConnection(env);
   if (!stored || !stored.refresh_token_encrypted) return null;
 
-  // 2. Decrypt refresh token server-side on demand
+  // Decrypt refresh token server-side on demand (request-scoped)
   const refreshToken = await decryptToken(stored.refresh_token_encrypted, env);
   if (!refreshToken) {
     stored.token_status = 'AUTH_ERROR';
@@ -768,10 +886,6 @@ async function getValidGoogleAccessToken(env) {
 
     const data = await res.json();
     if (res.ok && data.access_token) {
-      // Ephemeral Worker memory only — NEVER persist access_token to KV!
-      ephemeralGoogleAccessToken = data.access_token;
-      ephemeralGoogleTokenExpiresAt = now + (((data.expires_in || 3600) - 60) * 1000);
-      
       // Update metadata in persistent KV without storing access_token
       stored.last_refresh_at = new Date().toISOString();
       stored.token_status = 'ACTIVE';
@@ -780,7 +894,8 @@ async function getValidGoogleAccessToken(env) {
       delete stored.access_token_expires_at;
       await saveGoogleConnection(stored, env);
       
-      return ephemeralGoogleAccessToken;
+      // Return short-lived access token strictly in request-local scope
+      return data.access_token;
     } else {
       stored.token_status = 'AUTH_ERROR';
       stored.last_error = data.error_description || data.error || 'Refresh failed';
@@ -1313,7 +1428,7 @@ export default {
     if (path === '/api/admin/login' && request.method === 'POST') {
       const clientIp = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || '127.0.0.1';
 
-      const rateLimitCheck = checkAdminLoginRateLimit(clientIp);
+      const rateLimitCheck = await checkAdminLoginRateLimit(clientIp, env);
       if (!rateLimitCheck.allowed) {
         return new Response(JSON.stringify({
           status: 'RATE_LIMITED',
@@ -1343,7 +1458,7 @@ export default {
         const isPassValid = (body.password === expectedPass);
 
         if (isUserValid && isPassValid) {
-          recordSuccessfulLogin(clientIp);
+          await recordSuccessfulLogin(clientIp, env);
           const sessionToken = await createAdminSessionToken(body.username, env);
           return new Response(JSON.stringify({ status: 'SUCCESS' }), {
             status: 200,
@@ -1354,7 +1469,7 @@ export default {
           });
         }
 
-        recordFailedLoginAttempt(clientIp);
+        await recordFailedLoginAttempt(clientIp, env);
         // Generic error prevents username enumeration
         return new Response(JSON.stringify({ status: 'ERROR', error: 'Invalid username or password.' }), { status: 401, headers: CORS_HEADERS });
       } catch (e) {

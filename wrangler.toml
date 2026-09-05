@@ -11,6 +11,16 @@ binding = "ASSETS"
 binding = "SEO_AUTH"
 id = "seo_auth_kv"
 
+[durable_objects]
+bindings = [
+  { name = "LOGIN_LIMITER", class_name = "LoginRateLimiter" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["LoginRateLimiter"]
+
 [triggers]
 crons = ["0 */6 * * *"]
+
 

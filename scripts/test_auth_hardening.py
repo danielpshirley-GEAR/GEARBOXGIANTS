@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 scripts/test_auth_hardening.py
-Phase 3E.3 Auth Hardening & Zero-Plaintext Storage Audit Test
+Phase 3E.4 Edge Security & Credential Integrity Audit Test Suite
 """
 
 import sys
@@ -10,23 +10,48 @@ from pathlib import Path
 
 def run_checks():
     print("=================================================================")
-    print("PHASE 3E.3 AUTH HARDENING & CREDENTIAL INTEGRITY AUDIT")
+    print("PHASE 3E.4 EDGE SECURITY & CREDENTIAL INTEGRITY AUDIT")
     print("=================================================================")
 
     worker_path = Path("worker.js")
-    if not worker_path.exists():
-        print("FAIL: worker.js not found.")
+    wrangler_path = Path("wrangler.toml")
+    
+    if not worker_path.exists() or not wrangler_path.exists():
+        print("FAIL: worker.js or wrangler.toml not found.")
         sys.exit(1)
 
-    content = worker_path.read_text(encoding="utf-8")
+    worker_content = worker_path.read_text(encoding="utf-8")
+    wrangler_content = wrangler_path.read_text(encoding="utf-8")
 
     failures = []
     passes = []
 
-    # 1. Zero Plaintext Access Tokens in Persistent Storage
-    print("\n[Check 1] Auditing Persistent Storage in worker.js for Plaintext Access Tokens...")
+    # 1. Admin Login Rate Limit Storage (Durable Object + Cloudflare Native)
+    print("\n[Check 1] Auditing Admin Login Rate-Limit Storage Mechanism...")
+    if "export class LoginRateLimiter" in worker_content and "[durable_objects]" in wrangler_content:
+        passes.append("LOGIN_RATE_LIMIT_STORAGE: Cloudflare Durable Object (class LoginRateLimiter) declared & bound in wrangler.toml.")
+    else:
+        failures.append("Durable Object class LoginRateLimiter or wrangler.toml binding missing.")
+
+    if "loginRateLimitMap" in worker_content:
+        failures.append("Module-level JavaScript Map (Worker isolate memory) still present for rate limiting!")
+    else:
+        passes.append("Worker isolate memory Map purged; rate-limiting uses server-side durable storage.")
+
+    if "hashClientIp" in worker_content and "SHA-256" in worker_content:
+        passes.append("Client IP privacy protection: SHA-256 salted hash used for rate-limiting keys.")
+    else:
+        failures.append("Privacy-safe IP hashing missing in rate-limiting key generation.")
+
+    # 2. Google Access Token Scoping (Zero Module-Global State, Zero KV Plaintext)
+    print("\n[Check 2] Auditing Google Access Token Scoping & Storage...")
+    if "ephemeralGoogleAccessToken" in worker_content:
+        failures.append("Module-global ephemeralGoogleAccessToken found! Access tokens must be request-scoped.")
+    else:
+        passes.append("Zero module-global Google access token state. Tokens are strictly request-scoped.")
+
     # Ensure access_token is NOT inside connectionRecord saved to KV
-    save_matches = re.findall(r'const connectionRecord = \{([^}]+)\};', content, re.DOTALL)
+    save_matches = re.findall(r'const connectionRecord = \{([^}]+)\};', worker_content, re.DOTALL)
     has_persisted_access_token = False
     for match in save_matches:
         if 'access_token:' in match:
@@ -34,49 +59,43 @@ def run_checks():
             failures.append("connectionRecord contains persistent access_token property!")
 
     if not has_persisted_access_token:
-        passes.append("Zero persistent access_token storage in connectionRecord (SEO_AUTH KV).")
+        passes.append("Persistent plaintext access tokens in KV: 0 (Strict AES-GCM refresh token only).")
 
-    # Ensure getValidGoogleAccessToken deletes stored access_token and uses ephemeral memory
-    if "ephemeralGoogleAccessToken" in content and "delete stored.access_token" in content:
-        passes.append("Ephemeral Worker isolate memory cache active; persistent access_token purged.")
+    # 3. Google OAuth Consent Behavior (Forced only when required)
+    print("\n[Check 3] Auditing Google OAuth Consent Behavior...")
+    if "access_type', 'offline'" in worker_content:
+        passes.append("Google OAuth always requests access_type=offline for background refresh capability.")
     else:
-        failures.append("Ephemeral memory caching or purge logic missing in getValidGoogleAccessToken.")
+        failures.append("access_type=offline missing in Google OAuth login.")
 
-    # 2. Offline OAuth & Refresh Token First-Auth
-    print("\n[Check 2] Auditing OAuth Parameter Hardening & Re-authorization Handling...")
-    if "access_type', 'offline'" in content and "prompt', 'consent'" in content:
-        passes.append("Google OAuth URL includes explicit access_type=offline and prompt=consent.")
+    if "hasExistingRefreshToken" in worker_content and "if (!hasExistingRefreshToken || forceReauth)" in worker_content:
+        passes.append("prompt=consent is forced ONLY when no refresh token is stored or on explicit reauth.")
     else:
-        failures.append("Google OAuth missing offline access_type or prompt=consent.")
+        failures.append("Google OAuth forces prompt=consent indiscriminately on every login.")
 
-    if "GOOGLE_REAUTHORISATION_REQUIRED" in content and "encryptedRefreshToken = existing.refresh_token_encrypted" in content:
-        passes.append("OAuth callback properly preserves existing refresh token on re-auth and returns GOOGLE_REAUTHORISATION_REQUIRED if missing.")
+    # 4. Refresh Token Preservation & Safeguards
+    print("\n[Check 4] Auditing Refresh Token Preservation & Error Handling...")
+    if "encryptedRefreshToken = existing.refresh_token_encrypted" in worker_content and "GOOGLE_REAUTHORISATION_REQUIRED" in worker_content:
+        passes.append("Existing encrypted refresh token is preserved on re-auth; GOOGLE_REAUTHORISATION_REQUIRED returned if missing.")
     else:
-        failures.append("OAuth callback does not properly handle missing refresh tokens.")
+        failures.append("Missing refresh token preservation or error handling.")
 
-    # 3. Upstream Google Revocation on Disconnect
-    print("\n[Check 3] Auditing Google Disconnect Upstream Revocation...")
-    if "https://oauth2.googleapis.com/revoke?token=" in content and "deleteGoogleConnection(env)" in content:
-        passes.append("Disconnect handler revokes token upstream with Google before clearing SEO_AUTH KV.")
+    # 5. Upstream Google Revocation on Disconnect
+    print("\n[Check 5] Auditing Upstream Google Disconnect Revocation...")
+    if "https://oauth2.googleapis.com/revoke?token=" in worker_content and "deleteGoogleConnection(env)" in worker_content:
+        passes.append("Google Disconnect revokes token upstream with Google OAuth before clearing SEO_AUTH KV.")
     else:
-        failures.append("Disconnect handler does not call upstream Google token revocation endpoint.")
+        failures.append("Upstream Google token revocation missing on disconnect.")
 
-    # 4. Admin Login Brute-Force Rate Limiting
-    print("\n[Check 4] Auditing Admin Login Brute-Force Rate Limiting...")
-    if "checkAdminLoginRateLimit" in content and "recordFailedLoginAttempt" in content and "429" in content:
-        passes.append("Admin login protected by IP brute-force rate limiting with HTTP 429 response.")
+    # 6. Admin Login Brute-Force Throttling & Uniform Errors
+    print("\n[Check 6] Auditing Admin Login Throttling & Generic Error Handling...")
+    if "429" in worker_content and "RATE_LIMITED" in worker_content and "Invalid username or password." in worker_content:
+        passes.append("Admin login returns HTTP 429 on brute-force lockout and uniform error messages against username enumeration.")
     else:
-        failures.append("Admin login missing IP brute-force rate limiter.")
+        failures.append("Admin login missing HTTP 429 lockout response or generic error messages.")
 
-    # 5. Generic Error Responses (Zero Username Enumeration)
-    print("\n[Check 5] Auditing Admin Login Generic Error Messages...")
-    if 'error: \'Invalid username or password.\'' in content:
-        passes.append("Uniform error message 'Invalid username or password.' prevents username enumeration.")
-    else:
-        failures.append("Admin login error messages differentiate between invalid username and invalid password.")
-
-    # 6. Case Study Gate Verification
-    print("\n[Check 6] Auditing Case Study Verification Integrity Gate...")
+    # 7. Strict Case Study Integrity Gate
+    print("\n[Check 7] Auditing Human-Verified Case Study Gate...")
     case_study_file = Path("data/repair_case_studies.json")
     if case_study_file.exists():
         import json
