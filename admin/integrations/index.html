@@ -7,8 +7,25 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/components.css">
+  <style>
+    .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
+    .status-not-configured { background: #fee2e2; color: #991b1b; }
+    .status-configured { background: #fef3c7; color: #92400e; }
+    .status-connected { background: #dcfce7; color: #166534; }
+    .card-grid { display: grid; gap: 1.5rem; }
+    .integration-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; }
+    .meta-table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .meta-table td { padding: 0.5rem 0; vertical-align: top; }
+    .meta-label { color: #64748b; width: 180px; font-weight: 500; }
+    .meta-val { color: #1e293b; font-weight: 600; }
+    .btn-admin { background: var(--primary, #1a4971); color: white; border: none; padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-admin:hover { opacity: 0.9; }
+    .btn-secondary { background: #e2e8f0; color: #334155; }
+    .budget-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem; margin-top: 1rem; }
+  </style>
 </head>
-<body style="background: #f1f5f9;">
+<body style="background: #f8fafc;">
 
   <header class="site-header">
     <div class="header-container">
@@ -26,61 +43,201 @@
   </header>
 
   <main style="max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem;">
-    <h1 style="color: var(--primary, #1a4971); margin-bottom: 0.5rem;">API Integrations & Telemetry Dashboard</h1>
-    <p style="color: #64748b; margin-bottom: 2rem;">Real-time connection monitor for Google Search Console, GA4 Data API, and DataForSEO v3.</p>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+      <div>
+        <h1 style="color: var(--primary, #1a4971); margin-bottom: 0.5rem; font-size: 2rem;">API Integrations & Telemetry</h1>
+        <p style="color: #64748b; margin: 0;">Production environment integration gate for Search Console, GA4 Data API, and DataForSEO v3.</p>
+      </div>
+      <button onclick="refreshStatus()" class="btn-admin btn-secondary" style="font-size: 0.85rem;">&orarr; Refresh Telemetry</button>
+    </div>
 
-    <div style="display: grid; gap: 1.5rem;">
+    <div class="card-grid">
       
-      <!-- GSC Card -->
-      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">Google Search Console (GSC)</h2>
-          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+      <!-- 1. GOOGLE SEARCH CONSOLE -->
+      <div class="integration-card" id="gsc-card">
+        <div class="card-header">
+          <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">Google Search Console</h2>
+          <span id="gsc-status-badge" class="status-badge status-not-configured">NOT CONFIGURED</span>
         </div>
-        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          <strong>Target Property:</strong> <code>sc-domain:gearboxgiants.co.uk</code><br>
-          <strong>Required Scope:</strong> <code>https://www.googleapis.com/auth/webmasters.readonly</code> (Read-Only)<br>
-          <strong>Status:</strong> Awaiting OAuth credential configuration (<code>GSC_REFRESH_TOKEN</code> or <code>GOOGLE_APPLICATION_CREDENTIALS</code>).
-        </p>
-        <div style="margin-top: 1rem;">
-          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Connect Google Search Console</button>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">Configuration:</td>
+            <td class="meta-val" id="gsc-config-val">Not configured</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Authentication:</td>
+            <td class="meta-val" id="gsc-auth-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Selected property:</td>
+            <td class="meta-val" id="gsc-prop-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">OAuth Scope:</td>
+            <td class="meta-val"><code>https://www.googleapis.com/auth/webmasters.readonly</code></td>
+          </tr>
+          <tr>
+            <td class="meta-label">Last sync:</td>
+            <td class="meta-val" id="gsc-sync-val">&mdash;</td>
+          </tr>
+        </table>
+        <div>
+          <a href="/api/auth/google/login" class="btn-admin">Connect Google Search Console</a>
         </div>
       </div>
 
-      <!-- GA4 Card -->
-      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">Google Analytics 4 (GA4)</h2>
-          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+      <!-- 2. GOOGLE ANALYTICS 4 -->
+      <div class="integration-card" id="ga4-card">
+        <div class="card-header">
+          <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">Google Analytics 4</h2>
+          <span id="ga4-status-badge" class="status-badge status-not-configured">NOT CONFIGURED</span>
         </div>
-        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          <strong>Client-Side Tracking:</strong> Cleaned & PII-sanitized (<code>js/analytics.js</code> ready for tag deployment).<br>
-          <strong>Measurement ID:</strong> Masked / Pending environment configuration.<br>
-          <strong>Data API Status:</strong> Pending numeric Property ID & service account authentication.
-        </p>
-        <div style="margin-top: 1rem;">
-          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Connect Google Analytics 4 API</button>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">Tracking:</td>
+            <td class="meta-val" id="ga4-track-val">Not installed</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Measurement ID:</td>
+            <td class="meta-val" id="ga4-mid-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Data API:</td>
+            <td class="meta-val" id="ga4-api-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Property:</td>
+            <td class="meta-val" id="ga4-prop-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Last sync:</td>
+            <td class="meta-val" id="ga4-sync-val">&mdash;</td>
+          </tr>
+        </table>
+        <div>
+          <button onclick="alert('Configure GA4_MEASUREMENT_ID and GA4_PROPERTY_ID in Cloudflare Worker environment.')" class="btn-admin">Configure GA4</button>
         </div>
       </div>
 
-      <!-- DataForSEO Card -->
-      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <h2 style="font-size: 1.3rem; margin: 0; color: #1e293b;">DataForSEO API v3</h2>
-          <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">NOT CONNECTED</span>
+      <!-- 3. DATAFORSEO -->
+      <div class="integration-card" id="dataforseo-card">
+        <div class="card-header">
+          <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">DataForSEO API v3</h2>
+          <span id="dfs-status-badge" class="status-badge status-not-configured">NOT CONFIGURED</span>
         </div>
-        <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          <strong>API Version:</strong> v3 (HTTP Basic Auth).<br>
-          <strong>Credentials:</strong> Server-side environment variables (<code>DATAFORSEO_LOGIN</code> / <code>DATAFORSEO_PASSWORD</code>).<br>
-          <strong>Budget Control:</strong> <code>SEO_DATA_BUDGET</code> tracking active ($50.00 ceiling).
-        </p>
-        <div style="margin-top: 1rem;">
-          <button style="background: var(--primary, #1a4971); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Test DataForSEO Connection</button>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">Credentials:</td>
+            <td class="meta-val" id="dfs-creds-val">Not configured</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Connection:</td>
+            <td class="meta-val" id="dfs-conn-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Monthly budget:</td>
+            <td class="meta-val" id="dfs-budget-val" style="color: #d97706;">Not configured (Default: UNSET)</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Usage / Spend:</td>
+            <td class="meta-val" id="dfs-usage-val">&mdash;</td>
+          </tr>
+        </table>
+        
+        <div class="budget-box">
+          <h4 style="margin: 0 0 0.5rem 0; color: #334155;">Pre-Execution Cost Estimator</h4>
+          <p style="font-size: 0.85rem; color: #64748b; margin: 0 0 0.75rem 0;">Estimate keyword batch cost prior to execution. Requires owner-configured budget.</p>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <select id="est-type" style="padding: 0.4rem; border-radius: 4px; border: 1px solid #cbd5e1;">
+              <option value="serp_live">SERP Live ($0.002 / query)</option>
+              <option value="search_volume">Search Volume ($0.05 / 1k kw)</option>
+              <option value="ranked_keywords">Ranked Keywords ($0.01 / domain)</option>
+            </select>
+            <input type="number" id="est-count" value="50" min="1" max="1000" style="padding: 0.4rem; width: 80px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            <button onclick="estimateCost()" class="btn-admin btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Calculate Cost</button>
+          </div>
+          <div id="est-result" style="margin-top: 0.5rem; font-size: 0.9rem; font-weight: 600;"></div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <button onclick="testDataForSeo()" class="btn-admin">Test DataForSEO Connection</button>
         </div>
       </div>
 
     </div>
   </main>
+
+  <script>
+    async function refreshStatus() {
+      try {
+        const res = await fetch('/api/admin/integrations/status');
+        if (!res.ok) throw new Error('Failed to load status');
+        const data = await res.json();
+        
+        // Update GSC
+        if (data.gsc) {
+          document.getElementById('gsc-config-val').textContent = data.gsc.credentials_configured ? 'Configured' : 'Not configured';
+          document.getElementById('gsc-auth-val').textContent = data.gsc.authentication || 'Not connected';
+          document.getElementById('gsc-prop-val').textContent = data.gsc.selected_property || '—';
+          document.getElementById('gsc-sync-val').textContent = data.gsc.last_sync || '—';
+          updateBadge('gsc-status-badge', data.gsc.status);
+        }
+
+        // Update GA4
+        if (data.ga4) {
+          document.getElementById('ga4-track-val').textContent = data.ga4.tracking_installed || 'Not installed';
+          document.getElementById('ga4-mid-val').textContent = data.ga4.measurement_id || '—';
+          document.getElementById('ga4-api-val').textContent = data.ga4.data_api_status || 'Not connected';
+          document.getElementById('ga4-prop-val').textContent = data.ga4.property_id || '—';
+          document.getElementById('ga4-sync-val').textContent = data.ga4.last_sync || '—';
+          updateBadge('ga4-status-badge', data.ga4.status);
+        }
+
+        // Update DataForSEO
+        if (data.dataforseo) {
+          document.getElementById('dfs-creds-val').textContent = data.dataforseo.credentials_configured ? 'Configured' : 'Not configured';
+          document.getElementById('dfs-conn-val').textContent = data.dataforseo.authentication || 'Not connected';
+          document.getElementById('dfs-budget-val').textContent = data.dataforseo.monthly_budget_usd ? ('$' + data.dataforseo.monthly_budget_usd + ' / month (' + data.dataforseo.budget_state + ')') : 'Not configured (Default: UNSET)';
+          document.getElementById('dfs-usage-val').textContent = '$' + (data.dataforseo.usage_spent_usd || 0).toFixed(2);
+          updateBadge('dfs-status-badge', data.dataforseo.status);
+        }
+      } catch (e) {
+        console.warn('Status load note:', e);
+      }
+    }
+
+    function updateBadge(id, status) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = status || 'NOT CONFIGURED';
+      el.className = 'status-badge ' + (status === 'CONNECTED' ? 'status-connected' : (status === 'CONFIGURED_NOT_TESTED' ? 'status-configured' : 'status-not-configured'));
+    }
+
+    async function testDataForSeo() {
+      try {
+        const res = await fetch('/api/admin/integrations/dataforseo/test');
+        const json = await res.json();
+        alert('DataForSEO Result: ' + JSON.stringify(json, null, 2));
+      } catch (e) {
+        alert('Error: ' + e.message);
+      }
+    }
+
+    async function estimateCost() {
+      const type = document.getElementById('est-type').value;
+      const count = document.getElementById('est-count').value;
+      const resEl = document.getElementById('est-result');
+      try {
+        const res = await fetch('/api/admin/integrations/dataforseo/estimate-cost?type=' + encodeURIComponent(type) + '&count=' + encodeURIComponent(count));
+        const data = await res.json();
+        resEl.innerHTML = '<span style="color: ' + (data.allowed_to_run ? '#166534' : '#991b1b') + '">Estimated Cost: $' + data.estimated_cost_usd + ' | ' + data.reason + '</span>';
+      } catch (e) {
+        resEl.textContent = 'Error calculating cost: ' + e.message;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', refreshStatus);
+  </script>
 
 </body>
 </html>

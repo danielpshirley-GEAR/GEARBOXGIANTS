@@ -1,8 +1,24 @@
 {
-  "total_spent_usd": 0.0,
-  "budget_limit_usd": 50.0,
-  "currency": "USD",
-  "status": "BUDGET_AVAILABLE",
-  "last_updated": "2026-09-05T00:53:00+01:00",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "2.0.0",
+  "budget_configuration": {
+    "monthly_budget_usd": null,
+    "daily_soft_limit_usd": null,
+    "per_request_warning_threshold_usd": null,
+    "emergency_stop_enabled": true,
+    "budget_state": "BUDGET_NOT_CONFIGURED",
+    "last_configured_by": null,
+    "last_configured_at": null
+  },
+  "spend_telemetry": {
+    "total_spent_this_month_usd": 0.0,
+    "total_spent_lifetime_usd": 0.0,
+    "currency": "USD",
+    "request_count_this_month": 0
+  },
+  "provenance": {
+    "source_type": "DATAFORSEO_API",
+    "created_at": "2026-09-05T01:04:00+01:00"
+  },
   "requests": []
 }

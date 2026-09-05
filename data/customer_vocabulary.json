@@ -1,10 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
-  "description": "Anonymised natural customer phrasing mapped to technical transmission terms for user-first copy",
+  "version": "2.0.0",
+  "description": "Editorial plain-English symptom mappings for customer-first copy. Note: These examples were constructed editorially to guide conversational clarity, NOT derived from verified CRM enquiry transcripts.",
+  "provenance": {
+    "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
+    "real_customer_data_status": "NOT_DERIVED_FROM_CRM_TRANSCRIPTS",
+    "last_audited": "2026-09-05T01:04:00+01:00"
+  },
   "vocabulary_mappings": [
     {
       "customer_phrase": "Bangs into gear when I stop at lights",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Harsh 2-1 hydraulic downshift thud / sticking valve body solenoid",
       "relevant_pages": [
         "/faults/automatic-gearbox-jerking",
@@ -14,6 +20,7 @@
     },
     {
       "customer_phrase": "Revs up on hills but the car doesn't go any faster",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Clutch friction disc slippage / torque converter lock-up clutch slip",
       "relevant_pages": [
         "/faults/gearbox-slipping",
@@ -22,6 +29,7 @@
     },
     {
       "customer_phrase": "Flashing spanner on the dashboard",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Transmission Control Module failsafe / mechatronic DTC logged",
       "relevant_pages": [
         "/faults/flashing-prnds-light",
@@ -30,6 +38,7 @@
     },
     {
       "customer_phrase": "Feels like driving over rumble strips at 50 mph",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Torque converter lock-up clutch shudder under light load",
       "relevant_pages": [
         "/faults/gearbox-vibration-at-speed",
@@ -38,6 +47,7 @@
     },
     {
       "customer_phrase": "Shakes like a learner driver releasing the clutch too fast",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Low-speed dual-clutch friction judder / dual-mass flywheel free play",
       "relevant_pages": [
         "/faults/dsg-juddering",
@@ -46,6 +56,7 @@
     },
     {
       "customer_phrase": "Gear stick feels like a wooden spoon in an empty bowl",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Disconnected selector cable / perished shifter pivot bushing",
       "relevant_pages": [
         "/faults/gear-stick-loose-or-floppy",
@@ -54,6 +65,7 @@
     },
     {
       "customer_phrase": "Car won't go in reverse in the morning",
+      "source_type": "EDITORIAL_PLAIN_ENGLISH_EXAMPLE",
       "technical_equivalent": "Cold hydraulic pressure loss / reverse shift actuator piston seal bypass",
       "relevant_pages": [
         "/faults/no-reverse-gear",

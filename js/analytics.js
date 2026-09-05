@@ -1,36 +1,98 @@
 /**
- * Gearbox Giants Client-Side Conversion Tracking & Privacy Guardrail
+ * Gearbox Giants Client-Side Conversion Tracking & Double-Layer Privacy Guardrail
  * 
- * STRICT PRIVACY AUDIT:
+ * STRICT PRIVACY AUDIT & ALLOWLIST ENFORCEMENT:
  * Zero Personally Identifiable Information (PII) is transmitted to public analytics tools.
- * VRM / Registration numbers, customer names, emails, phone numbers, and free-text inputs
- * are strictly sanitized and never passed into gtag / GA4 events.
+ * Uses an explicit allowlist: any parameter not on the allowlist is dropped.
+ * Prohibits: VRM, name, email, phone, postal address, notes, VIN, customer free text.
  */
 
 (function() {
   'use strict';
 
-  // Helper to safely dispatch non-PII events to gtag
-  function trackEvent(eventName, eventParams) {
-    if (typeof window.gtag === 'function') {
-      // Deep sanitization to guarantee NO PII
-      var sanitizedParams = {};
-      for (var key in eventParams) {
-        if (eventParams.hasOwnProperty(key)) {
-          var k = key.toLowerCase();
-          // Blacklist any potentially sensitive keys
-          if (k.indexOf('reg') !== -1 || k.indexOf('vrm') !== -1 || 
-              k.indexOf('email') !== -1 || k.indexOf('phone') !== -1 || 
-              k.indexOf('name') !== -1 || k.indexOf('address') !== -1 ||
-              k.indexOf('text') !== -1) {
-            continue; // Skip PII
+  // Explicit Allowlist of Event Names
+  var ALLOWED_EVENTS = [
+    'quote_start',
+    'quote_step_complete',
+    'quote_submit',
+    'phone_click',
+    'whatsapp_click',
+    'symptom_select',
+    'nav_click',
+    'page_view'
+  ];
+
+  // Explicit Allowlist of Allowed Event Properties
+  var ALLOWED_PROPERTIES = [
+    'event_name',
+    'landing_page',
+    'page_path',
+    'page_type',
+    'service',
+    'symptom',
+    'transmission_family',
+    'location_hub',
+    'quote_id_hash',
+    'source',
+    'medium',
+    'campaign',
+    'link_location',
+    'step_number'
+  ];
+
+  function sanitizePayload(eventName, rawParams) {
+    if (ALLOWED_EVENTS.indexOf(eventName) === -1) {
+      console.warn('[Analytics Privacy] Event dropped (not on allowlist):', eventName);
+      return null;
+    }
+
+    var clean = {};
+    if (rawParams && typeof rawParams === 'object') {
+      for (var i = 0; i < ALLOWED_PROPERTIES.length; i++) {
+        var prop = ALLOWED_PROPERTIES[i];
+        if (rawParams.hasOwnProperty(prop) && rawParams[prop] !== undefined && rawParams[prop] !== null) {
+          var val = String(rawParams[prop]);
+          // Strip any accidental phone/email/reg patterns if embedded
+          if (/[A-Z]{2}[0-9]{2}\s?[A-Z]{3}/i.test(val) || /@/i.test(val) || /07\d{9}/.test(val)) {
+            continue; // Drop value if it resembles PII
           }
-          sanitizedParams[key] = eventParams[key];
+          clean[prop] = val.slice(0, 100); // Enforce safe length
         }
       }
-      window.gtag('event', eventName, sanitizedParams);
     }
+    return clean;
   }
+
+  function trackEvent(eventName, eventParams) {
+    var sanitized = sanitizePayload(eventName, eventParams);
+    if (!sanitized) return;
+
+    // 1. Dispatch to client gtag if loaded
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, sanitized);
+    }
+
+    // 2. Dispatch to server-side privacy gateway for dual-layer logging
+    try {
+      if (typeof fetch === 'function') {
+        fetch('/api/analytics/event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_name: eventName,
+            params: sanitized,
+            timestamp: new Date().toISOString()
+          }),
+          keepalive: true
+        }).catch(function() {});
+      }
+    } catch (e) {}
+  }
+
+  // Expose safe tracker to window
+  window.GGAnalytics = {
+    trackEvent: trackEvent
+  };
 
   document.addEventListener('DOMContentLoaded', function() {
     // 1. Phone link click tracking
@@ -43,18 +105,28 @@
       });
     });
 
-    // 2. Quote button / form interaction tracking (Sanitized: NO VRM)
-    document.querySelectorAll('form[action="/quote"]').forEach(function(form) {
+    // 2. WhatsApp link click tracking
+    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        trackEvent('whatsapp_click', {
+          link_location: el.closest('header') ? 'header' : (el.closest('footer') ? 'footer' : 'body'),
+          page_path: window.location.pathname
+        });
+      });
+    });
+
+    // 3. Quote form interaction (Zero VRM passed)
+    document.querySelectorAll('form[action="/quote"], .hero-reg-form').forEach(function(form) {
       form.addEventListener('submit', function(e) {
         var symptomInput = form.querySelector('input[name="symptom"]');
         var familyInput = form.querySelector('input[name="transmission_family"]');
         var landingInput = form.querySelector('input[name="landing_page"]');
         
         trackEvent('quote_start', {
-          symptom: symptomInput ? symptomInput.value : 'none',
-          transmission_family: familyInput ? familyInput.value : 'none',
+          symptom: symptomInput ? symptomInput.value : 'unspecified',
+          transmission_family: familyInput ? familyInput.value : 'unspecified',
           landing_page: landingInput ? landingInput.value : window.location.pathname,
-          has_vrm_entered: Boolean(form.querySelector('input[name="reg"]') && form.querySelector('input[name="reg"]').value.trim().length > 0)
+          page_path: window.location.pathname
         });
       });
     });
