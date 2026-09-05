@@ -1,232 +1,7 @@
 {
   "total_pages_audited": 96,
-  "total_issues_found": 28,
-  "issues": [
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/gearbox-replacement",
-      "device": "ALL",
-      "problem": "Broken internal link to '/services/mechatronic-repair'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/gearbox-replacement",
-      "device": "ALL",
-      "problem": "Broken internal link to '/contact'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/clutch-flywheel",
-      "device": "ALL",
-      "problem": "Broken internal link to '/services/mechatronic-repair'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/clutch-flywheel",
-      "device": "ALL",
-      "problem": "Broken internal link to '/services/mechatronic-repair'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/clutch-flywheel",
-      "device": "ALL",
-      "problem": "Broken internal link to '/contact'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/gearbox-servicing",
-      "device": "ALL",
-      "problem": "Broken internal link to '/services/mechatronic-repair'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/services/gearbox-servicing",
-      "device": "ALL",
-      "problem": "Broken internal link to '/contact'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/quote.html",
-      "device": "ALL",
-      "problem": "Missing <link rel='canonical'> tag",
-      "customer_impact": "Duplicate URL and indexation ambiguity in search engines",
-      "recommended_fix": "Add canonical link pointing to self"
-    },
-    {
-      "severity": "CRITICAL",
-      "url": "https://gearboxgiants.co.uk/warranty.html",
-      "device": "ALL",
-      "problem": "No primary conversion CTA found on page",
-      "customer_impact": "Customer reaches dead end and cannot start quote or contact business",
-      "recommended_fix": "Add standardized 'Get My Gearbox Checked' CTA"
-    },
-    {
-      "severity": "CRITICAL",
-      "url": "https://gearboxgiants.co.uk/terms.html",
-      "device": "ALL",
-      "problem": "No primary conversion CTA found on page",
-      "customer_impact": "Customer reaches dead end and cannot start quote or contact business",
-      "recommended_fix": "Add standardized 'Get My Gearbox Checked' CTA"
-    },
-    {
-      "severity": "CRITICAL",
-      "url": "https://gearboxgiants.co.uk/privacy.html",
-      "device": "ALL",
-      "problem": "No primary conversion CTA found on page",
-      "customer_impact": "Customer reaches dead end and cannot start quote or contact business",
-      "recommended_fix": "Add standardized 'Get My Gearbox Checked' CTA"
-    },
-    {
-      "severity": "CRITICAL",
-      "url": "https://gearboxgiants.co.uk/cookies.html",
-      "device": "ALL",
-      "problem": "No primary conversion CTA found on page",
-      "customer_impact": "Customer reaches dead end and cannot start quote or contact business",
-      "recommended_fix": "Add standardized 'Get My Gearbox Checked' CTA"
-    },
-    {
-      "severity": "CRITICAL",
-      "url": "https://gearboxgiants.co.uk/complaints.html",
-      "device": "ALL",
-      "problem": "No primary conversion CTA found on page",
-      "customer_impact": "Customer reaches dead end and cannot start quote or contact business",
-      "recommended_fix": "Add standardized 'Get My Gearbox Checked' CTA"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-slough.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-hounslow'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-slough.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-high-wycombe'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-guildford.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-leatherhead'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-brighton.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-worthing'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-brighton.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-eastbourne'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-brighton.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-horsham'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-cambridge.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-peterborough'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-cambridge.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-bedford'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-cambridge.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-ipswich'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-cambridge.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-stevenage'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-portsmouth.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-chichester'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-portsmouth.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-fareham'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/location-portsmouth.html",
-      "device": "ALL",
-      "problem": "Broken internal link to '/location-winchester'",
-      "customer_impact": "User clicks link and receives 404 error",
-      "recommended_fix": "Update link to point to existing URL"
-    },
-    {
-      "severity": "HIGH",
-      "url": "https://gearboxgiants.co.uk/quote",
-      "device": "ALL",
-      "problem": "Quote submission uses browser native alert() dialog on quote.html instead of inline success card",
-      "customer_impact": "Looks unprofessional, causes browser blocking, high abandonment rate after submit",
-      "recommended_fix": "Replace alert() with seamless in-page confirmation card showing reference number and next steps"
-    },
-    {
-      "severity": "HIGH",
-      "url": "SITE_WIDE",
-      "device": "MOBILE (375px, 390px, 430px)",
-      "problem": "No persistent mobile contact/action bar (Call / WhatsApp / Quote)",
-      "customer_impact": "Mobile visitors have to scroll extensively to reach phone number or quote trigger",
-      "recommended_fix": "Implement non-intrusive sticky bottom action bar for mobile devices"
-    }
-  ],
+  "total_issues_found": 0,
+  "issues": [],
   "top_cta_variations": [
     [
       "Get a Quote",
@@ -249,12 +24,12 @@
       34
     ],
     [
-      "Speak to a Specialist Technician",
-      30
+      "Call 0208 058 9668",
+      32
     ],
     [
-      "Call 0208 058 9668",
-      27
+      "Speak to a Specialist Technician",
+      30
     ],
     [
       "Speak With a Specialist: 0208 058 9668",
@@ -271,6 +46,10 @@
     [
       "Get a Quote for Your Vehicle",
       8
+    ],
+    [
+      "Get My Gearbox Checked \u2192",
+      6
     ],
     [
       "Speak With an Advisor: 0208 058 9668",
@@ -302,10 +81,6 @@
     ],
     [
       "Check My Automatic Vehicle & Get Quote",
-      1
-    ],
-    [
-      "Get a Diagnostic Estimate",
       1
     ]
   ],
