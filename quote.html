@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Get a Gearbox Quote | Gearbox Giants UK</title>
   <meta name="description" content="Get an instant quote for gearbox repair, replacement or reconditioning with free UK recovery. Up to 60% cheaper than main dealer.">
+  <link rel="canonical" href="https://gearboxgiants.co.uk/quote">
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2.2'><circle cx='12' cy='12' r='3'/><path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'/></svg>">
 
@@ -220,12 +221,28 @@
 
           <!-- Right Form Container -->
           <div class="fade-in-up delay-1" style="background:#111216; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:2.25rem 2.25rem; box-shadow:0 25px 50px rgba(0,0,0,0.6);">
-            <form onsubmit="window.handleQuoteFormSubmit(event)">
+            <!-- 3-Step Progress Indicator -->
+            <div class="quote-progress-bar">
+              <div class="quote-progress-step active" id="page-progress-step-1">
+                <span class="step-num">1</span>
+                <span class="step-label">Vehicle</span>
+              </div>
+              <div class="quote-progress-step active" id="page-progress-step-2">
+                <span class="step-num">2</span>
+                <span class="step-label">Problem</span>
+              </div>
+              <div class="quote-progress-step active" id="page-progress-step-3">
+                <span class="step-num">3</span>
+                <span class="step-label">Details</span>
+              </div>
+            </div>
+
+            <form id="standalone-quote-form" onsubmit="window.handleQuoteFormSubmit(event)">
               
-              <!-- Section 1: Unified Vehicle Details -->
+              <!-- STEP 1: VEHICLE LOOKUP -->
               <div id="vehicle-ident-block-page" style="margin-bottom:1.5rem; padding-bottom:1.25rem; border-bottom:1px solid rgba(255,255,255,0.07);">
                 <label style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.6rem;">
-                  <span>1. Vehicle Registration</span>
+                  <span>Step 1: Enter Vehicle Registration</span>
                 </label>
                 <div style="display:flex; gap:0.65rem; align-items:center;">
                   <div class="uk-reg-box" style="height:46px; flex:1; max-width:220px;">
@@ -284,10 +301,67 @@
                 </div>
               </div>
 
-              <!-- Section 2: Customer Details -->
+              <!-- STEP 2: PROBLEM / SYMPTOM SELECTOR -->
+              <div style="margin-bottom:1.5rem; padding-bottom:1.25rem; border-bottom:1px solid rgba(255,255,255,0.07);">
+                <label style="display:block; font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.5rem;">
+                  Step 2: What is your car doing?
+                </label>
+                <div class="symptom-tag-grid">
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Slipping / Loss of Drive')">
+                    <span class="symptom-icon">⚡</span> Slipping / Revving
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Juddering / Shuddering')">
+                    <span class="symptom-icon">〰️</span> Juddering on Pull-Away
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Harsh Jerking / Clunking')">
+                    <span class="symptom-icon">💥</span> Harsh Jerking / Bang
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Won\'t Go into Gear')">
+                    <span class="symptom-icon">🔒</span> Won't Go into Gear
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'No Reverse Gear')">
+                    <span class="symptom-icon">⛔</span> No Reverse Gear
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Warning Light / Limp Mode')">
+                    <span class="symptom-icon">⚠️</span> Warning Light / Limp Mode
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Whining / Grinding Noise')">
+                    <span class="symptom-icon">🔊</span> Whining / Grinding Noise
+                  </button>
+                  <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'page', 'Oil Leak / Burning Smell')">
+                    <span class="symptom-icon">💧</span> Fluid Leak / Burning
+                  </button>
+                  <button type="button" class="symptom-tag-btn selected" onclick="window.selectSymptomTag(this, 'page', 'Not Sure / Need Diagnostic')">
+                    <span class="symptom-icon">🔍</span> Not Sure / Inspection
+                  </button>
+                </div>
+
+                <input type="hidden" id="quote-symptom-val-page" value="Not Sure / Need Diagnostic">
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:0.85rem;">
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-service-type">Required Service</label>
+                    <select id="quote-service-type" class="form-select" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                      <option value="Gearbox Repair / Diagnostic">Gearbox Repair / Diagnostics</option>
+                      <option value="DSG / Mechatronic Repair">DSG / Mechatronic Repair</option>
+                      <option value="Gearbox Reconditioning">Gearbox Reconditioning (OEM Standard)</option>
+                      <option value="Gearbox Replacement">Gearbox Replacement</option>
+                      <option value="Clutch & Dual-Mass Flywheel">Clutch & Dual-Mass Flywheel</option>
+                      <option value="Emergency Recovery & Diagnostics">Emergency Free Recovery</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-desc">Additional Notes <span style="font-weight:400; text-transform:none; color:var(--text-muted);">(Optional)</span></label>
+                    <input type="text" id="quote-desc" class="form-input" placeholder="e.g. happens when engine warm" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: CUSTOMER CONTACT DETAILS -->
               <div style="margin-bottom:1.35rem;">
                 <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
-                  2. Your Details
+                  Step 3: Where should we send the estimate?
                 </div>
 
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
@@ -303,8 +377,8 @@
 
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
                   <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-email">Email Address *</label>
-                    <input type="email" id="quote-email" class="form-input" placeholder="john@example.co.uk" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                    <label class="form-label" style="font-size:0.78rem;" for="quote-email">Email Address</label>
+                    <input type="email" id="quote-email" class="form-input" placeholder="john@example.co.uk" style="padding:0.7rem 0.85rem; font-size:0.9rem;">
                   </div>
                   <div class="form-group" style="margin-bottom:0;">
                     <label class="form-label" style="font-size:0.78rem;" for="quote-postcode">Postcode / City *</label>
@@ -313,34 +387,14 @@
                 </div>
               </div>
 
-              <!-- Section 3: Service & Fault Description -->
-              <div style="margin-bottom:1.25rem;">
-                <div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">
-                  <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-service-type">Required Service</label>
-                    <select id="quote-service-type" class="form-select" style="padding:0.7rem 0.85rem; font-size:0.9rem;">
-                      <option value="Gearbox Repair / Diagnostic">Gearbox Repair / Diagnostic Booking</option>
-                      <option value="Gearbox Reconditioning">Gearbox Reconditioning (OEM Standard)</option>
-                      <option value="Gearbox Replacement">Gearbox Replacement</option>
-                      <option value="Clutch & Dual-Mass Flywheel">Clutch & Dual-Mass Flywheel</option>
-                      <option value="Automatic / DSG Mechatronics">Automatic / DSG Mechatronics</option>
-                      <option value="Emergency Recovery & Diagnostics">Emergency Free Recovery</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-desc">Fault Symptoms <span style="font-weight:400; text-transform:none; color:var(--text-muted);">(Optional)</span></label>
-                    <textarea id="quote-desc" class="form-textarea" rows="2" placeholder="e.g. grinding noise, slipping in 2nd/3rd gear, warning light on..." style="padding:0.65rem 0.85rem; font-size:0.88rem; min-height:55px;"></textarea>
-                  </div>
-                </div>
-              </div>
+              <input type="hidden" id="quote-landing-page" value="quote-page">
 
               <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.35rem; font-size:1.05rem; padding:0.85rem 1.5rem; border-radius:8px; font-weight:800; letter-spacing:0.02em;">
-                Submit Quote Request →
+                Get My Gearbox Checked →
               </button>
 
               <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1rem; font-size:0.76rem; color:var(--text-muted); flex-wrap:wrap;">
-                <span>✓ 100% Confidential</span>
+                <span>✓ 100% Free Consultation</span>
                 <span>✓ 12-Month / 12,000-Mile Warranty</span>
                 <span>✓ Free Collection (Completed Repairs)</span>
                 <span>✓ Complimentary Car Wash</span>

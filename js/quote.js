@@ -485,25 +485,37 @@
             </svg>
           </button>
 
-          <div class="modal-header-intro" style="margin-bottom:1.35rem; padding-right:3rem;">
+          <div class="modal-header-intro" style="margin-bottom:1.25rem; padding-right:3rem;">
             <span style="font-size:0.75rem; font-weight:800; color:var(--amber-400); text-transform:uppercase; letter-spacing:0.06em; display:inline-flex; align-items:center; gap:6px;">
               <span style="width:6px; height:6px; border-radius:50%; background:var(--amber-400); box-shadow:0 0 8px var(--amber-400);"></span>
-              Free Recovery & Fast Diagnostic Estimate
+              Specialist Transmission Assessment
             </span>
-            <h2 id="modal-quote-heading" style="font-size:1.85rem; color:#fff; margin:0.25rem 0 0.35rem; font-weight:800; font-family:var(--font-heading); letter-spacing:-0.02em;">
-              REQUEST A <span class="highlight-amber">QUOTE</span>
+            <h2 id="modal-quote-heading" style="font-size:1.75rem; color:#fff; margin:0.25rem 0 0.35rem; font-weight:800; font-family:var(--font-heading); letter-spacing:-0.02em;">
+              GET MY <span class="highlight-amber">GEARBOX CHECKED</span>
             </h2>
             <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.45; margin:0;">
-              Up to 60% cheaper than main dealer. 12-Month warranty included with free nationwide collection.
+              Fast diagnostic assessment & transparent repair options. 12-month warranty included with collection arranged.
             </p>
+          </div>
+
+          <div class="quote-progress-bar">
+            <div class="quote-progress-step active" id="modal-step-ind-1">
+              <span class="quote-step-badge">1</span> Vehicle
+            </div>
+            <div class="quote-progress-step" id="modal-step-ind-2">
+              <span class="quote-step-badge">2</span> Problem
+            </div>
+            <div class="quote-progress-step" id="modal-step-ind-3">
+              <span class="quote-step-badge">3</span> Details
+            </div>
           </div>
 
           <form id="main-quote-form" onsubmit="window.handleQuoteFormSubmit(event)">
             
-            <!-- SECTION 1: VEHICLE DETAILS -->
+            <!-- STEP 1: VEHICLE DETAILS -->
             <div style="margin-bottom:1.35rem; padding-bottom:1.15rem; border-bottom:1px solid rgba(255,255,255,0.07);">
               <label style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.55rem;">
-                <span>1. Vehicle Registration</span>
+                <span>Step 1: Vehicle Registration</span>
               </label>
               
               <div class="modal-reg-input-group" style="display:flex; gap:0.5rem; align-items:center; width:100%; box-sizing:border-box;">
@@ -514,7 +526,7 @@
                   </div>
                   <input type="text" id="quote-reg-input" class="uk-reg-input" placeholder="ENTER REG" style="font-size:1.1rem; width:100%; text-align:center;" maxlength="8" oninput="window.handleRegLookup(this.value, 'modal')" onkeydown="if(event.key==='Enter'){event.preventDefault();window.triggerRegLookup('modal');}">
                 </div>
-                <button type="button" class="btn btn-secondary" onclick="window.triggerRegLookup('modal')" style="height:46px !important; padding:0 1rem !important; font-size:0.82rem; font-weight:800; flex-shrink:0; white-space:nowrap; border-radius:9999px;">
+                <button type="button" class="btn btn-secondary" onclick="window.triggerRegLookup('modal')" style="height:46px !important; padding:0 1rem !important; font-size:0.82rem; font-weight:800; flex-shrink:0; white-space:nowrap; border-radius:8px;">
                   FIND VEHICLE
                 </button>
               </div>
@@ -523,38 +535,38 @@
               <div id="modal-reg-lookup-result"></div>
 
               <!-- Manual Vehicle Specification Dropdowns -->
-              <div id="vehicle-spec-section" style="margin-top:1rem; padding-top:0.85rem; border-top:1px dashed rgba(255,255,255,0.08); transition:all 0.3s ease;">
-                <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.6rem;">
+              <div id="vehicle-spec-section" style="margin-top:0.85rem; padding-top:0.75rem; border-top:1px dashed rgba(255,255,255,0.08); transition:all 0.3s ease;">
+                <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem;">
                   Or Select Vehicle Manually:
                 </div>
 
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; margin-bottom:0.65rem;">
                   <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-make-select">Make</label>
-                    <select id="quote-make-select" class="form-select" onchange="window.handleMakeSelectChange(this.value, 'modal', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                    <label class="form-label" style="font-size:0.75rem;" for="quote-make-select">Make</label>
+                    <select id="quote-make-select" class="form-select" onchange="window.handleMakeSelectChange(this.value, 'modal', true)" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
                       <option value="">-- Select Make --</option>
                     </select>
                   </div>
                   <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-model-select">Model</label>
-                    <select id="quote-model-select" class="form-select" onchange="window.handleModelSelectChange(this.value, 'modal', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                    <label class="form-label" style="font-size:0.75rem;" for="quote-model-select">Model</label>
+                    <select id="quote-model-select" class="form-select" onchange="window.handleModelSelectChange(this.value, 'modal', true)" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
                       <option value="">-- Select Model --</option>
                     </select>
                   </div>
                 </div>
 
-                <div style="display:grid; grid-template-columns:1.3fr 0.7fr; gap:0.75rem;">
+                <div style="display:grid; grid-template-columns:1.3fr 0.7fr; gap:0.65rem;">
                   <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-transmission-select">Transmission</label>
-                    <select id="quote-transmission-select" class="form-select" onchange="window.handleTransSelectChange(this.value, 'modal', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
-                      <option value="Manual">Manual</option>
-                      <option value="Automatic">Automatic</option>
-                      <option value="Semi-Automatic">Semi-Automatic</option>
+                    <label class="form-label" style="font-size:0.75rem;" for="quote-transmission-select">Transmission</label>
+                    <select id="quote-transmission-select" class="form-select" onchange="window.handleTransSelectChange(this.value, 'modal', true)" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
+                      <option value="Automatic">Automatic (Conventional / Dual-Clutch / CVT)</option>
+                      <option value="DSG / Dual-Clutch">DSG / S-Tronic / Powershift</option>
+                      <option value="Manual">Manual Transmission</option>
                     </select>
                   </div>
                   <div class="form-group" style="margin-bottom:0;">
-                    <label class="form-label" style="font-size:0.78rem;" for="quote-year-input">Year</label>
-                    <input type="text" id="quote-year-input" class="form-input" placeholder="2018" oninput="window.handleYearInputChange(this.value, 'modal', true)" style="padding:0.65rem 0.85rem; font-size:0.88rem;">
+                    <label class="form-label" style="font-size:0.75rem;" for="quote-year-input">Year</label>
+                    <input type="text" id="quote-year-input" class="form-input" placeholder="2018" oninput="window.handleYearInputChange(this.value, 'modal', true)" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
                   </div>
                 </div>
 
@@ -563,65 +575,101 @@
               </div>
             </div>
 
-            <!-- SECTION 2: CUSTOMER CONTACT & LOCATION -->
-            <div style="margin-bottom:1.25rem;">
-              <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
-                2. Your Details
+            <!-- STEP 2: WHAT IS THE CAR DOING? -->
+            <div style="margin-bottom:1.35rem; padding-bottom:1.15rem; border-bottom:1px solid rgba(255,255,255,0.07);">
+              <label style="display:block; font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.4rem;">
+                Step 2: What is your car doing?
+              </label>
+              <div class="symptom-tag-grid">
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Slipping / Loss of Drive')">
+                  <span class="symptom-icon">⚡</span> Slipping / Revving
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Juddering / Shuddering')">
+                  <span class="symptom-icon">〰️</span> Juddering on Pull-Away
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Harsh Jerking / Clunking')">
+                  <span class="symptom-icon">💥</span> Harsh Jerking / Bang
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Won\'t Go into Gear')">
+                  <span class="symptom-icon">🔒</span> Won't Go into Gear
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'No Reverse Gear')">
+                  <span class="symptom-icon">⛔</span> No Reverse Gear
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Warning Light / Limp Mode')">
+                  <span class="symptom-icon">⚠️</span> Warning Light / Limp Mode
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Whining / Grinding Noise')">
+                  <span class="symptom-icon">🔊</span> Whining / Grinding Noise
+                </button>
+                <button type="button" class="symptom-tag-btn" onclick="window.selectSymptomTag(this, 'modal', 'Oil Leak / Burning Smell')">
+                  <span class="symptom-icon">💧</span> Fluid Leak / Burning
+                </button>
+                <button type="button" class="symptom-tag-btn selected" onclick="window.selectSymptomTag(this, 'modal', 'Not Sure / Need Diagnostic')">
+                  <span class="symptom-icon">🔍</span> Not Sure / Inspection
+                </button>
               </div>
 
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+              <input type="hidden" id="quote-symptom-val" value="Not Sure / Need Diagnostic">
+              
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; margin-top:0.65rem;">
                 <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-name">Full Name *</label>
-                  <input type="text" id="quote-name" class="form-input" placeholder="John Smith" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-driveable">Is car driveable?</label>
+                  <select id="quote-driveable" class="form-select" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
+                    <option value="Yes, still driving">Yes, car drives</option>
+                    <option value="Drives but limited / Limp mode">Drives in limp mode</option>
+                    <option value="No, stationary / Will not move">No, cannot drive (Need Recovery)</option>
+                  </select>
                 </div>
                 <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-phone">Phone Number *</label>
-                  <input type="tel" id="quote-phone" class="form-input" placeholder="07123 456789" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
-                </div>
-              </div>
-
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
-                <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-email">Email Address *</label>
-                  <input type="email" id="quote-email" class="form-input" placeholder="john@example.co.uk" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
-                </div>
-                <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-postcode">Postcode / City *</label>
-                  <input type="text" id="quote-postcode" class="form-input" placeholder="e.g. RG1 1AA" required style="padding:0.7rem 0.85rem; font-size:0.9rem;">
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-service-type">Recommended Service</label>
+                  <select id="quote-service-type" class="form-select" style="padding:0.6rem 0.75rem; font-size:0.85rem;">
+                    <option value="Gearbox Diagnostics & Repair">Gearbox Diagnostics & Repair</option>
+                    <option value="DSG / Mechatronic Repair">DSG / Mechatronic Repair</option>
+                    <option value="Gearbox Reconditioning">Gearbox Reconditioning</option>
+                    <option value="Gearbox Replacement">Gearbox Replacement</option>
+                    <option value="Clutch & Dual-Mass Flywheel">Clutch & Dual-Mass Flywheel</option>
+                  </select>
                 </div>
               </div>
             </div>
 
-            <!-- SECTION 3: SERVICE TYPE & FAULT DESCRIPTION -->
+            <!-- STEP 3: CUSTOMER DETAILS -->
             <div style="margin-bottom:1.25rem;">
-              <div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">
-                <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-service-type">Required Service</label>
-                  <select id="quote-service-type" class="form-select" style="padding:0.7rem 0.85rem; font-size:0.9rem;">
-                    <option value="Gearbox Repair / Diagnostic">Gearbox Repair / Diagnostic Booking</option>
-                    <option value="Gearbox Reconditioning">Gearbox Reconditioning (OEM Standard)</option>
-                    <option value="Gearbox Replacement">Gearbox Replacement</option>
-                    <option value="Clutch & Dual-Mass Flywheel">Clutch & Dual-Mass Flywheel</option>
-                    <option value="Automatic / DSG Mechatronics">Automatic / DSG Mechatronics</option>
-                    <option value="Emergency Recovery & Diagnostics">Emergency Free Recovery</option>
-                  </select>
-                </div>
+              <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
+                Step 3: Where should we send the estimate?
+              </div>
 
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; margin-bottom:0.65rem;">
                 <div class="form-group" style="margin-bottom:0;">
-                  <label class="form-label" style="font-size:0.78rem;" for="quote-desc">Fault Symptoms <span style="font-weight:400; text-transform:none; color:var(--text-muted);">(Optional)</span></label>
-                  <textarea id="quote-desc" class="form-textarea" rows="2" placeholder="e.g. grinding noise, slipping in 2nd/3rd gear, warning light on..." style="padding:0.65rem 0.85rem; font-size:0.88rem; min-height:55px;"></textarea>
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-name">Full Name *</label>
+                  <input type="text" id="quote-name" class="form-input" placeholder="e.g. John Smith" required style="padding:0.65rem 0.75rem; font-size:0.88rem;">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-phone">Phone Number *</label>
+                  <input type="tel" id="quote-phone" class="form-input" placeholder="e.g. 07123 456789" required style="padding:0.65rem 0.75rem; font-size:0.88rem;">
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-email">Email Address</label>
+                  <input type="email" id="quote-email" class="form-input" placeholder="john@example.co.uk" style="padding:0.65rem 0.75rem; font-size:0.88rem;">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label" style="font-size:0.75rem;" for="quote-postcode">Postcode / Town *</label>
+                  <input type="text" id="quote-postcode" class="form-input" placeholder="e.g. RG1 1AA" required style="padding:0.65rem 0.75rem; font-size:0.88rem;">
                 </div>
               </div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.35rem; font-size:1.05rem; padding:0.85rem 1.5rem; border-radius:8px; font-weight:800; letter-spacing:0.02em;">
-              Submit Quote Request →
+              Get My Gearbox Checked →
             </button>
-            <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1rem; font-size:0.76rem; color:var(--text-muted); flex-wrap:wrap;">
-              <span> 100% Confidential</span>
-              <span> 12-Month / 12,000-Mile Warranty</span>
-              <span> Free Collection (Completed Repairs)</span>
-              <span> Free Valet On Return</span>
+            <div style="display:flex; align-items:center; justify-content:center; gap:0.85rem; margin-top:0.85rem; font-size:0.75rem; color:var(--text-muted); flex-wrap:wrap;">
+              <span>✓ 100% Free Consultation</span>
+              <span>✓ 12-Month / 12,000-Mile Warranty</span>
+              <span>✓ Collection Arranged</span>
             </div>
           </form>
         </div>
@@ -1325,10 +1373,31 @@
     }
   }
 
+  function selectSymptomTag(btn, scope = 'modal', val = '') {
+    const parent = btn.closest('.symptom-tag-grid');
+    if (parent) {
+      parent.querySelectorAll('.symptom-tag-btn').forEach(b => b.classList.remove('selected'));
+    }
+    btn.classList.add('selected');
+    
+    const hiddenVal = scope === 'page' ? document.getElementById('quote-symptom-val-page') : document.getElementById('quote-symptom-val');
+    if (hiddenVal) {
+      hiddenVal.value = val;
+    }
+    
+    const descInput = document.getElementById(scope === 'page' ? 'quote-desc' : 'quote-desc-modal');
+    if (descInput) {
+      descInput.value = val;
+    }
+  }
+
   function handleQuoteFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
-    const name = form.querySelector('#quote-name') ? form.querySelector('#quote-name').value : 'Valued Customer';
+    const name = form.querySelector('#quote-name') ? form.querySelector('#quote-name').value : 'Customer';
+    const phone = form.querySelector('#quote-phone') ? form.querySelector('#quote-phone').value : '';
+    const email = form.querySelector('#quote-email') ? form.querySelector('#quote-email').value : '';
+    const postcode = form.querySelector('#quote-postcode') ? form.querySelector('#quote-postcode').value : '';
     
     const hiddenMake = form.querySelector('#quote-make') ? form.querySelector('#quote-make').value : (form.querySelector('#quote-make-page') ? form.querySelector('#quote-make-page').value : '');
     const hiddenModel = form.querySelector('#quote-model') ? form.querySelector('#quote-model').value : (form.querySelector('#quote-model-page') ? form.querySelector('#quote-model-page').value : '');
@@ -1336,34 +1405,57 @@
     const makeSelectVal = form.querySelector('#quote-make-select') ? form.querySelector('#quote-make-select').value : (form.querySelector('#quote-make-select-page') ? form.querySelector('#quote-make-select-page').value : '');
     const modelSelectVal = form.querySelector('#quote-model-select') ? form.querySelector('#quote-model-select').value : (form.querySelector('#quote-model-select-page') ? form.querySelector('#quote-model-select-page').value : '');
     
-    const make = hiddenMake || makeSelectVal || 'Vehicle';
-    const model = hiddenModel || modelSelectVal || '';
+    const activeV = getActiveVehicle();
+    const make = hiddenMake || makeSelectVal || (activeV ? activeV.make : '') || 'Vehicle';
+    const model = hiddenModel || modelSelectVal || (activeV ? activeV.model : '') || '';
+    const reg = (activeV ? activeV.reg || activeV.raw : '') || (form.querySelector('.uk-reg-input') ? form.querySelector('.uk-reg-input').value : '');
     const refNum = 'GG-' + Math.floor(100000 + Math.random() * 900000);
 
-    const modalContent = document.querySelector('.modal-content');
-    if (modalContent && form.id === 'main-quote-form') {
-      modalContent.innerHTML = `
-        <div style="text-align:center; padding:2rem 1rem;">
-          <div style="width:70px; height:70px; border-radius:50%; background:rgba(16, 185, 129, 0.15); border:2px solid #10b981; color:#10b981; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; box-shadow:0 0 30px rgba(16,185,129,0.3);">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <h2 style="font-size:1.85rem; margin-bottom:0.5rem; color:#fff;">ESTIMATE REQUEST RECEIVED</h2>
-          <p style="font-size:1.05rem; color:var(--amber-400); font-weight:700; margin-bottom:1rem;">Booking Reference: ${refNum}</p>
-          <p style="color:var(--text-secondary); max-width:440px; margin:0 auto 2rem; font-size:0.95rem; line-height:1.6;">
-            Thank you, <strong>${name}</strong>. Our senior gearbox technician is reviewing specifications for your <strong>${make} ${model}</strong> and will call you with a quote proposal.
-          </p>
-          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-            <a href="tel:02080589668" class="btn btn-primary" style="text-decoration:none;">
-              Call Priority Line: 0208 058 9668
-            </a>
-            <button class="btn btn-secondary" onclick="window.closeQuoteModal()">
+    const vehicleSummary = `${reg ? formatUkPlate(reg) + ' — ' : ''}${make} ${model}`.trim();
+
+    const successCardMarkup = `
+      <div class="quote-success-card" style="text-align:center; padding:2rem 1.25rem;">
+        <div class="success-icon-wrap" style="width:68px; height:68px; border-radius:50%; background:rgba(16, 185, 129, 0.15); border:2px solid #10b981; color:#10b981; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; box-shadow:0 0 30px rgba(16,185,129,0.3);">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h2 style="font-size:1.75rem; margin-bottom:0.4rem; color:#fff; font-family:var(--font-heading);">QUOTE REQUEST RECEIVED</h2>
+        <div style="font-size:1.1rem; color:var(--amber-400); font-weight:800; margin-bottom:1rem; letter-spacing:0.04em;">Booking Ref: ${refNum}</div>
+        
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:1rem 1.25rem; max-width:480px; margin:0 auto 1.5rem; text-align:left;">
+          <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.35rem;">Vehicle Details:</div>
+          <div style="font-size:1rem; font-weight:800; color:#fff; margin-bottom:0.75rem;">${vehicleSummary || 'Vehicle Specifications Logged'}</div>
+          <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.35rem;">What Happens Next:</div>
+          <ol style="margin:0; padding-left:1.25rem; font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+            <li>Senior transmission specialist reviews your vehicle specification.</li>
+            <li>We evaluate repair, reconditioning, or replacement options.</li>
+            <li>We call <strong>${phone || 'you'}</strong> with a transparent fixed estimate and collection options.</li>
+          </ol>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; max-width:480px; margin:0 auto;">
+          <a href="tel:02080589668" class="btn btn-primary" style="flex:1; min-width:200px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Call 0208 058 9668
+          </a>
+          <a href="https://wa.me/447432240974?text=${encodeURIComponent('Hello Gearbox Giants, I have submitted quote ref ' + refNum + ' for my ' + (vehicleSummary || 'car') + '. Please can you provide an update?')}" target="_blank" rel="noopener noreferrer" class="btn" style="flex:1; min-width:200px; background:#25d366; color:#fff; border:none; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; font-weight:700;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            WhatsApp Message
+          </a>
+        </div>
+        ${form.closest('.modal-content') ? `
+          <div style="margin-top:1.5rem;">
+            <button class="btn btn-secondary" onclick="window.closeQuoteModal()" style="font-size:0.85rem; padding:0.4rem 1.25rem;">
               Close Window
             </button>
           </div>
-        </div>
-      `;
-    } else {
-      alert(`Thank you, ${name}! Your quote request for ${make} ${model} (Ref: ${refNum}) has been received. Our transmission specialist will contact you shortly.`);
+        ` : ''}
+      </div>
+    `;
+
+    const container = form.closest('.modal-content') || form.parentElement;
+    if (container) {
+      container.innerHTML = successCardMarkup;
+      container.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
 
@@ -1473,6 +1565,7 @@
   window.handleTransSelectChange = handleTransSelectChange;
   window.handleYearInputChange = handleYearInputChange;
   window.focusVehicleSelect = focusVehicleSelect;
+  window.selectSymptomTag = selectSymptomTag;
   window.handleQuoteFormSubmit = handleQuoteFormSubmit;
   window.saveActiveVehicle = saveActiveVehicle;
   window.getActiveVehicle = getActiveVehicle;

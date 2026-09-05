@@ -3712,4 +3712,198 @@ a.desktop-only, button.desktop-only {
   color: var(--amber-400);
 }
 
+/* ==========================================================================
+   MOBILE STICKY ACTION BAR (375px - 768px Viewports)
+   ========================================================================== */
+.mobile-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(12, 14, 18, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
+  z-index: 990;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .mobile-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  body {
+    padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+.mob-act-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.65rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  min-height: 44px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.mob-act-btn.mob-btn-call {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mob-act-btn.mob-btn-wa {
+  background: #065f46;
+  color: #ecfdf5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.mob-act-btn.mob-btn-quote {
+  background: var(--amber-400, #f59e0b);
+  color: #0c121e;
+  font-weight: 900;
+  flex: 1.35;
+}
+
+/* ==========================================================================
+   3-STEP QUOTE FUNNEL STYLES
+   ========================================================================== */
+.quote-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quote-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.quote-progress-step.active {
+  color: var(--amber-400, #f59e0b);
+}
+
+.quote-progress-step.completed {
+  color: #10b981;
+}
+
+.quote-step-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.quote-progress-step.active .quote-step-badge {
+  background: var(--amber-400, #f59e0b);
+  color: #0c121e;
+}
+
+.quote-progress-step.completed .quote-step-badge {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.symptom-tag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.symptom-tag-btn {
+  background: #161f30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  border-radius: 8px;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  min-height: 52px;
+  box-sizing: border-box;
+}
+
+.symptom-tag-btn:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #ffffff;
+}
+
+.symptom-tag-btn.selected {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--amber-400, #f59e0b);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+
+.symptom-icon {
+  font-size: 1.15rem;
+}
+
+.quote-success-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: #111216;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.quote-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  border: 2px solid #10b981;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+
 
