@@ -18,11 +18,13 @@
     'phone_click',
     'whatsapp_click',
     'symptom_select',
+    'service_select',
+    'vehicle_lookup_complete',
     'nav_click',
     'page_view'
   ];
 
-  // Explicit Allowlist of Allowed Event Properties
+  // Explicit Allowlist of Allowed Event Properties (Zero PII, Zero Lead Hashes)
   var ALLOWED_PROPERTIES = [
     'event_name',
     'landing_page',
@@ -32,7 +34,6 @@
     'symptom',
     'transmission_family',
     'location_hub',
-    'quote_id_hash',
     'source',
     'medium',
     'campaign',
