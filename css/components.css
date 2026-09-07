@@ -15,27 +15,75 @@
   width: 100%;
   height: var(--nav-height, 80px);
   z-index: 1000;
-  background: transparent;
-  border-bottom: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
+  background: rgba(6, 7, 10, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease, height 0.3s ease;
 }
 
 .site-header.scrolled {
-  background: rgba(6, 7, 10, 0.88);
+  background: rgba(6, 7, 10, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   height: 70px;
 }
 
-.nav-container {
+.nav-container,
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: var(--container-max, 1280px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.header-container .main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-container .main-nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.header-container .main-nav a:hover,
+.header-container .main-nav a.active {
+  color: var(--amber-400);
+}
+
+.header-container .main-nav a.nav-cta-btn {
+  background: var(--amber-400);
+  color: #06070a;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.header-container .header-contact .phone-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.location-hero {
+  padding-top: calc(var(--nav-height, 80px) + 2.5rem);
+  padding-bottom: 3.5rem;
+  background: #0c121e;
+  color: #ffffff;
 }
 
 /* Brand Logo Styling */

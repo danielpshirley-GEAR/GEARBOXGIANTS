@@ -35,50 +35,64 @@
 <body>
 
   <header class="site-header">
-    <div class="header-container">
-      <a href="/" class="brand-logo">
-        <span class="logo-main">GEARBOX</span>
-        <span class="logo-sub">GIANTS</span>
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Gearbox Giants Homepage">
+        <svg class="brand-gear-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="brand-title">Gearbox <span>GIANTS</span></span>
       </a>
-      <nav class="main-nav">
-        <a href="/services">Services</a>
-        <a href="/locations">Coverage Areas</a>
-        <a href="/fault-finding" class="active">Fault Finder</a>
-        <a href="/warranty">Warranty</a>
-        <a href="/quote" class="nav-cta-btn">Get a Quote</a>
-      </nav>
-      <div class="header-contact">
-        <a href="tel:02080589668" class="phone-link">
-          <span class="phone-icon">📞</span>
-          <span class="phone-text">0208 058 9668</span>
-        </a>
+
+      <div class="nav-right-group">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="/fault-finding" class="nav-link active">Fault Finder</a></li>
+            <li class="nav-item"><a href="/gearboxes" class="nav-link">Gearboxes</a></li>
+            <li class="nav-item"><a href="/locations" class="nav-link">Locations</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="tel:02080589668" class="phone-link-clean" aria-label="Call Gearbox Giants">0208 058 9668</a>
+          <button class="nav-quote-link" onclick="window.openQuoteModal()">Quote Me <span>→</span></button>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="main-content">
     
-    <section class="location-hero">
-      <div class="hero-content">
-        <div class="hero-badge">Interactive Symptom Directory</div>
-        <h1>What Is Your Car Doing?</h1>
-        <p class="hero-lead">
-          You don't need to be a mechanic or know technical gearbox codes to understand what might be wrong with your car. Choose what you are experiencing below for simple, plain-English advice on what it means, whether you can keep driving, and what happens next.
-        </p>
-        
-        <div class="hero-action-card">
-          <form class="quick-quote-form" action="/quote" method="GET">
-            <input type="hidden" name="landing_page" value="fault-finding-hub">
-            <div class="reg-input-group">
-              <span class="gb-flag">GB</span>
-              <input type="text" name="reg" placeholder="ENTER REG" class="vrm-input" required maxlength="8" autocomplete="off">
-            </div>
-            <button type="submit" class="cta-primary-btn">Check My Vehicle & Tell Us What It's Doing</button>
-          </form>
-          <div class="hero-trust-row">
-            <span>✓ Straightforward Advice First</span>
-            <span>✓ Vehicle Recovery Arranged</span>
-            <span>✓ Up to 12-Month / 12,000-Mile Warranty</span>
+    <section class="cinematic-hero-section">
+      <div class="hero-parallax-layer hero-img-faults"></div>
+      <div class="hero-parallax-overlay"></div>
+
+      <div class="container" style="position:relative; z-index:10;">
+        <div class="cinematic-hero-content fade-in-up">
+          <div class="hero-tag-simple desktop-only">INTERACTIVE SYMPTOM DIRECTORY</div>
+
+          <h1 class="hero-title-cinematic">
+            <span class="title-line-nowrap">WHAT IS YOUR CAR DOING?</span><br>
+            <span class="title-line-nowrap highlight-amber">FAULT & SYMPTOM CHECKER.</span>
+          </h1>
+
+          <p class="hero-desc-cinematic">
+            You don't need to be a mechanic to understand your gearbox. Choose what you are experiencing below for simple, plain-English advice on driving safety and next steps.
+          </p>
+
+          <div class="hero-action-row">
+            <form class="hero-reg-form" onsubmit="event.preventDefault(); window.openQuoteModal('', '', this.querySelector('.uk-reg-input').value);">
+              <div class="uk-reg-box">
+                <div class="uk-reg-flag">
+                  <svg viewBox="0 0 60 30" width="16" height="10"><path d="M0 0h60v30H0z" fill="#012169"/><path d="m0 0 60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
+                  <span>UK</span>
+                </div>
+                <input type="text" class="uk-reg-input" placeholder="ENTER REG" maxlength="8" onkeydown="if(event.key==='Enter'){event.preventDefault(); window.openQuoteModal('', '', this.value);}">
+              </div>
+
+              <button type="submit" class="btn-hero-quote" onclick="const v = this.form.querySelector('.uk-reg-input')?.value; window.openQuoteModal('', '', v);">
+                CHECK MY VEHICLE <span>→</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
