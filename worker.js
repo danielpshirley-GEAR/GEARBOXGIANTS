@@ -421,6 +421,9 @@ function handleUnauthorizedAdmin(request, isApi = false) {
     });
   }
 
+  const reqUrl = request ? new URL(request.url) : null;
+  const isLoginPage = reqUrl && (reqUrl.pathname === '/admin/login' || reqUrl.pathname === '/admin/login.html');
+
   // Redirect to secure login form or render login template
   return new Response(`<!DOCTYPE html>
 <html lang="en">
@@ -475,7 +478,7 @@ function handleUnauthorizedAdmin(request, isApi = false) {
   </script>
 </body>
 </html>`, {
-    status: 401,
+    status: isLoginPage ? 200 : 401,
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       ...SECURITY_HEADERS

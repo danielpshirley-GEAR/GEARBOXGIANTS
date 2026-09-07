@@ -8,6 +8,7 @@ __pycache__/
 .env
 .DS_Store
 config.json
+.wrangler/
 
 # Temporary archives
 *.zip
