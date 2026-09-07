@@ -28,4 +28,7 @@ new_sqlite_classes = ["LoginRateLimiter"]
 [triggers]
 crons = ["0 */6 * * *"]
 
+[vars]
+ADMIN_USERNAME = "shirley"
+
 
