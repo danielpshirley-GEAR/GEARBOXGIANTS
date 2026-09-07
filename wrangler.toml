@@ -31,5 +31,6 @@ crons = ["0 */6 * * *"]
 [vars]
 ADMIN_USERNAME = "shirley"
 GA4_MEASUREMENT_ID = "G-LZ86MKNF79"
+GA4_PROPERTY_ID = "553039728"
 
 
