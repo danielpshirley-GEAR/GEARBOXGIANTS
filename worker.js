@@ -648,6 +648,42 @@ async function getUnifiedGoogleStatus(env) {
 async function handleGoogleOAuthLogin(request, env) {
   const clientId = env && env.GSC_CLIENT_ID;
   if (!clientId) {
+    const accept = request.headers.get('Accept') || '';
+    if (accept.includes('text/html')) {
+      return new Response(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google OAuth Configuration Required — Gearbox Giants</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { font-family: -apple-system, sans-serif; background: #0c121e; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+    .card { background: #161f30; padding: 32px; border-radius: 8px; border: 1px solid #2a3b5c; max-width: 550px; width: 100%; }
+    h2 { color: #f59e0b; margin-top: 0; }
+    code { background: #0c121e; padding: 2px 6px; border-radius: 4px; color: #38bdf8; font-family: monospace; }
+    pre { background: #0c121e; padding: 12px; border-radius: 6px; color: #a5f3fc; overflow-x: auto; font-size: 13px; border: 1px solid #1e293b; }
+    .btn { display: inline-block; background: #1a4971; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Google OAuth Client Required</h2>
+    <p>To connect Google Search Console & GA4, add your Google OAuth credentials to Cloudflare Worker Secrets:</p>
+    <ul>
+      <li><code>GSC_CLIENT_ID</code></li>
+      <li><code>GSC_CLIENT_SECRET</code></li>
+    </ul>
+    <p>Ensure your Google Cloud Console OAuth redirect URI is set to:</p>
+    <pre>https://gearboxgiants.co.uk/api/auth/google/callback</pre>
+    <a href="/admin/integrations" class="btn">&larr; Return to Admin Integrations</a>
+  </div>
+</body>
+</html>`, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8', ...SECURITY_HEADERS }
+      });
+    }
+
     return new Response(JSON.stringify({ error: 'GSC_CLIENT_ID not configured in worker environment' }), {
       status: 400,
       headers: CORS_HEADERS
