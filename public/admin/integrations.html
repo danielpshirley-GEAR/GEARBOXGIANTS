@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin: API Integrations & Telemetry | Gearbox Giants</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <style>
+    .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
+    .status-not-configured { background: #fee2e2; color: #991b1b; }
+    .status-configured { background: #fef3c7; color: #92400e; }
+    .status-connected { background: #dcfce7; color: #166534; }
+    .card-grid { display: grid; gap: 1.5rem; }
+    .integration-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; }
+    .meta-table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .meta-table td { padding: 0.5rem 0; vertical-align: top; }
+    .meta-label { color: #64748b; width: 220px; font-weight: 500; }
+    .meta-val { color: #1e293b; font-weight: 600; }
+    .btn-admin { background: var(--primary, #1a4971); color: white; border: none; padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-admin:hover { opacity: 0.9; }
+    .btn-secondary { background: #e2e8f0; color: #334155; }
+    .btn-danger { background: #dc2626; color: white; }
+    .budget-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem; margin-top: 1rem; }
+  </style>
+</head>
+<body style="background: #f8fafc;">
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="logo-main">GEARBOX</span>
+        <span class="logo-sub">GIANTS ADMIN</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/admin/integrations" class="active">API Integrations</a>
+        <a href="/admin/case-studies/new">Ingest Case Study</a>
+        <a href="/gearboxes">Gearbox Hub</a>
+        <a href="/fault-finding">Fault Finder</a>
+        <a href="javascript:void(0)" onclick="logout()" style="color: #ef4444; font-weight: 600;">Sign Out</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+      <div>
+        <h1 style="color: var(--primary, #1a4971); margin-bottom: 0.5rem; font-size: 2rem;">API Integrations & Telemetry</h1>
+        <p style="color: #64748b; margin: 0;">Production environment integration gate for Unified Google OAuth (GSC + GA4 Data API) and DataForSEO v3.</p>
+      </div>
+      <button onclick="refreshStatus()" class="btn-admin btn-secondary" style="font-size: 0.85rem;">&orarr; Refresh Telemetry</button>
+    </div>
+
+    <div class="card-grid">
+      
+      <!-- 1. GOOGLE UNIFIED CONNECTION (GSC + GA4 DATA API) -->
+      <div class="integration-card" id="google-unified-card">
+        <div class="card-header">
+          <div>
+            <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">Google Services (Search Console + GA4 Data API)</h2>
+            <small style="color: #64748b;">Unified least-privilege OAuth with AES-GCM encrypted refresh token stored in <code>SEO_AUTH</code> KV</small>
+          </div>
+          <span id="google-status-badge" class="status-badge status-not-configured">NOT CONFIGURED</span>
+        </div>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">OAuth Application:</td>
+            <td class="meta-val" id="google-config-val">Not configured</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Account Authentication:</td>
+            <td class="meta-val" id="google-auth-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Selected Search Console Property:</td>
+            <td class="meta-val" id="gsc-prop-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">OAuth Scopes Granted:</td>
+            <td class="meta-val"><code>webmasters.readonly</code> &bull; <code>analytics.readonly</code></td>
+          </tr>
+          <tr>
+            <td class="meta-label">Connected At / Last Refresh:</td>
+            <td class="meta-val" id="google-refresh-val">&mdash;</td>
+          </tr>
+        </table>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="/api/auth/google/login" id="btn-google-connect" class="btn-admin">Connect Google Account</a>
+          <button onclick="disconnectGoogle()" id="btn-google-disconnect" class="btn-admin btn-danger" style="display: none;">Disconnect Google</button>
+        </div>
+      </div>
+
+      <!-- 2. GOOGLE ANALYTICS 4 (GA4) 3-STATE SEPARATION -->
+      <div class="integration-card" id="ga4-card">
+        <div class="card-header">
+          <div>
+            <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">Google Analytics 4 (GA4)</h2>
+            <small style="color: #64748b;">Separating Website Tracking, Account Access, and Data API Telemetry</small>
+          </div>
+          <span id="ga4-status-badge" class="status-badge status-not-configured">NOT INSTALLED</span>
+        </div>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">Website Tracking (Tag):</td>
+            <td class="meta-val" id="ga4-track-val" style="color: #dc2626;">GA4_TRACKING_NOT_INSTALLED</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Web Measurement ID:</td>
+            <td class="meta-val" id="ga4-mid-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">GA4 Account Access (OAuth):</td>
+            <td class="meta-val" id="ga4-oauth-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Numeric GA4 Property ID:</td>
+            <td class="meta-val" id="ga4-prop-val">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Reporting Data API Status:</td>
+            <td class="meta-val" id="ga4-data-val" style="color: #d97706;">DATA NOT AVAILABLE</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 3. DATAFORSEO -->
+      <div class="integration-card" id="dataforseo-card">
+        <div class="card-header">
+          <h2 style="font-size: 1.35rem; margin: 0; color: #1e293b;">DataForSEO API v3</h2>
+          <span id="dfs-status-badge" class="status-badge status-not-configured">NOT CONFIGURED</span>
+        </div>
+        <table class="meta-table">
+          <tr>
+            <td class="meta-label">Credentials:</td>
+            <td class="meta-val" id="dfs-creds-val">Not configured</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Connection:</td>
+            <td class="meta-val" id="dfs-conn-val">Not connected</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Monthly budget:</td>
+            <td class="meta-val" id="dfs-budget-val" style="color: #d97706;">Not configured (Default: UNSET)</td>
+          </tr>
+          <tr>
+            <td class="meta-label">Usage / Spend:</td>
+            <td class="meta-val" id="dfs-usage-val">&mdash;</td>
+          </tr>
+        </table>
+        
+        <div class="budget-box">
+          <h4 style="margin: 0 0 0.5rem 0; color: #334155;">Pre-Execution Cost Estimator</h4>
+          <p style="font-size: 0.85rem; color: #64748b; margin: 0 0 0.75rem 0;">Estimate keyword batch cost prior to execution. Requires owner-configured budget.</p>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <select id="est-type" style="padding: 0.4rem; border-radius: 4px; border: 1px solid #cbd5e1;">
+              <option value="serp_live">SERP Live ($0.002 / query)</option>
+              <option value="search_volume">Search Volume ($0.05 / 1k kw)</option>
+              <option value="ranked_keywords">Ranked Keywords ($0.01 / domain)</option>
+            </select>
+            <input type="number" id="est-count" value="50" min="1" max="1000" style="padding: 0.4rem; width: 80px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            <button onclick="estimateCost()" class="btn-admin btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Calculate Cost</button>
+          </div>
+          <div id="est-result" style="margin-top: 0.5rem; font-size: 0.9rem; font-weight: 600;"></div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <button onclick="testDataForSeo()" class="btn-admin">Test DataForSEO Connection</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    async function refreshStatus() {
+      try {
+        const res = await fetch('/api/admin/integrations/status');
+        if (!res.ok) throw new Error('Failed to load status');
+        const data = await res.json();
+        
+        // Update Google Unified / GSC
+        if (data.gsc) {
+          document.getElementById('google-config-val').textContent = data.gsc.credentials_configured ? 'Configured (OAuth Client Secrets set)' : 'Not configured';
+          document.getElementById('google-auth-val').textContent = data.gsc.authentication || 'Not connected';
+          document.getElementById('gsc-prop-val').textContent = data.gsc.selected_gsc_property || '—';
+          document.getElementById('google-refresh-val').textContent = data.gsc.last_refresh_at || data.gsc.connected_at || '—';
+          updateBadge('google-status-badge', data.gsc.status);
+
+          if (data.gsc.authentication === 'CONNECTED') {
+            document.getElementById('btn-google-connect').style.display = 'none';
+            document.getElementById('btn-google-disconnect').style.display = 'inline-block';
+          } else {
+            document.getElementById('btn-google-connect').style.display = 'inline-block';
+            document.getElementById('btn-google-disconnect').style.display = 'none';
+          }
+        }
+
+        // Update GA4 3-State Model
+        if (data.ga4) {
+          document.getElementById('ga4-track-val').textContent = data.ga4.website_tracking || 'GA4_TRACKING_NOT_INSTALLED';
+          document.getElementById('ga4-mid-val').textContent = data.ga4.measurement_id || '—';
+          document.getElementById('ga4-oauth-val').textContent = data.ga4.account_access || 'Not connected';
+          document.getElementById('ga4-prop-val').textContent = data.ga4.property_id || '—';
+          document.getElementById('ga4-data-val').textContent = data.ga4.data_status || 'DATA NOT AVAILABLE';
+          updateBadge('ga4-status-badge', data.ga4.website_tracking === 'INSTALLED' ? 'CONNECTED' : 'NOT CONFIGURED');
+        }
+
+        // Update DataForSEO
+        if (data.dataforseo) {
+          document.getElementById('dfs-creds-val').textContent = data.dataforseo.credentials_configured ? 'Configured' : 'Not configured';
+          document.getElementById('dfs-conn-val').textContent = data.dataforseo.authentication || 'Not connected';
+          document.getElementById('dfs-budget-val').textContent = data.dataforseo.monthly_budget_usd ? ('$' + data.dataforseo.monthly_budget_usd + ' / month (' + data.dataforseo.budget_state + ')') : 'Not configured (Default: UNSET)';
+          document.getElementById('dfs-usage-val').textContent = '$' + (data.dataforseo.usage_spent_usd || 0).toFixed(2);
+          updateBadge('dfs-status-badge', data.dataforseo.status);
+        }
+      } catch (e) {
+        console.warn('Status load note:', e);
+      }
+    }
+
+    function updateBadge(id, status) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = status || 'NOT CONFIGURED';
+      el.className = 'status-badge ' + (status === 'CONNECTED' ? 'status-connected' : (status === 'CONFIGURED_NOT_TESTED' ? 'status-configured' : 'status-not-configured'));
+    }
+
+    async function disconnectGoogle() {
+      if (!confirm('Are you sure you want to disconnect Google Search Console and GA4 Data API?')) return;
+      try {
+        const res = await fetch('/api/admin/integrations/google/disconnect', { method: 'POST' });
+        const data = await res.json();
+        alert(data.message || 'Disconnected');
+        refreshStatus();
+      } catch (e) {
+        alert('Error: ' + e.message);
+      }
+    }
+
+    async function logout() {
+      await fetch('/api/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/login';
+    }
+
+    async function testDataForSeo() {
+      try {
+        const res = await fetch('/api/admin/integrations/dataforseo/test');
+        const json = await res.json();
+        alert('DataForSEO Result: ' + JSON.stringify(json, null, 2));
+      } catch (e) {
+        alert('Error: ' + e.message);
+      }
+    }
+
+    async function estimateCost() {
+      const type = document.getElementById('est-type').value;
+      const count = document.getElementById('est-count').value;
+      const resEl = document.getElementById('est-result');
+      try {
+        const res = await fetch('/api/admin/integrations/dataforseo/estimate-cost?type=' + encodeURIComponent(type) + '&count=' + encodeURIComponent(count));
+        const data = await res.json();
+        resEl.innerHTML = '<span style="color: ' + (data.allowed_to_run ? '#166534' : '#991b1b') + '">Estimated Cost: $' + data.estimated_cost_usd + ' | ' + data.reason + '</span>';
+      } catch (e) {
+        resEl.textContent = 'Error calculating cost: ' + e.message;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', refreshStatus);
+  </script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ Strictly excludes all private, internal, server, script, report, and credential 
 import os
 import shutil
 
-WORKSPACE = '/Users/danielshirley/.gemini/antigravity/scratch/gearbox-giants'
+WORKSPACE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC_DIR = os.path.join(WORKSPACE, 'public')
 
 EXCLUDE_PATTERNS = [
