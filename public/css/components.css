@@ -868,9 +868,9 @@
 
 .hero-title-cinematic {
   font-family: var(--font-heading);
-  font-size: clamp(3.3rem, 6.8vw, 5.8rem);
+  font-size: clamp(2.4rem, 5.2vw, 4.8rem);
   font-weight: 900;
-  line-height: 0.94;
+  line-height: 0.98;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #ffffff;
@@ -3177,15 +3177,14 @@ a.desktop-only, button.desktop-only {
     transform: none !important;
   }
   .hero-title-cinematic {
-    font-size: clamp(2.3rem, 9.5vw, 3.3rem) !important;
+    font-size: clamp(1.75rem, 6.5vw, 2.6rem) !important;
     line-height: 1.05 !important;
-    word-break: normal;
-    overflow-wrap: break-word;
     margin-bottom: 0.65rem !important;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9) !important;
   }
   .title-line-nowrap {
-    white-space: normal !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
   }
   .hero-desc-cinematic {
     font-size: 1.05rem !important;
