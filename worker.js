@@ -1601,13 +1601,41 @@ export default {
     // H. Static Asset Serving via Cloudflare Assets
     if (env && env.ASSETS) {
       const assetResponse = await env.ASSETS.fetch(request);
-      const newHeaders = new Headers(assetResponse.headers);
+      const contentType = assetResponse.headers.get('Content-Type') || '';
+      
+      let response = assetResponse;
+      if (env.GA4_MEASUREMENT_ID && contentType.includes('text/html') && !path.startsWith('/admin')) {
+        const ga4Id = env.GA4_MEASUREMENT_ID;
+        const gaSnippet = `
+<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4Id}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${ga4Id}', { 'anonymize_ip': true });
+</script>
+<script defer src="/js/analytics.js"></script>`;
+        
+        try {
+          response = new HTMLRewriter()
+            .on('head', {
+              element(el) {
+                el.append(gaSnippet, { html: true });
+              }
+            })
+            .transform(assetResponse);
+        } catch (e) {
+          response = assetResponse;
+        }
+      }
+
+      const newHeaders = new Headers(response.headers);
       for (const [k, v] of Object.entries(SECURITY_HEADERS)) {
         newHeaders.set(k, v);
       }
-      return new Response(assetResponse.body, {
-        status: assetResponse.status,
-        statusText: assetResponse.statusText,
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
         headers: newHeaders
       });
     }
